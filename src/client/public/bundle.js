@@ -21162,6 +21162,67 @@
 	          "div",
 	          { className: "rudy-foodmenu-title" },
 	          "MENU"
+	        ),
+	        _react2.default.createElement(
+	          "div",
+	          { className: "rudy-item-cont" },
+	          _react2.default.createElement(
+	            "ul",
+	            null,
+	            _react2.default.createElement(
+	              "li",
+	              null,
+	              "The Rudy"
+	            ),
+	            _react2.default.createElement(
+	              "li",
+	              null,
+	              "6.99"
+	            ),
+	            _react2.default.createElement(
+	              "li",
+	              { className: "rudy-desc-text" },
+	              "This is the description for a nice meal yep"
+	            )
+	          ),
+	          _react2.default.createElement(
+	            "ul",
+	            null,
+	            _react2.default.createElement(
+	              "li",
+	              null,
+	              "Double Cheeseburger"
+	            ),
+	            _react2.default.createElement(
+	              "li",
+	              null,
+	              "3.99"
+	            ),
+	            _react2.default.createElement(
+	              "li",
+	              { className: "rudy-desc-text" },
+	              "This is the description for a nice meal yep"
+	            )
+	          ),
+	          _react2.default.createElement(
+	            "ul",
+	            null,
+	            _react2.default.createElement(
+	              "li",
+	              null,
+	              "Rude Dude Tattooed"
+	            ),
+	            _react2.default.createElement(
+	              "li",
+	              null,
+	              "16.99"
+	            ),
+	            _react2.default.createElement(
+	              "li",
+	              { className: "rudy-desc-text" },
+	              "This is the description for a nice meal yep"
+	            )
+	          )
 	        )
 	      );
 	    }

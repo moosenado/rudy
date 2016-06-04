@@ -4,7 +4,10 @@
 }
 
 html {
-	font-size: 12px;
+	font-size              : 12px;
+	-webkit-font-smoothing : antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-shadow            : 0 0 1px rgba(128,128,128,0.01);
 }
 
 body {
@@ -26,7 +29,7 @@ ul {
 ul li {
 	display        : inline;
 	text-decoration: none;
-	padding        : 0 1.250em 0 0;
+	padding        : 0;
 	margin         : 0;
 }
 
@@ -62,7 +65,7 @@ ul li {
 	width: 100%;
 	text-align: center;
 	font-size: 2em;
-	margin-top: 1.2em;
+	margin: 1.2em 0;
 }
 
 .rudy-close {
@@ -70,6 +73,36 @@ ul li {
 	position: absolute;
 	left: 0;
 	top: 0;
+}
+
+.rudy-item-cont {
+	font-size: 3.000em;
+	color: #fff;
+}
+
+.rudy-item-cont ul {
+}
+
+.rudy-item-cont ul li {
+/*	outline: 1px solid white;*/
+	display: inline-block;
+}
+
+.rudy-item-cont ul li:first-child {
+	width: 75%;
+	word-wrap: break-word;
+}
+
+.rudy-item-cont ul li:nth-child(2) {
+	width: 25%;
+}
+
+.rudy-item-cont ul li:nth-child(3) {
+	width: 100%;
+}
+
+.rudy-desc-text {
+	font-size: 0.4em;
 }
 
 /* HEADER */
@@ -81,6 +114,10 @@ ul li {
 
 .rudy-nav-desktop {
 	display: none;
+}
+
+.rudy-nav-desktop ul li {
+	padding: 0 1.250em 0 0;
 }
 
 .rudy-nav-mobile {
@@ -127,12 +164,16 @@ ul li {
 	text-align: center;
 }
 
+.rudy-copy ul li {
+	padding: 0 1.250em 0 0;
+}
+
 .rudy-design {
 	float: right;
 }
 
 @media all and ( min-width: 480px )  {
-	
+
 	.rudy-chevron {
 		width: 4.500em;
 	}
