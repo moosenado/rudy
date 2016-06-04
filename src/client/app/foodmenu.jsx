@@ -16,17 +16,17 @@ class FoodMenu extends React.Component {
 
         <div className="rudy-item-cont">
           <ul>
-            <li>The Rudy</li>
+            <li>The Rudy............................................................</li>
             <li>6.99</li>
             <li className="rudy-desc-text">This is the description for a nice meal yep</li>
           </ul>
           <ul>
-            <li>Double Cheeseburger</li>
+            <li>Double Cheeseburger............................................................</li>
             <li>3.99</li>
             <li className="rudy-desc-text">This is the description for a nice meal yep</li>
           </ul>
           <ul>
-            <li>Rude Dude Tattooed</li>
+            <li>Rude Dude Tattooed............................................................</li>
             <li>16.99</li>
             <li className="rudy-desc-text">This is the description for a nice meal yep</li>
           </ul>

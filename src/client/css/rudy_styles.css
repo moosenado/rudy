@@ -57,7 +57,7 @@ ul li {
 	right           : 0;
 	bottom          : 0;
 	background-color: rgba(0, 0, 0, .7);
-	transform: translate3d(0, 0, 0);
+	transform       : translate3d(0, 0, 0);
 }
 
 .rudy-foodmenu-title {
@@ -90,7 +90,9 @@ ul li {
 
 .rudy-item-cont ul li:first-child {
 	width: 75%;
-	word-wrap: break-word;
+	color: #f2024b;
+	font-weight: 700;
+	overflow: hidden;
 }
 
 .rudy-item-cont ul li:nth-child(2) {
@@ -102,7 +104,7 @@ ul li {
 }
 
 .rudy-desc-text {
-	font-size: 0.4em;
+	font-size: 0.3em;
 }
 
 /* HEADER */
