@@ -3,6 +3,7 @@ import {render} from 'react-dom';
 import Header from './header.jsx';
 import Main from './main.jsx';
 import Footer from './footer.jsx';
+import FoodMenu from './foodmenu.jsx';
 
 class RudySite extends React.Component {
   	render () {
@@ -11,6 +12,7 @@ class RudySite extends React.Component {
     			<Header />
       			<Main />
       			<Footer />
+      			<FoodMenu />
       		</div>
     	);
   	}

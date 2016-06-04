@@ -6,10 +6,10 @@ class Main extends React.Component {
     	return (
       		<div className="rudy-main">
       			<object data="images/burger.svg" type="image/svg+xml" className="rudy-burger">
-  					<img src="images/burger.png" />
+  					<img src="images/burger.png" className="rudy-burger"/>
 				</object>
         		<object data="images/rudy_facade_final.svg" type="image/svg+xml" className="rudy-main-img">
-  					<img src="images/rudy_facade_final.png" />
+  					<img src="images/rudy_facade_final.png" className="rudy-main-img"/>
 				</object>
       		</div>
    		 );
