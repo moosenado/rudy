@@ -10,6 +10,7 @@ body {
 	position        : relative;
 	padding         : 0;
 	margin          : 0;
+	/*overflow        : hidden;*/
 }
 
 /* HEADER */
@@ -34,19 +35,21 @@ body {
 
 .rudy-main {
 	text-align: center;
-	position : absolute;
-	top: 0%;
-	bottom: 0%;
-	padding: 60px 0;
-}
-
-.rudy-main-img {
-	height: 80%;
-	width : 100%;
+	position: absolute;
+	top: 10%;
+	bottom: 10%;
+	left: 0;
+	right: 0;
 }
 
 .rudy-burger {
-	width: 10%;
+	height: 15%;
+	width: 100%;
+}
+
+.rudy-main-img {
+	height: 85%;
+	width : 100%;
 }
 
 /* FOOTER */
