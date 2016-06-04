@@ -18,10 +18,30 @@ body {
 	letter-spacing  : 0.083em;
 }
 
+ul {
+	padding: 0;
+	margin : 0;
+}
+
+ul li {
+	display        : inline;
+	text-decoration: none;
+	padding        : 0 1.250em 0 0;
+	margin         : 0;
+}
+
 /* SHARED */
 
 .corner-padding {
 	padding: 2.5em;
+}
+
+.rudy-hide-desktop {
+	display: inline-block;
+}
+
+.rudy-hide-mobile {
+	display: none;
 }
 
 /* HEADER */
@@ -40,7 +60,7 @@ body {
 }
 
 .rudy-chevron {
-	width: 4.500em;
+	width: 2.500em;
 }
 
 /* BODY */
@@ -71,17 +91,34 @@ body {
 	bottom  : 0;
 	width   : 100%;
 	color   : #fff3f5;
+	font-size: 0.583em;
 }
 
 .rudy-copy {
-	float: left;
+	float: none;
+	text-align: center;
 }
 
 .rudy-design {
 	float: right;
 }
 
+@media all and ( min-width: 480px )  {
+	.rudy-chevron {
+		width: 4.500em;
+	}
+	
+	.rudy-footer {
+		font-size: 1em;
+	}
+}
+
 @media all and ( min-width: 768px )  {
+
+	.rudy-copy {
+		float: left;
+		text-align: left;
+	}
 
 	.rudy-nav-mobile {
 		display: none;
@@ -93,16 +130,11 @@ body {
 		font-size: 1.333em;
 	}
 
-	.rudy-nav-desktop ul {
-		padding: 0;
-		margin : 0;
+	.rudy-hide-desktop {
+		display: none;
 	}
 
-	.rudy-nav-desktop ul li {
-		display        : inline;
-		text-decoration: none;
-		padding        : 0 1.250em 0 0;
-		margin         : 0;
+	.rudy-hide-mobile {
+		display: inline-block;
 	}
-
 }

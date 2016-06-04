@@ -21062,11 +21062,39 @@
 	        _react2.default.createElement(
 	          "div",
 	          { className: "rudy-copy corner-padding" },
-	          "2016 Rudy | All Rights Reserved"
+	          _react2.default.createElement(
+	            "ul",
+	            null,
+	            _react2.default.createElement(
+	              "li",
+	              null,
+	              "2016 Rudy"
+	            ),
+	            _react2.default.createElement(
+	              "li",
+	              null,
+	              "|"
+	            ),
+	            _react2.default.createElement(
+	              "li",
+	              null,
+	              "All Rights Reserved"
+	            ),
+	            _react2.default.createElement(
+	              "li",
+	              { className: "rudy-hide-desktop" },
+	              "|"
+	            ),
+	            _react2.default.createElement(
+	              "li",
+	              { className: "rudy-hide-desktop" },
+	              "Drew Close Design"
+	            )
+	          )
 	        ),
 	        _react2.default.createElement(
 	          "div",
-	          { className: "rudy-design corner-padding" },
+	          { className: "rudy-design corner-padding rudy-hide-mobile" },
 	          "Drew Close Design"
 	        )
 	      );
