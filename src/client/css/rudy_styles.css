@@ -68,8 +68,8 @@ ul li {
 .rudy-main {
 	text-align: center;
 	position  : absolute;
-	top       : 10%;
-	bottom    : 10%;
+	top       : 7%;
+	bottom    : 13%;
 	left      : 0;
 	right     : 0;
 }
@@ -107,7 +107,7 @@ ul li {
 	.rudy-chevron {
 		width: 4.500em;
 	}
-	
+
 	.rudy-footer {
 		font-size: 1em;
 	}
