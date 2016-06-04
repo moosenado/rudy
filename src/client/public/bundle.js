@@ -20917,7 +20917,7 @@
 	        { className: "rudy-header" },
 	        _react2.default.createElement(
 	          "nav",
-	          { className: "rudy-nav" },
+	          { className: "rudy-nav-desktop corner-padding" },
 	          _react2.default.createElement(
 	            "ul",
 	            null,
@@ -20936,6 +20936,15 @@
 	              null,
 	              "Contact"
 	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "nav",
+	          { className: "rudy-nav-mobile" },
+	          _react2.default.createElement(
+	            "object",
+	            { data: "images/chevron.svg", type: "image/svg+xml", className: "rudy-chevron corner-padding" },
+	            _react2.default.createElement("img", { src: "images/chevron.png" })
 	          )
 	        )
 	      );
@@ -20992,12 +21001,12 @@
 	        _react2.default.createElement(
 	          "object",
 	          { data: "images/burger.svg", type: "image/svg+xml", className: "rudy-burger" },
-	          _react2.default.createElement("img", { src: "yourfallback.jpg" })
+	          _react2.default.createElement("img", { src: "images/burger.png" })
 	        ),
 	        _react2.default.createElement(
 	          "object",
 	          { data: "images/rudy_facade_final.svg", type: "image/svg+xml", className: "rudy-main-img" },
-	          _react2.default.createElement("img", { src: "yourfallback.jpg" })
+	          _react2.default.createElement("img", { src: "images/rudy_facade_final.png" })
 	        )
 	      );
 	    }
@@ -21052,12 +21061,12 @@
 	        { className: "rudy-footer" },
 	        _react2.default.createElement(
 	          "div",
-	          { className: "rudy-copy" },
+	          { className: "rudy-copy corner-padding" },
 	          "2016 Rudy | All Rights Reserved"
 	        ),
 	        _react2.default.createElement(
 	          "div",
-	          { className: "rudy-design" },
+	          { className: "rudy-design corner-padding" },
 	          "Drew Close Design"
 	        )
 	      );
