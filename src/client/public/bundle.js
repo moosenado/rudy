@@ -21210,7 +21210,7 @@
 	            _react2.default.createElement(
 	              "li",
 	              null,
-	              "Rude Dude Tattooed............................................................"
+	              "Rude Dude Tattooed Burger............................................................"
 	            ),
 	            _react2.default.createElement(
 	              "li",
