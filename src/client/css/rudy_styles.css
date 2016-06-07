@@ -50,38 +50,48 @@ ul li {
 /* FOOD MENU */
 
 .rudy-foodmenu {
-	position        : absolute;
-	display         : block;
-	top             : 0;
-	left            : 0;
-	right           : 0;
-	bottom          : 0;
-	background-color: rgba(0, 0, 0, .8);
-	transform       : translate3d(0, -150%, 0);
-	overflow: auto;
-	padding: 0 0 0 2%;
+	position                          : absolute;
+	display                           : block;
+	top                               : 0;
+	left                              : 0;
+	right                             : 0;
+	bottom                            : 0;
+	background-color                  : rgba(0, 0, 0, .8);
+	-webkit-transform                 : translate3d(0, -150%, 0);
+	transform                         : translate3d(0, -150%, 0);
+	-webkit-transition                : all 1s ease-in-out;
+	transition                        : all 1s ease-in-out;
+	-webkit-transition-timing-function: cubic-bezier(1,.11,.39,1);
+	transition-timing-function        : cubic-bezier(1,.11,.39,1);
+	overflow                          : auto;
+	padding                           : 0 0 0 2%;
+	z-index                           : 2;
+}
+
+.rudy-menu-open {
+	transform: translate3d(0, 0, 0);
 }
 
 .rudy-foodmenu-title {
-	color: #fff;
-	width: 100%;
+	color     : #fff;
+	width     : 100%;
 	text-align: center;
-	font-size: 2em;
-	margin: 1.2em 0;
-	display: block;
+	font-size : 2em;
+	margin    : 1.2em 0;
+	display   : block;
 }
 
 .rudy-close {
-	width: 2.000em;
+	width   : 2.000em;
 	position: absolute;
-	left: 0;
-	top: 0;
-	display: block;
+	left    : 0;
+	top     : 0;
+	display : block;
 }
 
 .rudy-item-cont {
 	font-size: 2.200em;
-	color: #fff;
+	color    : #fff;
 }
 
 .rudy-item-cont ul {
@@ -93,14 +103,14 @@ ul li {
 }
 
 .rudy-item-cont ul li:first-child {
-	width: 75%;
-	color: #f2024b;
+	width      : 75%;
+	color      : #f2024b;
 	font-weight: 700;
-	overflow: hidden;
+	overflow   : hidden;
 }
 
 .rudy-item-cont ul li:nth-child(2) {
-	width: 25%;
+	width   : 25%;
 	overflow: hidden;
 }
 
@@ -117,6 +127,7 @@ ul li {
 .rudy-header {
 	position: absolute;
 	top     : 0;
+	z-index : 2;
 }
 
 .rudy-nav-desktop {
@@ -125,6 +136,7 @@ ul li {
 
 .rudy-nav-desktop ul li {
 	padding: 0 1.250em 0 0;
+	cursor : pointer;
 }
 
 .rudy-nav-mobile {
@@ -132,7 +144,7 @@ ul li {
 }
 
 .rudy-chevron {
-	width: 2.500em;
+	width : 2.500em;
 	cursor: pointer;
 }
 
@@ -149,7 +161,6 @@ ul li {
 
 .rudy-burger {
 	height: 15%;
-	width : 100%;
 }
 
 .rudy-main-img {
@@ -160,15 +171,15 @@ ul li {
 /* FOOTER */
 
 .rudy-footer {
-	position: absolute;
-	bottom  : 0;
-	width   : 100%;
-	color   : #fff3f5;
+	position : absolute;
+	bottom   : 0;
+	width    : 100%;
+	color    : #fff3f5;
 	font-size: 0.583em;
 }
 
 .rudy-copy {
-	float: none;
+	float     : none;
 	text-align: center;
 }
 
@@ -198,7 +209,7 @@ ul li {
 @media all and ( min-width: 768px )  {
 
 	.rudy-copy {
-		float: left;
+		float     : left;
 		text-align: left;
 	}
 
@@ -227,7 +238,7 @@ ul li {
 		right           : 15%;
 		bottom          : 15%;
 		background-color: rgba(0, 0, 0, 1);
-		padding: 2% 0 0 2%;
+		padding         : 2% 0 0 2%;
 	}
 
 	.rudy-item-cont {

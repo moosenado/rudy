@@ -57,10 +57,6 @@
 	
 	var _reactDom = __webpack_require__(/*! react-dom */ 38);
 	
-	var _header = __webpack_require__(/*! ./header.jsx */ 168);
-	
-	var _header2 = _interopRequireDefault(_header);
-	
 	var _main = __webpack_require__(/*! ./main.jsx */ 169);
 	
 	var _main2 = _interopRequireDefault(_main);
@@ -82,29 +78,69 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
 	var RudySite = function (_React$Component) {
-	  _inherits(RudySite, _React$Component);
+		_inherits(RudySite, _React$Component);
 	
-	  function RudySite() {
-	    _classCallCheck(this, RudySite);
+		function RudySite() {
+			_classCallCheck(this, RudySite);
 	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(RudySite).apply(this, arguments));
-	  }
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(RudySite).apply(this, arguments));
+		}
 	
-	  _createClass(RudySite, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(_header2.default, null),
-	        _react2.default.createElement(_main2.default, null),
-	        _react2.default.createElement(_footer2.default, null),
-	        _react2.default.createElement(_foodmenu2.default, { data: this.props })
-	      );
-	    }
-	  }]);
+		_createClass(RudySite, [{
+			key: 'showMenu',
+			value: function showMenu() {
+				this.refs.menu.showHide();
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(
+					'div',
+					null,
+					_react2.default.createElement(
+						'header',
+						{ className: 'rudy-header' },
+						_react2.default.createElement(
+							'nav',
+							{ className: 'rudy-nav-desktop corner-padding' },
+							_react2.default.createElement(
+								'ul',
+								null,
+								_react2.default.createElement(
+									'li',
+									{ onClick: this.showMenu.bind(this) },
+									'Menu'
+								),
+								_react2.default.createElement(
+									'li',
+									null,
+									'|'
+								),
+								_react2.default.createElement(
+									'li',
+									null,
+									'Contact'
+								)
+							)
+						),
+						_react2.default.createElement(
+							'nav',
+							{ className: 'rudy-nav-mobile', onClick: this.showMenu.bind(this) },
+							_react2.default.createElement(
+								'object',
+								{ data: 'images/chevron.svg', type: 'image/svg+xml', className: 'rudy-chevron corner-padding' },
+								_react2.default.createElement('img', { src: 'images/chevron.png' })
+							)
+						)
+					),
+					_react2.default.createElement(_main2.default, null),
+					_react2.default.createElement(_footer2.default, null),
+					_react2.default.createElement(_foodmenu2.default, { ref: 'menu', data: this.props })
+				);
+			}
+		}]);
 	
-	  return RudySite;
+		return RudySite;
 	}(_react2.default.Component);
 	
 	(0, _reactDom.render)(_react2.default.createElement(RudySite, { data: rudy_menu }), document.getElementById('app'));
@@ -20879,89 +20915,7 @@
 	module.exports = ReactMount.renderSubtreeIntoContainer;
 
 /***/ },
-/* 168 */
-/*!***************************************************************************!*\
-  !*** C:/Users/m00senado/documents/rudy-project/src/client/app/header.jsx ***!
-  \***************************************************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var Header = function (_React$Component) {
-	  _inherits(Header, _React$Component);
-	
-	  function Header() {
-	    _classCallCheck(this, Header);
-	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Header).apply(this, arguments));
-	  }
-	
-	  _createClass(Header, [{
-	    key: "render",
-	    value: function render() {
-	      return _react2.default.createElement(
-	        "header",
-	        { className: "rudy-header" },
-	        _react2.default.createElement(
-	          "nav",
-	          { className: "rudy-nav-desktop corner-padding" },
-	          _react2.default.createElement(
-	            "ul",
-	            null,
-	            _react2.default.createElement(
-	              "li",
-	              null,
-	              "Menu"
-	            ),
-	            _react2.default.createElement(
-	              "li",
-	              null,
-	              "|"
-	            ),
-	            _react2.default.createElement(
-	              "li",
-	              null,
-	              "Contact"
-	            )
-	          )
-	        ),
-	        _react2.default.createElement(
-	          "nav",
-	          { className: "rudy-nav-mobile" },
-	          _react2.default.createElement(
-	            "object",
-	            { data: "images/chevron.svg", type: "image/svg+xml", className: "rudy-chevron corner-padding" },
-	            _react2.default.createElement("img", { src: "images/chevron.png" })
-	          )
-	        )
-	      );
-	    }
-	  }]);
-	
-	  return Header;
-	}(_react2.default.Component);
-	
-	exports.default = Header;
-
-/***/ },
+/* 168 */,
 /* 169 */
 /*!*************************************************************************!*\
   !*** C:/Users/m00senado/documents/rudy-project/src/client/app/main.jsx ***!
@@ -21118,7 +21072,7 @@
   \*****************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -21144,50 +21098,70 @@
 	  function FoodMenu() {
 	    _classCallCheck(this, FoodMenu);
 	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(FoodMenu).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(FoodMenu).call(this));
+	
+	    _this.state = {
+	      visible: 'rudy-foodmenu'
+	    };
+	    console.log(_this.state);
+	    return _this;
 	  }
 	
 	  _createClass(FoodMenu, [{
-	    key: "render",
+	    key: 'showHide',
+	    value: function showHide() {
+	
+	      if (this.state.visible === 'rudy-foodmenu') {
+	        this.setState({ visible: 'rudy-foodmenu rudy-menu-open' }, function () {
+	          console.log(this.state);
+	        });
+	      } else {
+	        this.setState({ visible: 'rudy-foodmenu' }, function () {
+	          console.log(this.state);
+	        });
+	      }
+	    }
+	  }, {
+	    key: 'render',
 	    value: function render() {
 	
 	      var food_data = this.props.data.data;
 	
 	      return _react2.default.createElement(
-	        "div",
-	        { className: "rudy-foodmenu" },
+	        'div',
+	        { className: this.state.visible },
 	        _react2.default.createElement(
-	          "object",
-	          { data: "images/close.svg", type: "image/svg+xml", className: "rudy-close corner-padding" },
-	          _react2.default.createElement("img", { src: "images/close.png", className: "rudy-close corner-padding" })
+	          'object',
+	          { data: 'images/close.svg', type: 'image/svg+xml', className: 'rudy-close corner-padding' },
+	          _react2.default.createElement('img', { src: 'images/close.png', className: 'rudy-close corner-padding' })
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "rudy-foodmenu-title" },
-	          "MENU"
+	          'div',
+	          { className: 'rudy-foodmenu-title' },
+	          'MENU'
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "rudy-item-cont" },
+	          'div',
+	          { className: 'rudy-item-cont' },
 	          food_data.map(function (info, i) {
 	            var dots = info.price ? '............................................................' : '';
 	            return _react2.default.createElement(
-	              "ul",
+	              'ul',
 	              { key: i },
 	              _react2.default.createElement(
-	                "li",
+	                'li',
 	                null,
 	                info.name,
 	                dots
 	              ),
 	              _react2.default.createElement(
-	                "li",
+	                'li',
 	                null,
 	                info.price
 	              ),
 	              _react2.default.createElement(
-	                "li",
-	                { className: "rudy-desc-text" },
+	                'li',
+	                { className: 'rudy-desc-text' },
 	                info.description
 	              )
 	            );
