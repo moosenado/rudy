@@ -3,6 +3,9 @@ import React from 'react';
 class FoodMenu extends React.Component {
 
 	render() {
+
+    let food_data = this.props.data.data;
+
   	return (
       <div className="ruby-foodmenu">
 
@@ -15,21 +18,17 @@ class FoodMenu extends React.Component {
         </div>
 
         <div className="rudy-item-cont">
-          <ul>
-            <li>The Rudy............................................................</li>
-            <li>6.99</li>
-            <li className="rudy-desc-text">This is the description for a nice meal yep</li>
-          </ul>
-          <ul>
-            <li>Double Cheeseburger............................................................</li>
-            <li>3.99</li>
-            <li className="rudy-desc-text">This is the description for a nice meal yep</li>
-          </ul>
-          <ul>
-            <li>Rude Dude Tattooed Burger............................................................</li>
-            <li>16.99</li>
-            <li className="rudy-desc-text">This is the description for a nice meal yep</li>
-          </ul>
+
+          {food_data.map( function( info, i ) {
+            return (
+              <ul key={i}>
+                <li>{info.name}............................................................</li>
+                <li>{info.price}</li>
+                <li className="rudy-desc-text">{info.description}</li>
+              </ul>
+            );
+          })}
+
         </div>
 
       </div>

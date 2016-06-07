@@ -12,10 +12,10 @@ class RudySite extends React.Component {
     			<Header />
       			<Main />
       			<Footer />
-      			<FoodMenu />
+      			<FoodMenu data={this.props}/>
       		</div>
     	);
   	}
 }
 
-render(<RudySite/>, document.getElementById('app'));
+render(<RudySite data={rudy_menu}/>, document.getElementById('app'));

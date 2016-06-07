@@ -99,7 +99,7 @@
 	        _react2.default.createElement(_header2.default, null),
 	        _react2.default.createElement(_main2.default, null),
 	        _react2.default.createElement(_footer2.default, null),
-	        _react2.default.createElement(_foodmenu2.default, null)
+	        _react2.default.createElement(_foodmenu2.default, { data: this.props })
 	      );
 	    }
 	  }]);
@@ -107,7 +107,7 @@
 	  return RudySite;
 	}(_react2.default.Component);
 	
-	(0, _reactDom.render)(_react2.default.createElement(RudySite, null), document.getElementById('app'));
+	(0, _reactDom.render)(_react2.default.createElement(RudySite, { data: rudy_menu }), document.getElementById('app'));
 
 /***/ },
 /* 1 */
@@ -21150,6 +21150,9 @@
 	  _createClass(FoodMenu, [{
 	    key: "render",
 	    value: function render() {
+	
+	      var food_data = this.props.data.data;
+	
 	      return _react2.default.createElement(
 	        "div",
 	        { className: "ruby-foodmenu" },
@@ -21166,63 +21169,28 @@
 	        _react2.default.createElement(
 	          "div",
 	          { className: "rudy-item-cont" },
-	          _react2.default.createElement(
-	            "ul",
-	            null,
-	            _react2.default.createElement(
-	              "li",
-	              null,
-	              "The Rudy............................................................"
-	            ),
-	            _react2.default.createElement(
-	              "li",
-	              null,
-	              "6.99"
-	            ),
-	            _react2.default.createElement(
-	              "li",
-	              { className: "rudy-desc-text" },
-	              "This is the description for a nice meal yep"
-	            )
-	          ),
-	          _react2.default.createElement(
-	            "ul",
-	            null,
-	            _react2.default.createElement(
-	              "li",
-	              null,
-	              "Double Cheeseburger............................................................"
-	            ),
-	            _react2.default.createElement(
-	              "li",
-	              null,
-	              "3.99"
-	            ),
-	            _react2.default.createElement(
-	              "li",
-	              { className: "rudy-desc-text" },
-	              "This is the description for a nice meal yep"
-	            )
-	          ),
-	          _react2.default.createElement(
-	            "ul",
-	            null,
-	            _react2.default.createElement(
-	              "li",
-	              null,
-	              "Rude Dude Tattooed Burger............................................................"
-	            ),
-	            _react2.default.createElement(
-	              "li",
-	              null,
-	              "16.99"
-	            ),
-	            _react2.default.createElement(
-	              "li",
-	              { className: "rudy-desc-text" },
-	              "This is the description for a nice meal yep"
-	            )
-	          )
+	          food_data.map(function (info, i) {
+	            return _react2.default.createElement(
+	              "ul",
+	              { key: i },
+	              _react2.default.createElement(
+	                "li",
+	                null,
+	                info.name,
+	                "............................................................"
+	              ),
+	              _react2.default.createElement(
+	                "li",
+	                null,
+	                info.price
+	              ),
+	              _react2.default.createElement(
+	                "li",
+	                { className: "rudy-desc-text" },
+	                info.description
+	              )
+	            );
+	          })
 	        )
 	      );
 	    }
