@@ -21155,7 +21155,7 @@
 	
 	      return _react2.default.createElement(
 	        "div",
-	        { className: "ruby-foodmenu" },
+	        { className: "rudy-foodmenu" },
 	        _react2.default.createElement(
 	          "object",
 	          { data: "images/close.svg", type: "image/svg+xml", className: "rudy-close corner-padding" },
@@ -21170,6 +21170,7 @@
 	          "div",
 	          { className: "rudy-item-cont" },
 	          food_data.map(function (info, i) {
+	            var dots = info.price ? '............................................................' : '';
 	            return _react2.default.createElement(
 	              "ul",
 	              { key: i },
@@ -21177,7 +21178,7 @@
 	                "li",
 	                null,
 	                info.name,
-	                "............................................................"
+	                dots
 	              ),
 	              _react2.default.createElement(
 	                "li",

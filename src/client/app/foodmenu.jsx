@@ -7,7 +7,7 @@ class FoodMenu extends React.Component {
     let food_data = this.props.data.data;
 
   	return (
-      <div className="ruby-foodmenu">
+      <div className="rudy-foodmenu">
 
         <object data="images/close.svg" type="image/svg+xml" className="rudy-close corner-padding">
             <img src="images/close.png" className="rudy-close corner-padding" />
@@ -20,9 +20,10 @@ class FoodMenu extends React.Component {
         <div className="rudy-item-cont">
 
           {food_data.map( function( info, i ) {
+            var dots = (info.price) ? '............................................................' : '';
             return (
               <ul key={i}>
-                <li>{info.name}............................................................</li>
+                <li>{info.name}{dots}</li>
                 <li>{info.price}</li>
                 <li className="rudy-desc-text">{info.description}</li>
               </ul>
