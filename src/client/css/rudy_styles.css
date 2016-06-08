@@ -161,7 +161,19 @@ ul li {
 }
 
 .rudy-burger {
-	height: 15%;
+	height                           : 15%;
+	-webkit-animation                : burgerRotate 2.5s infinite;
+	-moz-animation                   : burgerRotate 2.5s infinite;
+	-o-animation                     : burgerRotate 2.5s infinite;
+	animation                        : burgerRotate 2.5s infinite;
+	animation-timing-function        : linear;
+	-webkit-animation-timing-function: linear;
+	-webkit-backface-visibility      : hidden;
+	backface-visibility              : hidden;
+	transition                       : translateZ(0);
+	-webkit-transition               : translateZ(0);
+	-webkit-perspective              : 200px;
+	perspective                      : 200px;
 }
 
 .rudy-main-img {
@@ -285,4 +297,40 @@ ul li {
 	.rudy-item-cont {
 		font-size: 2.667em;
 	}
+}
+ 
+@-webkit-keyframes burgerRotate {
+    0% {
+    	-webkit-transform: translate3d(0,0,0);
+    }
+    25% {
+    	-webkit-transform: translate3d(8px,-8px,0);
+    }
+    50% {
+    	-webkit-transform: translate3d(0,-16px,0);
+    }
+    75% {
+    	-webkit-transform: translate3d(-8px,0,0);
+    }
+    100% {
+    	-webkit-transform: translate3d(0,0,0);
+    }
+} 
+
+@keyframes burgerRotate {
+    0% {
+    	transform: translate3d(0,0,0);
+    }
+    25% {
+    	transform: translate3d(8px,8px,0);
+    }
+    50% {
+    	transform: translate3d(0,16px,0);
+    }
+    75% {
+    	transform: translate3d(-8px,8px,0);
+    }
+    100% {
+    	transform: translate3d(0,0,0);
+    }
 }
