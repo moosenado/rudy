@@ -21126,7 +21126,7 @@
 	    value: function showHide() {
 	
 	      if (!this.state.visible) {
-	        this.setState({ menu_status: 'rudy-menu-open', visible: true });
+	        this.setState({ menu_status: 'rudy-foodmenu rudy-menu-open', visible: true });
 	      } else {
 	        this.setState({ menu_status: 'rudy-foodmenu', visible: false });
 	      }
