@@ -6,8 +6,23 @@ import FoodMenu from './foodmenu.jsx';
 
 class RudySite extends React.Component {
 
+	constructor() {
+      	super();
+		this.state = {
+			visible: false,
+			overlay_class: 'rudy-darkoverlay'
+		}
+  	}
+
 	showMenu() {
+
 		this.refs.menu.showHide();
+
+		if (!this.state.visible) {
+			this.setState({ overlay_class: 'rudy-darkoverlay rudy-darkoverlay-dark', visible: true });
+		} else {
+			this.setState({ overlay_class: 'rudy-darkoverlay', visible: false });
+		}
 	}
 
   	render () {
@@ -29,6 +44,7 @@ class RudySite extends React.Component {
 	     	 	</header>
       			<Main />
       			<Footer />
+      			<div className={this.state.overlay_class}></div>
       			<FoodMenu ref="menu" data={this.props}/>
       		</div>
     	);

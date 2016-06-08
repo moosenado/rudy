@@ -57,15 +57,15 @@
 	
 	var _reactDom = __webpack_require__(/*! react-dom */ 38);
 	
-	var _main = __webpack_require__(/*! ./main.jsx */ 169);
+	var _main = __webpack_require__(/*! ./main.jsx */ 168);
 	
 	var _main2 = _interopRequireDefault(_main);
 	
-	var _footer = __webpack_require__(/*! ./footer.jsx */ 170);
+	var _footer = __webpack_require__(/*! ./footer.jsx */ 169);
 	
 	var _footer2 = _interopRequireDefault(_footer);
 	
-	var _foodmenu = __webpack_require__(/*! ./foodmenu.jsx */ 171);
+	var _foodmenu = __webpack_require__(/*! ./foodmenu.jsx */ 170);
 	
 	var _foodmenu2 = _interopRequireDefault(_foodmenu);
 	
@@ -83,13 +83,26 @@
 		function RudySite() {
 			_classCallCheck(this, RudySite);
 	
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(RudySite).apply(this, arguments));
+			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(RudySite).call(this));
+	
+			_this.state = {
+				visible: false,
+				overlay_class: 'rudy-darkoverlay'
+			};
+			return _this;
 		}
 	
 		_createClass(RudySite, [{
 			key: 'showMenu',
 			value: function showMenu() {
+	
 				this.refs.menu.showHide();
+	
+				if (!this.state.visible) {
+					this.setState({ overlay_class: 'rudy-darkoverlay rudy-darkoverlay-dark', visible: true });
+				} else {
+					this.setState({ overlay_class: 'rudy-darkoverlay', visible: false });
+				}
 			}
 		}, {
 			key: 'render',
@@ -135,6 +148,7 @@
 					),
 					_react2.default.createElement(_main2.default, null),
 					_react2.default.createElement(_footer2.default, null),
+					_react2.default.createElement('div', { className: this.state.overlay_class }),
 					_react2.default.createElement(_foodmenu2.default, { ref: 'menu', data: this.props })
 				);
 			}
@@ -20915,8 +20929,7 @@
 	module.exports = ReactMount.renderSubtreeIntoContainer;
 
 /***/ },
-/* 168 */,
-/* 169 */
+/* 168 */
 /*!*************************************************************************!*\
   !*** C:/Users/m00senado/documents/rudy-project/src/client/app/main.jsx ***!
   \*************************************************************************/
@@ -20977,7 +20990,7 @@
 	exports.default = Main;
 
 /***/ },
-/* 170 */
+/* 169 */
 /*!***************************************************************************!*\
   !*** C:/Users/m00senado/documents/rudy-project/src/client/app/footer.jsx ***!
   \***************************************************************************/
@@ -21066,7 +21079,7 @@
 	exports.default = Footer;
 
 /***/ },
-/* 171 */
+/* 170 */
 /*!*****************************************************************************!*\
   !*** C:/Users/m00senado/documents/rudy-project/src/client/app/foodmenu.jsx ***!
   \*****************************************************************************/
@@ -21101,9 +21114,9 @@
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(FoodMenu).call(this));
 	
 	    _this.state = {
-	      visible: 'rudy-foodmenu'
+	      visible: false,
+	      menu_status: 'rudy-foodmenu'
 	    };
-	    console.log(_this.state);
 	    return _this;
 	  }
 	
@@ -21111,14 +21124,10 @@
 	    key: 'showHide',
 	    value: function showHide() {
 	
-	      if (this.state.visible === 'rudy-foodmenu') {
-	        this.setState({ visible: 'rudy-foodmenu rudy-menu-open' }, function () {
-	          console.log(this.state);
-	        });
+	      if (!this.state.visible) {
+	        this.setState({ menu_status: 'rudy-foodmenu rudy-menu-open', visible: true });
 	      } else {
-	        this.setState({ visible: 'rudy-foodmenu' }, function () {
-	          console.log(this.state);
-	        });
+	        this.setState({ menu_status: 'rudy-foodmenu', visible: false });
 	      }
 	    }
 	  }, {
@@ -21129,7 +21138,7 @@
 	
 	      return _react2.default.createElement(
 	        'div',
-	        { className: this.state.visible },
+	        { className: this.state.menu_status },
 	        _react2.default.createElement(
 	          'object',
 	          { data: 'images/close.svg', type: 'image/svg+xml', className: 'rudy-close corner-padding' },

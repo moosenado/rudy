@@ -5,25 +5,18 @@ class FoodMenu extends React.Component {
   constructor() {
       super();
       this.state = {
-          visible: 'rudy-foodmenu'
+          visible: false,
+          menu_status: 'rudy-foodmenu'
       }
-      console.log(this.state);
   }
 
   showHide() {
 
-    if (this.state.visible === 'rudy-foodmenu'){
-      this.setState({ visible: 'rudy-foodmenu rudy-menu-open' }, function() {
-        console.log(this.state);
-      });
+    if (!this.state.visible) {
+      this.setState({ menu_status: 'rudy-foodmenu rudy-menu-open', visible: true });
+    } else {
+      this.setState({ menu_status: 'rudy-foodmenu', visible: false });
     }
-    else
-    {
-      this.setState({ visible: 'rudy-foodmenu' }, function() {
-        console.log(this.state);
-      });
-    }
-
   }
 
 	render() {
@@ -31,7 +24,7 @@ class FoodMenu extends React.Component {
     let food_data = this.props.data.data;
 
   	return (
-      <div className={this.state.visible}>
+      <div className={this.state.menu_status}>
 
         <object data="images/close.svg" type="image/svg+xml" className="rudy-close corner-padding">
             <img src="images/close.png" className="rudy-close corner-padding" />
