@@ -57,15 +57,15 @@
 	
 	var _reactDom = __webpack_require__(/*! react-dom */ 38);
 	
-	var _main = __webpack_require__(/*! ./main.jsx */ 169);
+	var _main = __webpack_require__(/*! ./main.jsx */ 168);
 	
 	var _main2 = _interopRequireDefault(_main);
 	
-	var _footer = __webpack_require__(/*! ./footer.jsx */ 170);
+	var _footer = __webpack_require__(/*! ./footer.jsx */ 169);
 	
 	var _footer2 = _interopRequireDefault(_footer);
 	
-	var _foodmenu = __webpack_require__(/*! ./foodmenu.jsx */ 171);
+	var _foodmenu = __webpack_require__(/*! ./foodmenu.jsx */ 170);
 	
 	var _foodmenu2 = _interopRequireDefault(_foodmenu);
 	
@@ -20946,8 +20946,7 @@
 	module.exports = ReactMount.renderSubtreeIntoContainer;
 
 /***/ },
-/* 168 */,
-/* 169 */
+/* 168 */
 /*!*************************************************************************!*\
   !*** C:/Users/m00senado/documents/rudy-project/src/client/app/main.jsx ***!
   \*************************************************************************/
@@ -21008,7 +21007,7 @@
 	exports.default = Main;
 
 /***/ },
-/* 170 */
+/* 169 */
 /*!***************************************************************************!*\
   !*** C:/Users/m00senado/documents/rudy-project/src/client/app/footer.jsx ***!
   \***************************************************************************/
@@ -21097,7 +21096,7 @@
 	exports.default = Footer;
 
 /***/ },
-/* 171 */
+/* 170 */
 /*!*****************************************************************************!*\
   !*** C:/Users/m00senado/documents/rudy-project/src/client/app/foodmenu.jsx ***!
   \*****************************************************************************/

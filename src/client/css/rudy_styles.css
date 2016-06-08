@@ -17,6 +17,7 @@ body {
 	position        : relative;
 	padding         : 0;
 	margin          : 0;
+	height          : 100%; /*firefox*/
 	/*overflow        : hidden;*/
 	letter-spacing  : 0.083em;
 }
