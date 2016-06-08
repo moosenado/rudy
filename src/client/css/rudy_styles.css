@@ -69,8 +69,22 @@ ul li {
 }
 
 .rudy-menu-open {
-	-webkit-transform: translate3d(0, 0, 0);
-	transform        : translate3d(0, 0, 0);
+	position                          : absolute;
+	display                           : block;
+	top                               : 0;
+	left                              : 0;
+	right                             : 0;
+	bottom                            : 0;
+	background-color                  : rgba(0, 0, 0, .8);
+	-webkit-transition                : all 1s ease-in-out;
+	transition                        : all 1s ease-in-out;
+	-webkit-transition-timing-function: cubic-bezier(1,.11,.39,1);
+	transition-timing-function        : cubic-bezier(1,.11,.39,1);
+	overflow                          : auto;
+	padding                           : 0 0 0 2%;
+	z-index                           : 2;
+	-webkit-transform                 : translate3d(0, 0, 0);
+	transform                         : translate3d(0, 0, 0);
 }
 
 .rudy-foodmenu-title {
@@ -249,13 +263,41 @@ ul li {
 	}
 
 	.rudy-foodmenu {
-		position        : absolute;
-		top             : 15%;
-		left            : 15%;
-		right           : 15%;
-		bottom          : 15%;
-		background-color: rgba(0, 0, 0, 1);
-		padding         : 2% 0 0 2%;
+		position                          : absolute;
+		display                           : block;
+		top                               : 15%;
+		left                              : 15%;
+		right                             : 15%;
+		bottom                            : 15%;
+		background-color                  : rgba(0, 0, 0, 1);
+		-webkit-transform                 : translate3d(0, -2000px, 0);
+		transform                         : translate3d(0, -2000px, 0);
+		-webkit-transition                : all 1s ease-in-out;
+		transition                        : all 1s ease-in-out;
+		-webkit-transition-timing-function: cubic-bezier(1,.11,.39,1);
+		transition-timing-function        : cubic-bezier(1,.11,.39,1);
+		overflow                          : auto;
+		padding                           : 2% 0 0 2%;
+		z-index                           : 2;
+	}
+
+	.rudy-menu-open {
+		position                          : absolute;
+		display                           : block;
+		top                               : 15%;
+		left                              : 15%;
+		right                             : 15%;
+		bottom                            : 15%;
+		background-color                  : rgba(0, 0, 0, 1);
+		-webkit-transform                 : translate3d(0, 0, 0);
+		transform                         : translate3d(0, 0, 0);
+		-webkit-transition                : all 1s ease-in-out;
+		transition                        : all 1s ease-in-out;
+		-webkit-transition-timing-function: cubic-bezier(1,.11,.39,1);
+		transition-timing-function        : cubic-bezier(1,.11,.39,1);
+		overflow                          : auto;
+		padding                           : 2% 0 0 2%;
+		z-index                           : 2;
 	}
 
 	.rudy-item-cont {
