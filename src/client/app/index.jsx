@@ -10,7 +10,9 @@ class RudySite extends React.Component {
       	super();
 		this.state = {
 			visible: false,
-			overlay_class: 'rudy-darkoverlay'
+			overlay_class: 'rudy-darkoverlay',
+			mobileicon_class_closed: 'rudy-chevron corner-padding rudy-show',
+			mobileicon_class_open: 'rudy-close corner-padding rudy-hide'
 		}
   	}
 
@@ -19,9 +21,19 @@ class RudySite extends React.Component {
 		this.refs.menu.showHide();
 
 		if (!this.state.visible) {
-			this.setState({ overlay_class: 'rudy-darkoverlay rudy-darkoverlay-dark', visible: true });
+			this.setState({
+				overlay_class: 'rudy-darkoverlay rudy-darkoverlay-dark',
+				mobileicon_class_closed: 'rudy-chevron corner-padding rudy-hide',
+				mobileicon_class_open: 'rudy-close corner-padding rudy-show',
+				visible: true
+			});
 		} else {
-			this.setState({ overlay_class: 'rudy-darkoverlay', visible: false });
+			this.setState({
+				overlay_class: 'rudy-darkoverlay',
+				mobileicon_class_closed: 'rudy-chevron corner-padding rudy-show',
+				mobileicon_class_open: 'rudy-close corner-padding rudy-hide',
+				visible: false
+			});
 		}
 	}
 
@@ -37,9 +49,12 @@ class RudySite extends React.Component {
 	      				</ul>
 	      			</nav>
 		            <nav className="rudy-nav-mobile" onClick={this.showMenu.bind(this)}>
-		              <object data="images/chevron.svg" type="image/svg+xml" className="rudy-chevron corner-padding">
-		                <img src="images/chevron.png" />
-		              </object>
+		             	 <object data="images/chevron.svg" type="image/svg+xml" className={this.state.mobileicon_class_closed}>
+		                	<img src="images/chevron.png" />
+		              	</object>
+		                <object data="images/close.svg" type="image/svg+xml" className={this.state.mobileicon_class_open}>
+				            <img src="images/close.png" className="rudy-close corner-padding" />
+				        </object>
 		            </nav>
 	     	 	</header>
       			<Main />

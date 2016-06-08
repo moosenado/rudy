@@ -57,15 +57,15 @@
 	
 	var _reactDom = __webpack_require__(/*! react-dom */ 38);
 	
-	var _main = __webpack_require__(/*! ./main.jsx */ 168);
+	var _main = __webpack_require__(/*! ./main.jsx */ 169);
 	
 	var _main2 = _interopRequireDefault(_main);
 	
-	var _footer = __webpack_require__(/*! ./footer.jsx */ 169);
+	var _footer = __webpack_require__(/*! ./footer.jsx */ 170);
 	
 	var _footer2 = _interopRequireDefault(_footer);
 	
-	var _foodmenu = __webpack_require__(/*! ./foodmenu.jsx */ 170);
+	var _foodmenu = __webpack_require__(/*! ./foodmenu.jsx */ 171);
 	
 	var _foodmenu2 = _interopRequireDefault(_foodmenu);
 	
@@ -87,7 +87,9 @@
 	
 			_this.state = {
 				visible: false,
-				overlay_class: 'rudy-darkoverlay'
+				overlay_class: 'rudy-darkoverlay',
+				mobileicon_class_closed: 'rudy-chevron corner-padding rudy-show',
+				mobileicon_class_open: 'rudy-close corner-padding rudy-hide'
 			};
 			return _this;
 		}
@@ -99,9 +101,19 @@
 				this.refs.menu.showHide();
 	
 				if (!this.state.visible) {
-					this.setState({ overlay_class: 'rudy-darkoverlay rudy-darkoverlay-dark', visible: true });
+					this.setState({
+						overlay_class: 'rudy-darkoverlay rudy-darkoverlay-dark',
+						mobileicon_class_closed: 'rudy-chevron corner-padding rudy-hide',
+						mobileicon_class_open: 'rudy-close corner-padding rudy-show',
+						visible: true
+					});
 				} else {
-					this.setState({ overlay_class: 'rudy-darkoverlay', visible: false });
+					this.setState({
+						overlay_class: 'rudy-darkoverlay',
+						mobileicon_class_closed: 'rudy-chevron corner-padding rudy-show',
+						mobileicon_class_open: 'rudy-close corner-padding rudy-hide',
+						visible: false
+					});
 				}
 			}
 		}, {
@@ -141,8 +153,13 @@
 							{ className: 'rudy-nav-mobile', onClick: this.showMenu.bind(this) },
 							_react2.default.createElement(
 								'object',
-								{ data: 'images/chevron.svg', type: 'image/svg+xml', className: 'rudy-chevron corner-padding' },
+								{ data: 'images/chevron.svg', type: 'image/svg+xml', className: this.state.mobileicon_class_closed },
 								_react2.default.createElement('img', { src: 'images/chevron.png' })
+							),
+							_react2.default.createElement(
+								'object',
+								{ data: 'images/close.svg', type: 'image/svg+xml', className: this.state.mobileicon_class_open },
+								_react2.default.createElement('img', { src: 'images/close.png', className: 'rudy-close corner-padding' })
 							)
 						)
 					),
@@ -20929,7 +20946,8 @@
 	module.exports = ReactMount.renderSubtreeIntoContainer;
 
 /***/ },
-/* 168 */
+/* 168 */,
+/* 169 */
 /*!*************************************************************************!*\
   !*** C:/Users/m00senado/documents/rudy-project/src/client/app/main.jsx ***!
   \*************************************************************************/
@@ -20990,7 +21008,7 @@
 	exports.default = Main;
 
 /***/ },
-/* 169 */
+/* 170 */
 /*!***************************************************************************!*\
   !*** C:/Users/m00senado/documents/rudy-project/src/client/app/footer.jsx ***!
   \***************************************************************************/
@@ -21079,7 +21097,7 @@
 	exports.default = Footer;
 
 /***/ },
-/* 170 */
+/* 171 */
 /*!*****************************************************************************!*\
   !*** C:/Users/m00senado/documents/rudy-project/src/client/app/foodmenu.jsx ***!
   \*****************************************************************************/
@@ -21139,11 +21157,6 @@
 	      return _react2.default.createElement(
 	        'div',
 	        { className: this.state.menu_status },
-	        _react2.default.createElement(
-	          'object',
-	          { data: 'images/close.svg', type: 'image/svg+xml', className: 'rudy-close corner-padding' },
-	          _react2.default.createElement('img', { src: 'images/close.png', className: 'rudy-close corner-padding' })
-	        ),
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'rudy-foodmenu-title' },
