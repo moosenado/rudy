@@ -11,8 +11,9 @@ class RudySite extends React.Component {
 		this.state = {
 			visible: false,
 			overlay_class: 'rudy-darkoverlay',
-			mobileicon_class_closed: 'rudy-chevron corner-padding rudy-show',
-			mobileicon_class_open: 'rudy-close corner-padding rudy-hide'
+			mobileicon_class_closed: 'rudy-chevron corner-padding rudy-show-general',
+			mobileicon_class_open: 'rudy-close corner-padding rudy-hide-general',
+			menu_icon_class: 'rudy-menu-icon-closed'
 		}
   	}
 
@@ -23,16 +24,18 @@ class RudySite extends React.Component {
 		if (!this.state.visible) {
 			this.setState({
 				overlay_class: 'rudy-darkoverlay rudy-darkoverlay-dark',
-				mobileicon_class_closed: 'rudy-chevron corner-padding rudy-hide',
-				mobileicon_class_open: 'rudy-close corner-padding rudy-show',
-				visible: true
+				mobileicon_class_closed: 'rudy-chevron corner-padding rudy-hide-general',
+				mobileicon_class_open: 'rudy-close corner-padding rudy-show-general',
+				visible: true,
+				menu_icon_class: 'rudy-menu-icon-open'
 			});
 		} else {
 			this.setState({
 				overlay_class: 'rudy-darkoverlay',
-				mobileicon_class_closed: 'rudy-chevron corner-padding rudy-show',
-				mobileicon_class_open: 'rudy-close corner-padding rudy-hide',
-				visible: false
+				mobileicon_class_closed: 'rudy-chevron corner-padding rudy-show-general',
+				mobileicon_class_open: 'rudy-close corner-padding rudy-hide-general',
+				visible: false,
+				menu_icon_class: 'rudy-menu-icon-closed'
 			});
 		}
 	}
@@ -43,7 +46,7 @@ class RudySite extends React.Component {
 	    		<header className="rudy-header">
 	      			<nav className="rudy-nav-desktop corner-padding">
 	      				<ul>
-	      					<li onClick={this.showMenu.bind(this)}>Menu</li>
+	      					<li onClick={this.showMenu.bind(this)} className={this.state.menu_icon_class}>Menu</li>
 	      					<li>|</li>
 	      					<li>Contact</li>
 	      				</ul>
