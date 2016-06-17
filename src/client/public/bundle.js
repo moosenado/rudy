@@ -69,6 +69,10 @@
 	
 	var _foodmenu2 = _interopRequireDefault(_foodmenu);
 	
+	var _contact = __webpack_require__(/*! ./contact.jsx */ 171);
+	
+	var _contact2 = _interopRequireDefault(_contact);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -90,7 +94,8 @@
 				overlay_class: 'rudy-darkoverlay',
 				mobileicon_class_closed: 'rudy-chevron corner-padding rudy-show-general',
 				mobileicon_class_open: 'rudy-close corner-padding rudy-hide-general',
-				menu_icon_class: 'rudy-menu-icon-closed'
+				menu_icon_class: 'rudy-menu-icon-closed',
+				contact_icon_class: 'rudy-contact-icon-closed'
 			};
 			return _this;
 		}
@@ -116,6 +121,26 @@
 						mobileicon_class_open: 'rudy-close corner-padding rudy-hide-general',
 						visible: false,
 						menu_icon_class: 'rudy-menu-icon-closed'
+					});
+				}
+			}
+		}, {
+			key: 'showContact',
+			value: function showContact() {
+	
+				this.refs.contact.showHide();
+	
+				if (!this.state.visible) {
+					this.setState({
+						overlay_class: 'rudy-darkoverlay rudy-darkoverlay-dark',
+						visible: true,
+						contact_icon_class: 'rudy-contact-icon-open'
+					});
+				} else {
+					this.setState({
+						overlay_class: 'rudy-darkoverlay',
+						visible: false,
+						contact_icon_class: 'rudy-contact-icon-closed'
 					});
 				}
 			}
@@ -146,7 +171,7 @@
 								),
 								_react2.default.createElement(
 									'li',
-									null,
+									{ onClick: this.showContact.bind(this), className: this.state.contact_icon_class },
 									'Contact'
 								)
 							)
@@ -169,7 +194,8 @@
 					_react2.default.createElement(_main2.default, null),
 					_react2.default.createElement(_footer2.default, null),
 					_react2.default.createElement('div', { className: this.state.overlay_class }),
-					_react2.default.createElement(_foodmenu2.default, { ref: 'menu', data: this.props })
+					_react2.default.createElement(_foodmenu2.default, { ref: 'menu', data: this.props }),
+					_react2.default.createElement(_contact2.default, { ref: 'contact' })
 				);
 			}
 		}]);
@@ -21234,6 +21260,148 @@
 	}(_react2.default.Component);
 	
 	exports.default = FoodMenu;
+
+/***/ },
+/* 171 */
+/*!************************************!*\
+  !*** ./src/client/app/contact.jsx ***!
+  \************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Contact = function (_React$Component) {
+	  _inherits(Contact, _React$Component);
+	
+	  function Contact() {
+	    _classCallCheck(this, Contact);
+	
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Contact).call(this));
+	
+	    _this.state = {
+	      visible: false,
+	      contact_status: 'rudy-contact'
+	    };
+	    return _this;
+	  }
+	
+	  _createClass(Contact, [{
+	    key: 'showHide',
+	    value: function showHide() {
+	
+	      if (!this.state.visible) {
+	        this.setState({ contact_status: 'rudy-contact rudy-contact-open', visible: true });
+	      } else {
+	        this.setState({ contact_status: 'rudy-contact', visible: false });
+	      }
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	
+	      return _react2.default.createElement(
+	        'div',
+	        { className: this.state.contact_status },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'rudy-contact-centered' },
+	          _react2.default.createElement(
+	            'ul',
+	            null,
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              _react2.default.createElement(
+	                'object',
+	                { data: 'images/iphone.svg', type: 'image/svg+xml', className: 'rudy-contact-images-phone' },
+	                _react2.default.createElement('img', { src: 'images/iphone.png' })
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              { className: 'rudy-contact-phone-height' },
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'rudy-contact-info-cont' },
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'rudy-contact-info-centered' },
+	                  '416.434.9943'
+	                )
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              _react2.default.createElement(
+	                'object',
+	                { data: 'images/email.svg', type: 'image/svg+xml', className: 'rudy-contact-images-email' },
+	                _react2.default.createElement('img', { src: 'images/email.png' })
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              { className: 'rudy-contact-email-height' },
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'rudy-contact-info-cont' },
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'rudy-contact-info-centered' },
+	                  'info@rudyresto.com'
+	                )
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              _react2.default.createElement(
+	                'object',
+	                { data: 'images/map_pin.svg', type: 'image/svg+xml', className: 'rudy-contact-images-pin' },
+	                _react2.default.createElement('img', { src: 'images/map_pin.png' })
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              { className: 'rudy-contact-pin-height' },
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'rudy-contact-info-cont' },
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'rudy-contact-info-centered' },
+	                  'View Map'
+	                )
+	              )
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Contact;
+	}(_react2.default.Component);
+	
+	exports.default = Contact;
 
 /***/ }
 /******/ ]);

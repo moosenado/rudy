@@ -3,6 +3,7 @@ import {render} from 'react-dom';
 import Main from './main.jsx';
 import Footer from './footer.jsx';
 import FoodMenu from './foodmenu.jsx';
+import Contact from './contact.jsx';
 
 class RudySite extends React.Component {
 
@@ -13,7 +14,8 @@ class RudySite extends React.Component {
 			overlay_class: 'rudy-darkoverlay',
 			mobileicon_class_closed: 'rudy-chevron corner-padding rudy-show-general',
 			mobileicon_class_open: 'rudy-close corner-padding rudy-hide-general',
-			menu_icon_class: 'rudy-menu-icon-closed'
+			menu_icon_class: 'rudy-menu-icon-closed',
+			contact_icon_class: 'rudy-contact-icon-closed'
 		}
   	}
 
@@ -40,6 +42,25 @@ class RudySite extends React.Component {
 		}
 	}
 
+	showContact() {
+
+		this.refs.contact.showHide();
+
+		if (!this.state.visible) {
+			this.setState({
+				overlay_class: 'rudy-darkoverlay rudy-darkoverlay-dark',
+				visible: true,
+				contact_icon_class: 'rudy-contact-icon-open'
+			});
+		} else {
+			this.setState({
+				overlay_class: 'rudy-darkoverlay',
+				visible: false,
+				contact_icon_class: 'rudy-contact-icon-closed'
+			});
+		}
+	}
+
   	render () {
     	return (
     		<div>
@@ -48,7 +69,7 @@ class RudySite extends React.Component {
 	      				<ul>
 	      					<li onClick={this.showMenu.bind(this)} className={this.state.menu_icon_class}>Menu</li>
 	      					<li>|</li>
-	      					<li>Contact</li>
+	      					<li onClick={this.showContact.bind(this)} className={this.state.contact_icon_class}>Contact</li>
 	      				</ul>
 	      			</nav>
 		            <nav className="rudy-nav-mobile" onClick={this.showMenu.bind(this)}>
@@ -64,6 +85,7 @@ class RudySite extends React.Component {
       			<Footer />
       			<div className={this.state.overlay_class}></div>
       			<FoodMenu ref="menu" data={this.props}/>
+      			<Contact ref="contact" />
       		</div>
     	);
   	}

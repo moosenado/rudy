@@ -1,5 +1,5 @@
 /*
-* RUDY MENU - CHANGING THIS FILE WILL CHANGE THE MENU ON THE WEBSITE
+* RUDY MENU - BACKUP ONLY!!!!!!
 * When adding/removing items, please remember to keep the same structure that currently exists
 * Don't forget to add commas in the right places
 * It is suggested that you make a copy of this file somewhere for future reference if anything goes wrong while editing
