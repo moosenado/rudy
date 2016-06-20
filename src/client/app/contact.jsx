@@ -33,7 +33,7 @@ class Contact extends React.Component {
             <li className="rudy-contact-phone-height">
               <div className="rudy-contact-info-cont">
                 <div className="rudy-contact-info-centered">
-                  416.434.9943
+                  <a href="tel:6477487839">647.748.7839</a>
                 </div>
               </div>
             </li>
@@ -45,7 +45,7 @@ class Contact extends React.Component {
             <li className="rudy-contact-email-height">
               <div className="rudy-contact-info-cont">
                 <div className="rudy-contact-info-centered">
-                  info@rudyresto.com
+                  <a href="mailto:info@rudyresto.com">info@rudyresto.com</a>
                 </div>
               </div>
             </li>

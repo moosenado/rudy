@@ -14,19 +14,11 @@ class Main extends React.Component {
             <div className="rudy-social">
               <ul> 
                 <li>
-                  <object data="images/facebook_icon.svg" type="image/svg+xml" className="rudy-social-icon">
-                    <img src="images/facebook_icon.png" className="rudy-main-img"/>
-                  </object>
-                </li>
-                <li>
-                  <object data="images/twitter_icon.svg" type="image/svg+xml" className="rudy-social-icon">
-                    <img src="images/twitter_icon.png" className="rudy-main-img"/>
-                  </object>
-                </li>
-                <li>
-                  <object data="images/instagram_logo.svg" type="image/svg+xml" className="rudy-social-icon">
-                    <img src="images/instagram_logo.png" className="rudy-main-img"/>
-                  </object>
+                  <a href="https://www.instagram.com/rudyresto/">
+                    <object data="images/instagram_logo.svg" type="image/svg+xml" className="rudy-social-icon">
+                      <img src="images/instagram_logo.png" className="rudy-main-img"/>
+                    </object>
+                  </a>
                 </li>
               </ul>
             </div>

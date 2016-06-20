@@ -90,6 +90,8 @@
 			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(RudySite).call(this));
 	
 			_this.state = {
+				menu: false,
+				contact: false,
 				visible: false,
 				overlay_class: 'rudy-darkoverlay',
 				mobileicon_class_closed: 'rudy-chevron corner-padding rudy-show-general',
@@ -104,44 +106,58 @@
 			key: 'showMenu',
 			value: function showMenu() {
 	
-				this.refs.menu.showHide();
+				if (!this.state.contact) {
 	
-				if (!this.state.visible) {
-					this.setState({
-						overlay_class: 'rudy-darkoverlay rudy-darkoverlay-dark',
-						mobileicon_class_closed: 'rudy-chevron corner-padding rudy-hide-general',
-						mobileicon_class_open: 'rudy-close corner-padding rudy-show-general',
-						visible: true,
-						menu_icon_class: 'rudy-menu-icon-open'
-					});
-				} else {
-					this.setState({
-						overlay_class: 'rudy-darkoverlay',
-						mobileicon_class_closed: 'rudy-chevron corner-padding rudy-show-general',
-						mobileicon_class_open: 'rudy-close corner-padding rudy-hide-general',
-						visible: false,
-						menu_icon_class: 'rudy-menu-icon-closed'
-					});
+					this.refs.menu.showHide();
+	
+					if (!this.state.visible) {
+						this.setState({
+							overlay_class: 'rudy-darkoverlay rudy-darkoverlay-dark',
+							mobileicon_class_closed: 'rudy-chevron corner-padding rudy-hide-general',
+							mobileicon_class_open: 'rudy-close corner-padding rudy-show-general',
+							menu_icon_class: 'rudy-menu-icon-open',
+							menu: true,
+							contact: false,
+							visible: true
+						});
+					} else {
+						this.setState({
+							overlay_class: 'rudy-darkoverlay',
+							mobileicon_class_closed: 'rudy-chevron corner-padding rudy-show-general',
+							mobileicon_class_open: 'rudy-close corner-padding rudy-hide-general',
+							menu_icon_class: 'rudy-menu-icon-closed',
+							menu: false,
+							contact: false,
+							visible: false
+						});
+					}
 				}
 			}
 		}, {
 			key: 'showContact',
 			value: function showContact() {
 	
-				this.refs.contact.showHide();
+				if (!this.state.menu) {
 	
-				if (!this.state.visible) {
-					this.setState({
-						overlay_class: 'rudy-darkoverlay rudy-darkoverlay-dark',
-						visible: true,
-						contact_icon_class: 'rudy-contact-icon-open'
-					});
-				} else {
-					this.setState({
-						overlay_class: 'rudy-darkoverlay',
-						visible: false,
-						contact_icon_class: 'rudy-contact-icon-closed'
-					});
+					this.refs.contact.showHide();
+	
+					if (!this.state.visible) {
+						this.setState({
+							overlay_class: 'rudy-darkoverlay rudy-darkoverlay-dark',
+							contact_icon_class: 'rudy-contact-icon-open',
+							menu: false,
+							contact: true,
+							visible: true
+						});
+					} else {
+						this.setState({
+							overlay_class: 'rudy-darkoverlay',
+							contact_icon_class: 'rudy-contact-icon-closed',
+							menu: false,
+							contact: false,
+							visible: false
+						});
+					}
 				}
 			}
 		}, {
@@ -21036,27 +21052,13 @@
 	              "li",
 	              null,
 	              _react2.default.createElement(
-	                "object",
-	                { data: "images/facebook_icon.svg", type: "image/svg+xml", className: "rudy-social-icon" },
-	                _react2.default.createElement("img", { src: "images/facebook_icon.png", className: "rudy-main-img" })
-	              )
-	            ),
-	            _react2.default.createElement(
-	              "li",
-	              null,
-	              _react2.default.createElement(
-	                "object",
-	                { data: "images/twitter_icon.svg", type: "image/svg+xml", className: "rudy-social-icon" },
-	                _react2.default.createElement("img", { src: "images/twitter_icon.png", className: "rudy-main-img" })
-	              )
-	            ),
-	            _react2.default.createElement(
-	              "li",
-	              null,
-	              _react2.default.createElement(
-	                "object",
-	                { data: "images/instagram_logo.svg", type: "image/svg+xml", className: "rudy-social-icon" },
-	                _react2.default.createElement("img", { src: "images/instagram_logo.png", className: "rudy-main-img" })
+	                "a",
+	                { href: "https://www.instagram.com/rudyresto/" },
+	                _react2.default.createElement(
+	                  "object",
+	                  { data: "images/instagram_logo.svg", type: "image/svg+xml", className: "rudy-social-icon" },
+	                  _react2.default.createElement("img", { src: "images/instagram_logo.png", className: "rudy-main-img" })
+	                )
 	              )
 	            )
 	          )
@@ -21141,14 +21143,22 @@
 	            _react2.default.createElement(
 	              "li",
 	              { className: "rudy-hide-desktop" },
-	              "Drew Close Design"
+	              _react2.default.createElement(
+	                "a",
+	                { href: "http://www.drewclose.com" },
+	                "Drew Close Design"
+	              )
 	            )
 	          )
 	        ),
 	        _react2.default.createElement(
 	          "div",
 	          { className: "rudy-design corner-padding rudy-hide-mobile" },
-	          "Drew Close Design"
+	          _react2.default.createElement(
+	            "a",
+	            { href: "http://www.drewclose.com" },
+	            "Drew Close Design"
+	          )
 	        )
 	      );
 	    }
@@ -21344,7 +21354,11 @@
 	                _react2.default.createElement(
 	                  'div',
 	                  { className: 'rudy-contact-info-centered' },
-	                  '416.434.9943'
+	                  _react2.default.createElement(
+	                    'a',
+	                    { href: 'tel:6477487839' },
+	                    '647.748.7839'
+	                  )
 	                )
 	              )
 	            ),
@@ -21366,7 +21380,11 @@
 	                _react2.default.createElement(
 	                  'div',
 	                  { className: 'rudy-contact-info-centered' },
-	                  'info@rudyresto.com'
+	                  _react2.default.createElement(
+	                    'a',
+	                    { href: 'mailto:info@rudyresto.com' },
+	                    'info@rudyresto.com'
+	                  )
 	                )
 	              )
 	            ),

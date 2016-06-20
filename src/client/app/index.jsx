@@ -10,6 +10,8 @@ class RudySite extends React.Component {
 	constructor() {
       	super();
 		this.state = {
+			menu: false,
+			contact: false,
 			visible: false,
 			overlay_class: 'rudy-darkoverlay',
 			mobileicon_class_closed: 'rudy-chevron corner-padding rudy-show-general',
@@ -21,43 +23,59 @@ class RudySite extends React.Component {
 
 	showMenu() {
 
-		this.refs.menu.showHide();
+		if (!this.state.contact) {
 
-		if (!this.state.visible) {
-			this.setState({
-				overlay_class: 'rudy-darkoverlay rudy-darkoverlay-dark',
-				mobileicon_class_closed: 'rudy-chevron corner-padding rudy-hide-general',
-				mobileicon_class_open: 'rudy-close corner-padding rudy-show-general',
-				visible: true,
-				menu_icon_class: 'rudy-menu-icon-open'
-			});
-		} else {
-			this.setState({
-				overlay_class: 'rudy-darkoverlay',
-				mobileicon_class_closed: 'rudy-chevron corner-padding rudy-show-general',
-				mobileicon_class_open: 'rudy-close corner-padding rudy-hide-general',
-				visible: false,
-				menu_icon_class: 'rudy-menu-icon-closed'
-			});
+			this.refs.menu.showHide();
+
+			if (!this.state.visible)
+			{
+				this.setState({
+					overlay_class: 'rudy-darkoverlay rudy-darkoverlay-dark',
+					mobileicon_class_closed: 'rudy-chevron corner-padding rudy-hide-general',
+					mobileicon_class_open: 'rudy-close corner-padding rudy-show-general',
+					menu_icon_class: 'rudy-menu-icon-open',
+					menu: true,
+					contact: false,
+					visible: true
+				});
+			} else {
+				this.setState({
+					overlay_class: 'rudy-darkoverlay',
+					mobileicon_class_closed: 'rudy-chevron corner-padding rudy-show-general',
+					mobileicon_class_open: 'rudy-close corner-padding rudy-hide-general',
+					menu_icon_class: 'rudy-menu-icon-closed',
+					menu: false,
+					contact: false,
+					visible: false
+				});
+			}
 		}
 	}
 
 	showContact() {
 
-		this.refs.contact.showHide();
+		if (!this.state.menu) {
 
-		if (!this.state.visible) {
-			this.setState({
-				overlay_class: 'rudy-darkoverlay rudy-darkoverlay-dark',
-				visible: true,
-				contact_icon_class: 'rudy-contact-icon-open'
-			});
-		} else {
-			this.setState({
-				overlay_class: 'rudy-darkoverlay',
-				visible: false,
-				contact_icon_class: 'rudy-contact-icon-closed'
-			});
+			this.refs.contact.showHide();
+
+			if (!this.state.visible)
+			{
+				this.setState({
+					overlay_class: 'rudy-darkoverlay rudy-darkoverlay-dark',
+					contact_icon_class: 'rudy-contact-icon-open',
+					menu: false,
+					contact: true,
+					visible: true
+				});
+			} else {
+				this.setState({
+					overlay_class: 'rudy-darkoverlay',
+					contact_icon_class: 'rudy-contact-icon-closed',
+					menu: false,
+					contact: false,
+					visible: false
+				});
+			}
 		}
 	}
 
