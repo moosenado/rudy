@@ -21511,7 +21511,7 @@
 	  _createClass(GMap, [{
 	    key: 'showHide',
 	    value: function showHide() {
-	      console.log(this.state.map_visible);
+	
 	      if (!this.state.map_visible) {
 	        this.setState({ map_class: 'rudy-gmap rudy-gmap-open', map_visible: true });
 	      } else {
@@ -21526,7 +21526,7 @@
 	        { className: this.state.map_class },
 	        _react2.default.createElement(
 	          'div',
-	          { onClick: this.showHide.bind(this) },
+	          { onClick: this.showHide.bind(this), className: 'rudy-gmap-close' },
 	          _react2.default.createElement(
 	            'object',
 	            { data: 'images/close.svg', type: 'image/svg+xml', className: 'rudy-gmap-close' },

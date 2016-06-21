@@ -16,7 +16,7 @@ class GMap extends React.Component {
   }
 
   showHide() {
-    console.log(this.state.map_visible);
+
     if (!this.state.map_visible) {
       this.setState({ map_class: 'rudy-gmap rudy-gmap-open', map_visible: true });
     } else {
@@ -26,7 +26,7 @@ class GMap extends React.Component {
 
 	render() {
     return <div className={this.state.map_class}>
-      <div onClick={this.showHide.bind(this)}>
+      <div onClick={this.showHide.bind(this)} className="rudy-gmap-close">
         <object data="images/close.svg" type="image/svg+xml" className="rudy-gmap-close">
           <img src="images/close.png" className="rudy-gmap-close" />
         </object>
