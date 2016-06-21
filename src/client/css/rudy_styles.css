@@ -15,6 +15,25 @@ a {
 	text-decoration: none;
 }
 
+.GMap {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom : 0;
+}
+.GMap-canvas {
+  top: 20px;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.UpdatedText {
+  color: red;
+}
+
 body {
 	background-color: #f4004a;
 	font-family     : Moon;
@@ -359,6 +378,8 @@ ul li {
 		bottom                            : 0;
 		left                              : 0;
 		right                             : 0;
+		width                             : 450px;
+		padding-left                      : 8%;
 		display                           : block;
 		-webkit-transform                 : translate3d(-2500px, 0, 0);
 		transform                         : translate3d(-2500px, 0, 0);
@@ -446,6 +467,14 @@ ul li {
 	.rudy-contact-info-centered {
 		vertical-align: middle;
 		display       : inline-block;
+	}
+
+	.rudy-menu-icon-open {
+		font-weight: 700;
+	}
+
+	.rudy-contact-icon-open {
+		font-weight: 700;
 	}
 }
 

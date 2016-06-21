@@ -79,6 +79,23 @@ class RudySite extends React.Component {
 		}
 	}
 
+	hideMenusFromBG() {
+
+		if (this.state.visible) {
+
+			if (this.state.menu)
+			{
+				this.showMenu();
+			}
+
+			if (this.state.contact)
+			{
+				this.showContact();
+			}
+
+		}
+	}
+
   	render () {
     	return (
     		<div>
@@ -101,7 +118,7 @@ class RudySite extends React.Component {
 	     	 	</header>
       			<Main />
       			<Footer />
-      			<div className={this.state.overlay_class}></div>
+      			<div className={this.state.overlay_class} onClick={this.hideMenusFromBG.bind(this)}></div>
       			<FoodMenu ref="menu" data={this.props}/>
       			<Contact ref="contact" />
       		</div>

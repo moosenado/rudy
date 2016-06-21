@@ -1,4 +1,5 @@
 import React from 'react';
+import GMap from './gmap.jsx';
 
 class Contact extends React.Component {
 
@@ -20,6 +21,8 @@ class Contact extends React.Component {
   }
 
 	render() {
+
+    let initialCenter = { lng: -79.414814, lat: 43.654909 }
 
   	return (
       <div className={this.state.contact_status}>
@@ -63,6 +66,7 @@ class Contact extends React.Component {
             </li>
           </ul>
         </div>
+        <GMap initialCenter={initialCenter}/>
       </div>
   	);
   }

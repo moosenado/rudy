@@ -161,6 +161,21 @@
 				}
 			}
 		}, {
+			key: 'hideMenusFromBG',
+			value: function hideMenusFromBG() {
+	
+				if (this.state.visible) {
+	
+					if (this.state.menu) {
+						this.showMenu();
+					}
+	
+					if (this.state.contact) {
+						this.showContact();
+					}
+				}
+			}
+		}, {
 			key: 'render',
 			value: function render() {
 				return _react2.default.createElement(
@@ -209,7 +224,7 @@
 					),
 					_react2.default.createElement(_main2.default, null),
 					_react2.default.createElement(_footer2.default, null),
-					_react2.default.createElement('div', { className: this.state.overlay_class }),
+					_react2.default.createElement('div', { className: this.state.overlay_class, onClick: this.hideMenusFromBG.bind(this) }),
 					_react2.default.createElement(_foodmenu2.default, { ref: 'menu', data: this.props }),
 					_react2.default.createElement(_contact2.default, { ref: 'contact' })
 				);
@@ -21290,6 +21305,10 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _gmap = __webpack_require__(/*! ./gmap.jsx */ 172);
+	
+	var _gmap2 = _interopRequireDefault(_gmap);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -21326,6 +21345,8 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
+	
+	      var initialCenter = { lng: -79.414814, lat: 43.654909 };
 	
 	      return _react2.default.createElement(
 	        'div',
@@ -21411,7 +21432,8 @@
 	              )
 	            )
 	          )
-	        )
+	        ),
+	        _react2.default.createElement(_gmap2.default, { initialCenter: initialCenter })
 	      );
 	    }
 	  }]);
@@ -21420,6 +21442,107 @@
 	}(_react2.default.Component);
 	
 	exports.default = Contact;
+
+/***/ },
+/* 172 */
+/*!*********************************!*\
+  !*** ./src/client/app/gmap.jsx ***!
+  \*********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var GMap = function (_React$Component) {
+	  _inherits(GMap, _React$Component);
+	
+	  function GMap() {
+	    _classCallCheck(this, GMap);
+	
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(GMap).call(this));
+	
+	    _this.state = { zoom: 14 };
+	    return _this;
+	  }
+	
+	  _createClass(GMap, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'GMap' },
+	        _react2.default.createElement('div', { className: 'GMap-canvas', ref: 'mapCanvas' })
+	      );
+	    }
+	  }, {
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      // create the map, marker and infoWindow after the component has
+	      // been rendered because we need to manipulate the DOM for Google =(
+	      this.map = this.createMap();
+	      this.marker = this.createMarker();
+	      this.infoWindow = this.createInfoWindow();
+	    }
+	  }, {
+	    key: 'createMap',
+	    value: function createMap() {
+	      var mapOptions = {
+	        zoom: this.state.zoom,
+	        center: this.mapCenter()
+	      };
+	      return new google.maps.Map(this.refs.mapCanvas, mapOptions);
+	    }
+	  }, {
+	    key: 'mapCenter',
+	    value: function mapCenter() {
+	      return new google.maps.LatLng(this.props.initialCenter.lat, this.props.initialCenter.lng);
+	    }
+	  }, {
+	    key: 'createMarker',
+	    value: function createMarker() {
+	      return new google.maps.Marker({
+	        position: this.mapCenter(),
+	        map: this.map
+	      });
+	    }
+	  }, {
+	    key: 'createInfoWindow',
+	    value: function createInfoWindow() {
+	      var contentString = "<div class='InfoWindow'>619 College Street, Toronto, Ontario</div>";
+	      return new google.maps.InfoWindow({
+	        map: this.map,
+	        anchor: this.marker,
+	        content: contentString
+	      });
+	    }
+	  }], [{
+	    key: 'propTypes',
+	    value: function propTypes() {
+	      initialCenter: _react2.default.PropTypes.objectOf(_react2.default.PropTypes.number).isRequired;
+	    }
+	  }]);
+	
+	  return GMap;
+	}(_react2.default.Component);
+	
+	exports.default = GMap;
 
 /***/ }
 /******/ ]);
