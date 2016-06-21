@@ -5,9 +5,9 @@ class GMap extends React.Component {
   constructor() {
     super();
     this.state = { 
-      zoom: 14,
+      zoom       : 14,
       map_visible: false,
-      map_class: 'rudy-gmap'
+      map_class  : 'rudy-gmap'
     };
   }
 

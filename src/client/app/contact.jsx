@@ -6,10 +6,10 @@ class Contact extends React.Component {
   constructor() {
       super();
       this.state = {
-          visible: false,
-          map_visible: false,
+          visible       : false,
+          map_visible   : false,
           contact_status: 'rudy-contact',
-          map_status: 'rudy-gmap'
+          map_status    : 'rudy-gmap'
       }
   }
 

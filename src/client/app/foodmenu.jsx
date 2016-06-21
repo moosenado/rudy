@@ -5,7 +5,7 @@ class FoodMenu extends React.Component {
   constructor() {
       super();
       this.state = {
-          visible: false,
+          visible    : false,
           menu_status: 'rudy-foodmenu'
       }
   }
