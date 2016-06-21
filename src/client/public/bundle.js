@@ -213,12 +213,12 @@
 							_react2.default.createElement(
 								'object',
 								{ data: 'images/chevron.svg', type: 'image/svg+xml', className: this.state.mobileicon_class_closed },
-								_react2.default.createElement('img', { src: 'images/chevron.png' })
+								_react2.default.createElement('img', { src: 'images/chevron.png', className: this.state.mobileicon_class_closed })
 							),
 							_react2.default.createElement(
 								'object',
 								{ data: 'images/close.svg', type: 'image/svg+xml', className: this.state.mobileicon_class_open },
-								_react2.default.createElement('img', { src: 'images/close.png', className: 'rudy-close corner-padding' })
+								_react2.default.createElement('img', { src: 'images/close.png', className: this.state.mobileicon_class_open })
 							)
 						)
 					),
@@ -21072,7 +21072,7 @@
 	                _react2.default.createElement(
 	                  "object",
 	                  { data: "images/instagram_logo.svg", type: "image/svg+xml", className: "rudy-social-icon" },
-	                  _react2.default.createElement("img", { src: "images/instagram_logo.png", className: "rudy-main-img" })
+	                  _react2.default.createElement("img", { src: "images/instagram_logo.png", className: "rudy-social-icon" })
 	                )
 	              )
 	            )
@@ -21327,7 +21327,9 @@
 	
 	    _this.state = {
 	      visible: false,
-	      contact_status: 'rudy-contact'
+	      map_visible: false,
+	      contact_status: 'rudy-contact',
+	      map_status: 'rudy-gmap'
 	    };
 	    return _this;
 	  }
@@ -21343,6 +21345,18 @@
 	      }
 	    }
 	  }, {
+	    key: 'showMap',
+	    value: function showMap() {
+	
+	      this.refs.gmap.showHide();
+	
+	      if (!this.state.map_visible) {
+	        this.setState({ map_visible: true });
+	      } else {
+	        this.setState({ map_visible: false });
+	      }
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	
@@ -21350,90 +21364,98 @@
 	
 	      return _react2.default.createElement(
 	        'div',
-	        { className: this.state.contact_status },
+	        null,
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'rudy-contact-centered' },
+	          { className: this.state.contact_status },
 	          _react2.default.createElement(
-	            'ul',
-	            null,
+	            'div',
+	            { className: 'rudy-contact-centered' },
 	            _react2.default.createElement(
-	              'li',
+	              'ul',
 	              null,
 	              _react2.default.createElement(
-	                'object',
-	                { data: 'images/iphone.svg', type: 'image/svg+xml', className: 'rudy-contact-images-phone' },
-	                _react2.default.createElement('img', { src: 'images/iphone.png' })
-	              )
-	            ),
-	            _react2.default.createElement(
-	              'li',
-	              { className: 'rudy-contact-phone-height' },
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'object',
+	                  { data: 'images/iphone.svg', type: 'image/svg+xml', className: 'rudy-contact-images-phone' },
+	                  _react2.default.createElement('img', { src: 'images/iphone.png' })
+	                )
+	              ),
 	              _react2.default.createElement(
-	                'div',
-	                { className: 'rudy-contact-info-cont' },
+	                'li',
+	                { className: 'rudy-contact-phone-height' },
 	                _react2.default.createElement(
 	                  'div',
-	                  { className: 'rudy-contact-info-centered' },
+	                  { className: 'rudy-contact-info-cont' },
 	                  _react2.default.createElement(
-	                    'a',
-	                    { href: 'tel:6477487839' },
-	                    '647.748.7839'
+	                    'div',
+	                    { className: 'rudy-contact-info-centered' },
+	                    _react2.default.createElement(
+	                      'a',
+	                      { href: 'tel:6477487839' },
+	                      '647.748.7839'
+	                    )
 	                  )
 	                )
-	              )
-	            ),
-	            _react2.default.createElement(
-	              'li',
-	              null,
+	              ),
 	              _react2.default.createElement(
-	                'object',
-	                { data: 'images/email.svg', type: 'image/svg+xml', className: 'rudy-contact-images-email' },
-	                _react2.default.createElement('img', { src: 'images/email.png' })
-	              )
-	            ),
-	            _react2.default.createElement(
-	              'li',
-	              { className: 'rudy-contact-email-height' },
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'object',
+	                  { data: 'images/email.svg', type: 'image/svg+xml', className: 'rudy-contact-images-email' },
+	                  _react2.default.createElement('img', { src: 'images/email.png' })
+	                )
+	              ),
 	              _react2.default.createElement(
-	                'div',
-	                { className: 'rudy-contact-info-cont' },
+	                'li',
+	                { className: 'rudy-contact-email-height' },
 	                _react2.default.createElement(
 	                  'div',
-	                  { className: 'rudy-contact-info-centered' },
+	                  { className: 'rudy-contact-info-cont' },
 	                  _react2.default.createElement(
-	                    'a',
-	                    { href: 'mailto:info@rudyresto.com' },
-	                    'info@rudyresto.com'
+	                    'div',
+	                    { className: 'rudy-contact-info-centered' },
+	                    _react2.default.createElement(
+	                      'a',
+	                      { href: 'mailto:info@rudyresto.com' },
+	                      'info@rudyresto.com'
+	                    )
 	                  )
 	                )
-	              )
-	            ),
-	            _react2.default.createElement(
-	              'li',
-	              null,
+	              ),
 	              _react2.default.createElement(
-	                'object',
-	                { data: 'images/map_pin.svg', type: 'image/svg+xml', className: 'rudy-contact-images-pin' },
-	                _react2.default.createElement('img', { src: 'images/map_pin.png' })
-	              )
-	            ),
-	            _react2.default.createElement(
-	              'li',
-	              { className: 'rudy-contact-pin-height' },
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'object',
+	                  { data: 'images/map_pin.svg', type: 'image/svg+xml', className: 'rudy-contact-images-pin' },
+	                  _react2.default.createElement('img', { src: 'images/map_pin.png' })
+	                )
+	              ),
 	              _react2.default.createElement(
-	                'div',
-	                { className: 'rudy-contact-info-cont' },
+	                'li',
+	                { className: 'rudy-contact-pin-height' },
 	                _react2.default.createElement(
 	                  'div',
-	                  { className: 'rudy-contact-info-centered' },
-	                  'View Map'
+	                  { className: 'rudy-contact-info-cont' },
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'rudy-contact-info-centered' },
+	                    _react2.default.createElement(
+	                      'div',
+	                      { className: 'rudy-pointer', onClick: this.showMap.bind(this) },
+	                      'View Map'
+	                    )
+	                  )
 	                )
 	              )
 	            )
 	          )
 	        ),
-	        _react2.default.createElement(_gmap2.default, { initialCenter: initialCenter })
+	        _react2.default.createElement(_gmap2.default, { ref: 'gmap', initialCenter: initialCenter })
 	      );
 	    }
 	  }]);
@@ -21478,17 +21500,40 @@
 	
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(GMap).call(this));
 	
-	    _this.state = { zoom: 14 };
+	    _this.state = {
+	      zoom: 14,
+	      map_visible: false,
+	      map_class: 'rudy-gmap'
+	    };
 	    return _this;
 	  }
 	
 	  _createClass(GMap, [{
+	    key: 'showHide',
+	    value: function showHide() {
+	      console.log(this.state.map_visible);
+	      if (!this.state.map_visible) {
+	        this.setState({ map_class: 'rudy-gmap rudy-gmap-open', map_visible: true });
+	      } else {
+	        this.setState({ map_class: 'rudy-gmap', map_visible: false });
+	      }
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'GMap' },
-	        _react2.default.createElement('div', { className: 'GMap-canvas', ref: 'mapCanvas' })
+	        { className: this.state.map_class },
+	        _react2.default.createElement(
+	          'div',
+	          { onClick: this.showHide.bind(this) },
+	          _react2.default.createElement(
+	            'object',
+	            { data: 'images/close.svg', type: 'image/svg+xml', className: 'rudy-gmap-close' },
+	            _react2.default.createElement('img', { src: 'images/close.png', className: 'rudy-gmap-close' })
+	          )
+	        ),
+	        _react2.default.createElement('div', { className: 'rudy-gmap-canvas', ref: 'mapCanvas' })
 	      );
 	    }
 	  }, {

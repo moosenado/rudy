@@ -92,7 +92,6 @@ class RudySite extends React.Component {
 			{
 				this.showContact();
 			}
-
 		}
 	}
 
@@ -109,10 +108,10 @@ class RudySite extends React.Component {
 	      			</nav>
 		            <nav className="rudy-nav-mobile" onClick={this.showMenu.bind(this)}>
 		             	 <object data="images/chevron.svg" type="image/svg+xml" className={this.state.mobileicon_class_closed}>
-		                	<img src="images/chevron.png" />
+		                	<img src="images/chevron.png" className={this.state.mobileicon_class_closed}/>
 		              	</object>
 		                <object data="images/close.svg" type="image/svg+xml" className={this.state.mobileicon_class_open}>
-				            <img src="images/close.png" className="rudy-close corner-padding" />
+				            <img src="images/close.png" className={this.state.mobileicon_class_open} />
 				        </object>
 		            </nav>
 	     	 	</header>

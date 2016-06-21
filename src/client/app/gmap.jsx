@@ -4,16 +4,34 @@ class GMap extends React.Component {
 
   constructor() {
     super();
-    this.state = { zoom: 14 };
+    this.state = { 
+      zoom: 14,
+      map_visible: false,
+      map_class: 'rudy-gmap'
+    };
   }
 
   static propTypes() {
   	initialCenter: React.PropTypes.objectOf(React.PropTypes.number).isRequired
   }
 
+  showHide() {
+    console.log(this.state.map_visible);
+    if (!this.state.map_visible) {
+      this.setState({ map_class: 'rudy-gmap rudy-gmap-open', map_visible: true });
+    } else {
+      this.setState({ map_class: 'rudy-gmap', map_visible: false });
+    }
+  }
+
 	render() {
-    return <div className="GMap">
-      <div className='GMap-canvas' ref="mapCanvas">
+    return <div className={this.state.map_class}>
+      <div onClick={this.showHide.bind(this)}>
+        <object data="images/close.svg" type="image/svg+xml" className="rudy-gmap-close">
+          <img src="images/close.png" className="rudy-gmap-close" />
+        </object>
+      </div>
+      <div className='rudy-gmap-canvas' ref="mapCanvas">
       </div>
     </div>
   }

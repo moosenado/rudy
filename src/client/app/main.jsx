@@ -16,7 +16,7 @@ class Main extends React.Component {
                 <li>
                   <a href="https://www.instagram.com/rudyresto/">
                     <object data="images/instagram_logo.svg" type="image/svg+xml" className="rudy-social-icon">
-                      <img src="images/instagram_logo.png" className="rudy-main-img"/>
+                      <img src="images/instagram_logo.png" className="rudy-social-icon"/>
                     </object>
                   </a>
                 </li>

@@ -15,25 +15,6 @@ a {
 	text-decoration: none;
 }
 
-.GMap {
-  height: 100%;
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom : 0;
-}
-.GMap-canvas {
-  top: 20px;
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-.UpdatedText {
-  color: red;
-}
-
 body {
 	background-color: #f4004a;
 	font-family     : Moon;
@@ -82,6 +63,10 @@ ul li {
 
 .rudy-hide-general {
 	display: none;
+}
+
+.rudy-pointer {
+	cursor: pointer;
 }
 
 /* FOOD MENU */
@@ -275,6 +260,39 @@ ul li {
 
 .rudy-contact {
 	display: none;
+}
+
+.rudy-gmap {
+	position                          : absolute;
+	top                               : 15%;
+	left                              : 15%;
+	right                             : 15%;
+	bottom                            : 15%;
+	background-color                  : rgba(0, 0, 0, 0);
+	-webkit-transform                 : translate3d(2500px, 0, 0);
+	transform                         : translate3d(2500px, 0, 0);
+	-webkit-transition                : all 1s ease-in-out;
+	transition                        : all 1s ease-in-out;
+	-webkit-transition-timing-function: cubic-bezier(1,.11,.39,1);
+	transition-timing-function        : cubic-bezier(1,.11,.39,1);
+	overflow                          : hidden;
+	z-index                           : 250;
+}
+
+.rudy-gmap-open {
+	-webkit-transform: translate3d(0, 0, 0);
+	transform        : translate3d(0, 0, 0);
+}
+
+.rudy-gmap-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.rudy-gmap-close {
+	width: 25px;
+	padding: 10px;
 }
 
 @media all and ( min-width: 481px )  {
