@@ -12,9 +12,11 @@ class Main extends React.Component {
   					 <img src="images/rudy_facade_final.png" className="rudy-main-img"/>
 				    </object>
             <div className="rudy-social">
-              <ul> 
+              <ul>
+                <li onClick={this.props.showMenu} className="rudy-nav-text-mobile rudy-hide-desktop">Menu</li>
+                <li onClick={this.props.showContact} className="rudy-nav-text-mobile rudy-hide-desktop">Contact</li>
                 <li>
-                  <a href="https://www.instagram.com/rudyresto/">
+                  <a href="https://www.instagram.com/rudyresto/" target="_blank">
                     <object data="images/instagram_logo.svg" type="image/svg+xml" className="rudy-social-icon">
                       <img src="images/instagram_logo.png" className="rudy-social-icon"/>
                     </object>

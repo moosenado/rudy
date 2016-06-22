@@ -7,7 +7,7 @@ html {
 	font-size              : 12px;
 	-webkit-font-smoothing : antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	text-shadow            : 0 0 1px rgba(128,128,128,0.01);
+	/*text-shadow            : 0 0 1px rgba(128,128,128,0.01);*/
 }
 
 a {
@@ -50,7 +50,7 @@ ul li {
 }
 
 .rudy-hide-desktop {
-	display: inline-block;
+	display: inline-block !important;
 }
 
 .rudy-hide-mobile {
@@ -158,10 +158,6 @@ ul li {
 	cursor : pointer;
 }
 
-.rudy-nav-mobile {
-	display: block;
-}
-
 .rudy-chevron {
 	width: 2.500em;
 }
@@ -178,17 +174,17 @@ ul li {
 }
 
 .rudy-burger {
-	height                           : 15%;
-	-webkit-animation                : burgerRotate 4s linear infinite;
-	-moz-animation                   : burgerRotate 4s linear infinite;
-	-o-animation                     : burgerRotate 4s linear infinite;
-	animation                        : burgerRotate 4s linear infinite;
-	-webkit-backface-visibility      : hidden;
-	backface-visibility              : hidden;
-	transition                       : translateZ(0);
-	-webkit-transition               : translateZ(0);
-	-webkit-perspective              : 200px;
-	perspective                      : 200px;
+	height                     : 15%;
+	-webkit-animation          : burgerRotate 4s linear infinite;
+	-moz-animation             : burgerRotate 4s linear infinite;
+	-o-animation               : burgerRotate 4s linear infinite;
+	animation                  : burgerRotate 4s linear infinite;
+	-webkit-backface-visibility: hidden;
+	backface-visibility        : hidden;
+	transition                 : translateZ(0);
+	-webkit-transition         : translateZ(0);
+	-webkit-perspective        : 200px;
+	perspective                : 200px;
 }
 
 .rudy-main-img {
@@ -249,10 +245,6 @@ ul li {
 	width: 2.417em;
 }
 
-.rudy-contact {
-	display: none;
-}
-
 .rudy-gmap {
 	position                          : absolute;
 	top                               : 15%;
@@ -285,6 +277,100 @@ ul li {
 	width  : 25px;
 	padding: 5px 0 5px 5px;
 	cursor : pointer;
+}
+
+.rudy-contact {
+	position                          : absolute;
+	top                               : 0;
+	bottom                            : 0;
+	left                              : 0;
+	right                             : 0;
+	width                             : 100%;
+	padding-left                      : 0;
+	display                           : block;
+	background-color                  : rgba(0, 0, 0, .8);
+	-webkit-transform                 : translate3d(-2500px, 0, 0);
+	transform                         : translate3d(-2500px, 0, 0);
+	-webkit-transition                : all 1s ease-in-out;
+	transition                        : all 1s ease-in-out;
+	-webkit-transition-timing-function: cubic-bezier(1,.11,.39,1);
+	transition-timing-function        : cubic-bezier(1,.11,.39,1);
+	text-align                        : center;
+	z-index                           : 250;
+}
+
+.rudy-contact-centered ul {
+	width: 100%;
+}
+
+.rudy-contact-centered ul li {
+	display   : block;
+	text-align: center;
+	padding   : 5px;
+	position  : relative;
+	color     : #fff;
+}
+
+.rudy-contact-open {
+	-webkit-transform: translate3d(0, 0, 0);
+	transform        : translate3d(0, 0, 0);
+}
+
+.rudy-contact-images-phone {
+	width: 100px;
+}
+
+.rudy-contact-phone-height {
+	height: 20px;
+}
+
+.rudy-contact-images-email {
+	width: 80px;
+}
+
+.rudy-contact-email-height {
+	height: 20px;
+}
+
+.rudy-contact-images-pin {
+	width: 60px;
+}
+
+.rudy-contact-pin-height {
+	height: 20px;
+}
+
+.rudy-contact-info-cont {
+	position: absolute;
+	top     : 0;
+	bottom  : 0;
+	left    : 0;
+	right   : 0;
+}
+
+.rudy-contact-info-cont:before {
+	content       : '';
+	display       : inline-block;
+	vertical-align: middle;
+	height        : 100%;
+}
+
+.rudy-contact-info-centered {
+	vertical-align: middle;
+	display       : inline-block;
+}
+
+.rudy-menu-icon-open {
+	font-weight: 700;
+}
+
+.rudy-contact-icon-open {
+	font-weight: 700;
+}
+
+.rudy-nav-text-mobile {
+	font-weight: 700;
+	color      : #fff;
 }
 
 @media all and ( min-width: 481px )  {
@@ -333,10 +419,6 @@ ul li {
 		opacity: .5;
 	}
 
-	.rudy-nav-mobile {
-		display: none;
-	}
-
 	.rudy-nav-desktop {
 		display  : block;
 		color    : #fff;
@@ -344,7 +426,7 @@ ul li {
 	}
 
 	.rudy-hide-desktop {
-		display: none;
+		display: none !important;
 	}
 
 	.rudy-hide-mobile {
@@ -383,20 +465,11 @@ ul li {
 	}
 
 	.rudy-contact {
-		position                          : absolute;
-		top                               : 0;
-		bottom                            : 0;
-		left                              : 0;
-		right                             : 0;
-		width                             : 450px;
-		padding-left                      : 8%;
-		display                           : block;
-		-webkit-transform                 : translate3d(-2500px, 0, 0);
-		transform                         : translate3d(-2500px, 0, 0);
-		-webkit-transition                : all 1s ease-in-out;
-		transition                        : all 1s ease-in-out;
-		-webkit-transition-timing-function: cubic-bezier(1,.11,.39,1);
-		transition-timing-function        : cubic-bezier(1,.11,.39,1);
+		padding-left    : 8%;
+		background-color: rgba(0, 0, 0, 0);
+		text-align      : left;
+		z-index         : 0;
+		width           : 450px;
 	}
 
 	.rudy-contact:before {

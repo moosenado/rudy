@@ -42,6 +42,9 @@ class Contact extends React.Component {
       <div>
         <div className={this.state.contact_status}>
           <div className="rudy-contact-centered">
+            <div className="rudy-foodmenu-title">
+              CONTACT
+            </div>
             <ul>
               <li>
                 <object data="images/iphone.svg" type="image/svg+xml" className="rudy-contact-images-phone">

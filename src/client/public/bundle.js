@@ -94,11 +94,13 @@
 				contact: false,
 				visible: false,
 				overlay_class: 'rudy-darkoverlay',
-				mobileicon_class_closed: 'rudy-chevron corner-padding rudy-show-general',
 				mobileicon_class_open: 'rudy-close corner-padding rudy-hide-general',
 				menu_icon_class: 'rudy-menu-icon-closed',
 				contact_icon_class: 'rudy-contact-icon-closed'
 			};
+			_this.showMenu = _this.showMenu.bind(_this);
+			_this.showContact = _this.showContact.bind(_this);
+			_this.hideAnyOpenMenu = _this.hideAnyOpenMenu.bind(_this);
 			return _this;
 		}
 	
@@ -113,7 +115,6 @@
 					if (!this.state.visible) {
 						this.setState({
 							overlay_class: 'rudy-darkoverlay rudy-darkoverlay-dark',
-							mobileicon_class_closed: 'rudy-chevron corner-padding rudy-hide-general',
 							mobileicon_class_open: 'rudy-close corner-padding rudy-show-general',
 							menu_icon_class: 'rudy-menu-icon-open',
 							menu: true,
@@ -123,7 +124,6 @@
 					} else {
 						this.setState({
 							overlay_class: 'rudy-darkoverlay',
-							mobileicon_class_closed: 'rudy-chevron corner-padding rudy-show-general',
 							mobileicon_class_open: 'rudy-close corner-padding rudy-hide-general',
 							menu_icon_class: 'rudy-menu-icon-closed',
 							menu: false,
@@ -145,6 +145,7 @@
 						this.setState({
 							overlay_class: 'rudy-darkoverlay rudy-darkoverlay-dark',
 							contact_icon_class: 'rudy-contact-icon-open',
+							mobileicon_class_open: 'rudy-close corner-padding rudy-show-general',
 							menu: false,
 							contact: true,
 							visible: true
@@ -153,6 +154,7 @@
 						this.setState({
 							overlay_class: 'rudy-darkoverlay',
 							contact_icon_class: 'rudy-contact-icon-closed',
+							mobileicon_class_open: 'rudy-close corner-padding rudy-hide-general',
 							menu: false,
 							contact: false,
 							visible: false
@@ -161,8 +163,8 @@
 				}
 			}
 		}, {
-			key: 'hideMenusFromBG',
-			value: function hideMenusFromBG() {
+			key: 'hideAnyOpenMenu',
+			value: function hideAnyOpenMenu() {
 	
 				if (this.state.visible) {
 	
@@ -192,7 +194,7 @@
 								null,
 								_react2.default.createElement(
 									'li',
-									{ onClick: this.showMenu.bind(this), className: this.state.menu_icon_class },
+									{ onClick: this.showMenu, className: this.state.menu_icon_class },
 									'Menu'
 								),
 								_react2.default.createElement(
@@ -202,19 +204,14 @@
 								),
 								_react2.default.createElement(
 									'li',
-									{ onClick: this.showContact.bind(this), className: this.state.contact_icon_class },
+									{ onClick: this.showContact, className: this.state.contact_icon_class },
 									'Contact'
 								)
 							)
 						),
 						_react2.default.createElement(
 							'nav',
-							{ className: 'rudy-nav-mobile', onClick: this.showMenu.bind(this) },
-							_react2.default.createElement(
-								'object',
-								{ data: 'images/chevron.svg', type: 'image/svg+xml', className: this.state.mobileicon_class_closed },
-								_react2.default.createElement('img', { src: 'images/chevron.png', className: this.state.mobileicon_class_closed })
-							),
+							{ className: 'rudy-nav-mobile', onClick: this.hideAnyOpenMenu },
 							_react2.default.createElement(
 								'object',
 								{ data: 'images/close.svg', type: 'image/svg+xml', className: this.state.mobileicon_class_open },
@@ -222,9 +219,9 @@
 							)
 						)
 					),
-					_react2.default.createElement(_main2.default, null),
+					_react2.default.createElement(_main2.default, { showMenu: this.showMenu, showContact: this.showContact }),
 					_react2.default.createElement(_footer2.default, null),
-					_react2.default.createElement('div', { className: this.state.overlay_class, onClick: this.hideMenusFromBG.bind(this) }),
+					_react2.default.createElement('div', { className: this.state.overlay_class, onClick: this.hideAnyOpenMenu }),
 					_react2.default.createElement(_foodmenu2.default, { ref: 'menu', data: this.props }),
 					_react2.default.createElement(_contact2.default, { ref: 'contact' })
 				);
@@ -21065,10 +21062,20 @@
 	            null,
 	            _react2.default.createElement(
 	              "li",
+	              { onClick: this.props.showMenu, className: "rudy-nav-text-mobile rudy-hide-desktop" },
+	              "Menu"
+	            ),
+	            _react2.default.createElement(
+	              "li",
+	              { onClick: this.props.showContact, className: "rudy-nav-text-mobile rudy-hide-desktop" },
+	              "Contact"
+	            ),
+	            _react2.default.createElement(
+	              "li",
 	              null,
 	              _react2.default.createElement(
 	                "a",
-	                { href: "https://www.instagram.com/rudyresto/" },
+	                { href: "https://www.instagram.com/rudyresto/", target: "_blank" },
 	                _react2.default.createElement(
 	                  "object",
 	                  { data: "images/instagram_logo.svg", type: "image/svg+xml", className: "rudy-social-icon" },
@@ -21160,7 +21167,7 @@
 	              { className: "rudy-hide-desktop" },
 	              _react2.default.createElement(
 	                "a",
-	                { href: "http://www.drewclose.com" },
+	                { href: "http://www.drewclose.com", target: "_blank" },
 	                "Drew Close Design"
 	              )
 	            )
@@ -21171,7 +21178,7 @@
 	          { className: "rudy-design corner-padding rudy-hide-mobile" },
 	          _react2.default.createElement(
 	            "a",
-	            { href: "http://www.drewclose.com" },
+	            { href: "http://www.drewclose.com", target: "_blank" },
 	            "Drew Close Design"
 	          )
 	        )
@@ -21371,6 +21378,11 @@
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'rudy-contact-centered' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'rudy-foodmenu-title' },
+	              'CONTACT'
+	            ),
 	            _react2.default.createElement(
 	              'ul',
 	              null,

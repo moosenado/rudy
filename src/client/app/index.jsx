@@ -14,11 +14,13 @@ class RudySite extends React.Component {
 			contact                : false,
 			visible                : false,
 			overlay_class          : 'rudy-darkoverlay',
-			mobileicon_class_closed: 'rudy-chevron corner-padding rudy-show-general',
 			mobileicon_class_open  : 'rudy-close corner-padding rudy-hide-general',
 			menu_icon_class        : 'rudy-menu-icon-closed',
 			contact_icon_class     : 'rudy-contact-icon-closed'
 		}
+		this.showMenu        = this.showMenu.bind(this);
+		this.showContact     = this.showContact.bind(this);
+		this.hideAnyOpenMenu = this.hideAnyOpenMenu.bind(this);
   	}
 
 	showMenu() {
@@ -31,7 +33,6 @@ class RudySite extends React.Component {
 			{
 				this.setState({
 					overlay_class          : 'rudy-darkoverlay rudy-darkoverlay-dark',
-					mobileicon_class_closed: 'rudy-chevron corner-padding rudy-hide-general',
 					mobileicon_class_open  : 'rudy-close corner-padding rudy-show-general',
 					menu_icon_class        : 'rudy-menu-icon-open',
 					menu                   : true,
@@ -41,7 +42,6 @@ class RudySite extends React.Component {
 			} else {
 				this.setState({
 					overlay_class          : 'rudy-darkoverlay',
-					mobileicon_class_closed: 'rudy-chevron corner-padding rudy-show-general',
 					mobileicon_class_open  : 'rudy-close corner-padding rudy-hide-general',
 					menu_icon_class        : 'rudy-menu-icon-closed',
 					menu                   : false,
@@ -61,25 +61,27 @@ class RudySite extends React.Component {
 			if (!this.state.visible)
 			{
 				this.setState({
-					overlay_class     : 'rudy-darkoverlay rudy-darkoverlay-dark',
-					contact_icon_class: 'rudy-contact-icon-open',
-					menu              : false,
-					contact           : true,
-					visible           : true
+					overlay_class        : 'rudy-darkoverlay rudy-darkoverlay-dark',
+					contact_icon_class   : 'rudy-contact-icon-open',
+					mobileicon_class_open: 'rudy-close corner-padding rudy-show-general',
+					menu                 : false,
+					contact              : true,
+					visible              : true
 				});
 			} else {
 				this.setState({
-					overlay_class     : 'rudy-darkoverlay',
-					contact_icon_class: 'rudy-contact-icon-closed',
-					menu              : false,
-					contact           : false,
-					visible           : false
+					overlay_class        : 'rudy-darkoverlay',
+					contact_icon_class   : 'rudy-contact-icon-closed',
+					mobileicon_class_open: 'rudy-close corner-padding rudy-hide-general',
+					menu                 : false,
+					contact              : false,
+					visible              : false
 				});
 			}
 		}
 	}
 
-	hideMenusFromBG() {
+	hideAnyOpenMenu() {
 
 		if (this.state.visible) {
 
@@ -101,25 +103,22 @@ class RudySite extends React.Component {
 	    		<header className="rudy-header">
 	      			<nav className="rudy-nav-desktop corner-padding">
 	      				<ul>
-	      					<li onClick={this.showMenu.bind(this)} className={this.state.menu_icon_class}>Menu</li>
+	      					<li onClick={this.showMenu} className={this.state.menu_icon_class}>Menu</li>
 	      					<li>|</li>
-	      					<li onClick={this.showContact.bind(this)} className={this.state.contact_icon_class}>Contact</li>
+	      					<li onClick={this.showContact} className={this.state.contact_icon_class}>Contact</li>
 	      				</ul>
 	      			</nav>
-		            <nav className="rudy-nav-mobile" onClick={this.showMenu.bind(this)}>
-		             	 <object data="images/chevron.svg" type="image/svg+xml" className={this.state.mobileicon_class_closed}>
-		                	<img src="images/chevron.png" className={this.state.mobileicon_class_closed}/>
-		              	</object>
+	      			<nav className="rudy-nav-mobile" onClick={this.hideAnyOpenMenu}>
 		                <object data="images/close.svg" type="image/svg+xml" className={this.state.mobileicon_class_open}>
 				            <img src="images/close.png" className={this.state.mobileicon_class_open} />
 				        </object>
 		            </nav>
 	     	 	</header>
-      			<Main />
+      			<Main showMenu={this.showMenu} showContact={this.showContact} />
       			<Footer />
-      			<div className={this.state.overlay_class} onClick={this.hideMenusFromBG.bind(this)}></div>
+      			<div className={this.state.overlay_class} onClick={this.hideAnyOpenMenu}></div>
       			<FoodMenu ref="menu" data={this.props}/>
-      			<Contact ref="contact" />
+      			<Contact ref="contact"/>
       		</div>
     	);
   	}
