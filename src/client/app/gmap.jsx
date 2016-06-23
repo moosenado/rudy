@@ -26,7 +26,7 @@ class GMap extends React.Component {
 
 	render() {
     return <div className={this.state.map_class}>
-      <div onClick={this.showHide.bind(this)} className="rudy-gmap-close">
+      <div onClick={this.showHide.bind(this)} className="rudy-hide-mobile rudy-gmap-close">
         <object data="images/close.svg" type="image/svg+xml" className="rudy-gmap-close">
           <img src="images/close.png" className="rudy-gmap-close" />
         </object>

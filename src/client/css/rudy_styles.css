@@ -7,12 +7,13 @@ html {
 	font-size              : 12px;
 	-webkit-font-smoothing : antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	/*text-shadow            : 0 0 1px rgba(128,128,128,0.01);*/
+	text-shadow            : 0 0 1px rgba(128,128,128,0.01);
 }
 
 a {
 	color          : inherit;
 	text-decoration: none;
+	display        : block;
 }
 
 body {
@@ -221,16 +222,20 @@ ul li {
 }
 
 .rudy-social {
-	position: absolute;
-	bottom  : 0;
-	left    : 0;
-	right   : 0;
-	z-index : 150;
+	position   : absolute;
+	bottom     : 0;
+	left       : 0;
+	right      : 0;
+	z-index    : 150;
+	font-weight: 700;
+	color      : #fff;
 }
 
 .rudy-social ul li {
-	display: inline-block;
-	padding: 0 2em 0 0;
+	display       : inline-block;
+	padding       : 0 3em 0 0;
+	vertical-align: middle;
+	z-index       : 150;
 }
 
 .rudy-social ul li a {
@@ -304,11 +309,17 @@ ul li {
 }
 
 .rudy-contact-centered ul li {
-	display   : block;
-	text-align: center;
-	padding   : 5px;
-	position  : relative;
-	color     : #fff;
+	display    : block;
+	text-align : center;
+	padding    : 10px;
+	position   : relative;
+	color      : #f4004a;
+	font-size  : 1.5em;
+	font-weight: 700;
+}
+
+.rudy-contact-centered ul li:nth-child(5) {
+	cursor: pointer;
 }
 
 .rudy-contact-open {
@@ -317,7 +328,7 @@ ul li {
 }
 
 .rudy-contact-images-phone {
-	width: 100px;
+	width: 80px;
 }
 
 .rudy-contact-phone-height {
@@ -325,7 +336,7 @@ ul li {
 }
 
 .rudy-contact-images-email {
-	width: 80px;
+	width: 60px;
 }
 
 .rudy-contact-email-height {
@@ -333,7 +344,7 @@ ul li {
 }
 
 .rudy-contact-images-pin {
-	width: 60px;
+	width: 40px;
 }
 
 .rudy-contact-pin-height {
@@ -366,11 +377,6 @@ ul li {
 
 .rudy-contact-icon-open {
 	font-weight: 700;
-}
-
-.rudy-nav-text-mobile {
-	font-weight: 700;
-	color      : #fff;
 }
 
 @media all and ( min-width: 481px )  {
@@ -496,6 +502,7 @@ ul li {
 		padding   : 15px;
 		position  : relative;
 		color     : #fff;
+		font-size : 1em;
 	}
 
 	.rudy-contact-centered ul li:nth-child(even) {
@@ -565,6 +572,49 @@ ul li {
 
 	.rudy-item-cont {
 		font-size: 2.667em;
+	}
+}
+
+@media all and ( min-width: 1600px )  {
+
+	html {
+		font-size: 16px;
+	}
+
+	.rudy-contact {
+		width: 650px;
+	}
+
+	.rudy-contact-centered ul {
+		width: 600px;
+	}
+
+	.rudy-contact-centered ul li {
+		width: 200px;
+	}
+
+	.rudy-contact-images-phone {
+		width: 200px;
+	}
+
+	.rudy-contact-phone-height {
+		height: 80px;
+	}
+
+	.rudy-contact-images-email {
+		width: 160px;
+	}
+
+	.rudy-contact-email-height {
+		height: 40px;
+	}
+
+	.rudy-contact-images-pin {
+		width: 120px;
+	}
+
+	.rudy-contact-pin-height {
+		height: 120px;
 	}
 }
 

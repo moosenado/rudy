@@ -13,8 +13,8 @@ class Main extends React.Component {
 				    </object>
             <div className="rudy-social">
               <ul>
-                <li onClick={this.props.showMenu} className="rudy-nav-text-mobile rudy-hide-desktop">Menu</li>
-                <li onClick={this.props.showContact} className="rudy-nav-text-mobile rudy-hide-desktop">Contact</li>
+                <li onClick={this.props.showMenu} className="rudy-hide-desktop">Menu</li>
+                <li onClick={this.props.showContact} className="rudy-hide-desktop">Contact</li>
                 <li>
                   <a href="https://www.instagram.com/rudyresto/" target="_blank">
                     <object data="images/instagram_logo.svg" type="image/svg+xml" className="rudy-social-icon">

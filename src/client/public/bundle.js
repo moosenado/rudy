@@ -21062,12 +21062,12 @@
 	            null,
 	            _react2.default.createElement(
 	              "li",
-	              { onClick: this.props.showMenu, className: "rudy-nav-text-mobile rudy-hide-desktop" },
+	              { onClick: this.props.showMenu, className: "rudy-hide-desktop" },
 	              "Menu"
 	            ),
 	            _react2.default.createElement(
 	              "li",
-	              { onClick: this.props.showContact, className: "rudy-nav-text-mobile rudy-hide-desktop" },
+	              { onClick: this.props.showContact, className: "rudy-hide-desktop" },
 	              "Contact"
 	            ),
 	            _react2.default.createElement(
@@ -21334,7 +21334,6 @@
 	
 	    _this.state = {
 	      visible: false,
-	      map_visible: false,
 	      contact_status: 'rudy-contact',
 	      map_status: 'rudy-gmap'
 	    };
@@ -21350,6 +21349,10 @@
 	      } else {
 	        this.setState({ contact_status: 'rudy-contact', visible: false });
 	      }
+	
+	      if (this.refs.gmap.state.map_visible) {
+	        this.refs.gmap.showHide();
+	      }
 	    }
 	  }, {
 	    key: 'showMap',
@@ -21357,10 +21360,10 @@
 	
 	      this.refs.gmap.showHide();
 	
-	      if (!this.state.map_visible) {
-	        this.setState({ map_visible: true });
+	      if (!this.refs.gmap.state.map_visible) {
+	        this.refs.gmap.setState({ map_visible: true });
 	      } else {
-	        this.setState({ map_visible: false });
+	        this.refs.gmap.setState({ map_visible: false });
 	      }
 	    }
 	  }, {
@@ -21390,9 +21393,13 @@
 	                'li',
 	                null,
 	                _react2.default.createElement(
-	                  'object',
-	                  { data: 'images/iphone.svg', type: 'image/svg+xml', className: 'rudy-contact-images-phone' },
-	                  _react2.default.createElement('img', { src: 'images/iphone.png' })
+	                  'a',
+	                  { href: 'tel:6477487839' },
+	                  _react2.default.createElement(
+	                    'object',
+	                    { data: 'images/iphone.svg', type: 'image/svg+xml', className: 'rudy-contact-images-phone' },
+	                    _react2.default.createElement('img', { src: 'images/iphone.png' })
+	                  )
 	                )
 	              ),
 	              _react2.default.createElement(
@@ -21416,9 +21423,13 @@
 	                'li',
 	                null,
 	                _react2.default.createElement(
-	                  'object',
-	                  { data: 'images/email.svg', type: 'image/svg+xml', className: 'rudy-contact-images-email' },
-	                  _react2.default.createElement('img', { src: 'images/email.png' })
+	                  'a',
+	                  { href: 'mailto:info@rudyresto.com' },
+	                  _react2.default.createElement(
+	                    'object',
+	                    { data: 'images/email.svg', type: 'image/svg+xml', className: 'rudy-contact-images-email' },
+	                    _react2.default.createElement('img', { src: 'images/email.png' })
+	                  )
 	                )
 	              ),
 	              _react2.default.createElement(
@@ -21440,7 +21451,7 @@
 	              ),
 	              _react2.default.createElement(
 	                'li',
-	                null,
+	                { onClick: this.showMap.bind(this) },
 	                _react2.default.createElement(
 	                  'object',
 	                  { data: 'images/map_pin.svg', type: 'image/svg+xml', className: 'rudy-contact-images-pin' },
@@ -21538,7 +21549,7 @@
 	        { className: this.state.map_class },
 	        _react2.default.createElement(
 	          'div',
-	          { onClick: this.showHide.bind(this), className: 'rudy-gmap-close' },
+	          { onClick: this.showHide.bind(this), className: 'rudy-hide-mobile rudy-gmap-close' },
 	          _react2.default.createElement(
 	            'object',
 	            { data: 'images/close.svg', type: 'image/svg+xml', className: 'rudy-gmap-close' },
