@@ -327,6 +327,10 @@ ul li {
 	transform        : translate3d(0, 0, 0);
 }
 
+.rudy-contact-img-padding {
+	padding-top: 4%;
+}
+
 .rudy-contact-images-phone {
 	width: 80px;
 }

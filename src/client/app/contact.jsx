@@ -51,7 +51,7 @@ class Contact extends React.Component {
             <ul>
               <li>
                 <a href="tel:6477487839">
-                  <object data="images/iphone.svg" type="image/svg+xml" className="rudy-contact-images-phone">
+                  <object data="images/iphone.svg" type="image/svg+xml" className="rudy-contact-images-phone rudy-contact-img-padding">
                     <img src="images/iphone.png" />
                   </object>
                 </a>
@@ -65,7 +65,7 @@ class Contact extends React.Component {
               </li>
               <li>
                 <a href="mailto:info@rudyresto.com">
-                  <object data="images/email.svg" type="image/svg+xml" className="rudy-contact-images-email">
+                  <object data="images/email.svg" type="image/svg+xml" className="rudy-contact-images-email rudy-contact-img-padding">
                     <img src="images/email.png" />
                   </object>
                 </a>
@@ -78,7 +78,7 @@ class Contact extends React.Component {
                 </div>
               </li>
               <li onClick={this.showMap.bind(this)}>
-                <object data="images/map_pin.svg" type="image/svg+xml" className="rudy-contact-images-pin">
+                <object data="images/map_pin.svg" type="image/svg+xml" className="rudy-contact-images-pin rudy-contact-img-padding">
                   <img src="images/map_pin.png" />
                 </object>
               </li>

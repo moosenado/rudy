@@ -21397,7 +21397,7 @@
 	                  { href: 'tel:6477487839' },
 	                  _react2.default.createElement(
 	                    'object',
-	                    { data: 'images/iphone.svg', type: 'image/svg+xml', className: 'rudy-contact-images-phone' },
+	                    { data: 'images/iphone.svg', type: 'image/svg+xml', className: 'rudy-contact-images-phone rudy-contact-img-padding' },
 	                    _react2.default.createElement('img', { src: 'images/iphone.png' })
 	                  )
 	                )
@@ -21427,7 +21427,7 @@
 	                  { href: 'mailto:info@rudyresto.com' },
 	                  _react2.default.createElement(
 	                    'object',
-	                    { data: 'images/email.svg', type: 'image/svg+xml', className: 'rudy-contact-images-email' },
+	                    { data: 'images/email.svg', type: 'image/svg+xml', className: 'rudy-contact-images-email rudy-contact-img-padding' },
 	                    _react2.default.createElement('img', { src: 'images/email.png' })
 	                  )
 	                )
@@ -21454,7 +21454,7 @@
 	                { onClick: this.showMap.bind(this) },
 	                _react2.default.createElement(
 	                  'object',
-	                  { data: 'images/map_pin.svg', type: 'image/svg+xml', className: 'rudy-contact-images-pin' },
+	                  { data: 'images/map_pin.svg', type: 'image/svg+xml', className: 'rudy-contact-images-pin rudy-contact-img-padding' },
 	                  _react2.default.createElement('img', { src: 'images/map_pin.png' })
 	                )
 	              ),
