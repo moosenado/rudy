@@ -12,7 +12,7 @@ class RudySite extends React.Component {
 		this.state = {
 			menu                   : false,
 			contact                : false,
-			visible                : false,
+			somethings_open        : false,
 			overlay_class          : 'rudy-darkoverlay',
 			mobileicon_class_open  : 'rudy-close corner-padding rudy-hide-general',
 			menu_icon_class        : 'rudy-menu-icon-closed',
@@ -25,75 +25,78 @@ class RudySite extends React.Component {
 
 	showMenu() {
 
-		if (!this.state.contact) {
+		this.refs.menu.showHide();
 
-			this.refs.menu.showHide();
-
-			if (!this.state.visible)
-			{
-				this.setState({
-					overlay_class          : 'rudy-darkoverlay rudy-darkoverlay-dark',
-					mobileicon_class_open  : 'rudy-close corner-padding rudy-show-general',
-					menu_icon_class        : 'rudy-menu-icon-open',
-					menu                   : true,
-					contact                : false,
-					visible                : true
-				});
-			} else {
-				this.setState({
-					overlay_class          : 'rudy-darkoverlay',
-					mobileicon_class_open  : 'rudy-close corner-padding rudy-hide-general',
-					menu_icon_class        : 'rudy-menu-icon-closed',
-					menu                   : false,
-					contact                : false,
-					visible                : false
-				});
+		if (!this.state.menu)
+		{
+			if (this.state.somethings_open){
+				this.refs.contact.showHide();
 			}
+
+			this.setState({
+				overlay_class          : 'rudy-darkoverlay rudy-darkoverlay-dark',
+				mobileicon_class_open  : 'rudy-close corner-padding rudy-show-general',
+				menu_icon_class        : 'rudy-menu-icon-open',
+				contact_icon_class     : 'rudy-contact-icon-closed',
+				menu                   : true,
+				contact                : false,
+				somethings_open		   : true
+			});
+		} else {
+			this.setState({
+				overlay_class          : 'rudy-darkoverlay',
+				mobileicon_class_open  : 'rudy-close corner-padding rudy-hide-general',
+				menu_icon_class        : 'rudy-menu-icon-closed',
+				contact_icon_class     : 'rudy-contact-icon-closed',
+				menu                   : false,
+				contact                : false,
+				somethings_open		   : false
+			});
 		}
 	}
 
 	showContact() {
 
-		if (!this.state.menu) {
+		this.refs.contact.showHide();
 
-			this.refs.contact.showHide();
-
-			if (!this.state.visible)
-			{
-				this.setState({
-					overlay_class        : 'rudy-darkoverlay rudy-darkoverlay-dark',
-					contact_icon_class   : 'rudy-contact-icon-open',
-					mobileicon_class_open: 'rudy-close corner-padding rudy-show-general',
-					menu                 : false,
-					contact              : true,
-					visible              : true
-				});
-			} else {
-				this.setState({
-					overlay_class        : 'rudy-darkoverlay',
-					contact_icon_class   : 'rudy-contact-icon-closed',
-					mobileicon_class_open: 'rudy-close corner-padding rudy-hide-general',
-					menu                 : false,
-					contact              : false,
-					visible              : false
-				});
+		if (!this.state.contact)
+		{
+			if (this.state.somethings_open){
+				this.refs.menu.showHide();
 			}
+
+			this.setState({
+				overlay_class        : 'rudy-darkoverlay rudy-darkoverlay-dark',
+				contact_icon_class   : 'rudy-contact-icon-open',
+				menu_icon_class      : 'rudy-menu-icon-closed',
+				mobileicon_class_open: 'rudy-close corner-padding rudy-show-general',
+				menu                 : false,
+				contact              : true,
+				somethings_open		 : true
+			});
+		} else {
+			this.setState({
+				overlay_class        : 'rudy-darkoverlay',
+				contact_icon_class   : 'rudy-contact-icon-closed',
+				menu_icon_class      : 'rudy-menu-icon-closed',
+				mobileicon_class_open: 'rudy-close corner-padding rudy-hide-general',
+				menu                 : false,
+				contact              : false,
+				somethings_open		 : false
+			});
 		}
 	}
 
 	hideAnyOpenMenu() {
 
-		if (this.state.visible) {
+		if (this.state.menu)
+		{
+			this.showMenu();
+		}
 
-			if (this.state.menu)
-			{
-				this.showMenu();
-			}
-
-			if (this.state.contact)
-			{
-				this.showContact();
-			}
+		if (this.state.contact)
+		{
+			this.showContact();
 		}
 	}
 

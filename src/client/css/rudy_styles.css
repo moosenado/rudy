@@ -233,7 +233,7 @@ ul li {
 
 .rudy-social ul li {
 	display       : inline-block;
-	padding       : 0 3em 0 0;
+	padding       : 0 2.5em 0 0;
 	vertical-align: middle;
 	z-index       : 150;
 }
@@ -248,6 +248,10 @@ ul li {
 
 .rudy-social-icon {
 	width: 2.417em;
+}
+
+.rudy-mobile-nav-text {
+	font-size: 1.2em;
 }
 
 .rudy-gmap {
