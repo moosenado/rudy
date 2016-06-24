@@ -59,11 +59,11 @@ ul li {
 }
 
 .rudy-show-general {
-	display: block;
+	opacity: 1;
 }
 
 .rudy-hide-general {
-	display: none;
+	opacity: 0;
 }
 
 .rudy-pointer {
@@ -106,7 +106,9 @@ ul li {
 }
 
 .rudy-close {
-	width   : 2.500em;
+	width             : 2.500em;
+	-webkit-transition: all 1s ease-in-out;
+	transition        : all 1s ease-in-out;
 }
 
 .rudy-item-cont {
