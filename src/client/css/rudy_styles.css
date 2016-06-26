@@ -107,8 +107,8 @@ ul li {
 
 .rudy-close {
 	width             : 2.500em;
-	-webkit-transition: all 1s ease-in-out;
-	transition        : all 1s ease-in-out;
+	-webkit-transition: all 1s .3s ease-in-out;
+	transition        : all 1s .3s ease-in-out;
 }
 
 .rudy-item-cont {
@@ -270,7 +270,16 @@ ul li {
 	-webkit-transition-timing-function: cubic-bezier(1,.11,.39,1);
 	transition-timing-function        : cubic-bezier(1,.11,.39,1);
 	overflow                          : hidden;
-	z-index                           : 250;
+	z-index                           : 301;
+}
+
+.rudy-gmap-bg {
+	position: absolute;
+	top     : 0;
+	bottom  : 0;
+	right   : 0;
+	left    : 0;
+	z-index : 300;
 }
 
 .rudy-gmap-open {
@@ -285,8 +294,8 @@ ul li {
 }
 
 .rudy-gmap-close {
-	width  : 25px;
-	padding: 5px 0 5px 5px;
+	width  : 1.167em;
+	padding: 5px 0 5px 0;
 	cursor : pointer;
 }
 

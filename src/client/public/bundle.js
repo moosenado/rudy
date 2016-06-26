@@ -21529,7 +21529,8 @@
 	    _this.state = {
 	      zoom: 14,
 	      map_visible: false,
-	      map_class: 'rudy-gmap'
+	      map_class: 'rudy-gmap',
+	      clickable_bg: ''
 	    };
 	    return _this;
 	  }
@@ -21539,9 +21540,9 @@
 	    value: function showHide() {
 	
 	      if (!this.state.map_visible) {
-	        this.setState({ map_class: 'rudy-gmap rudy-gmap-open', map_visible: true });
+	        this.setState({ map_class: 'rudy-gmap rudy-gmap-open', map_visible: true, clickable_bg: 'rudy-gmap-bg' });
 	      } else {
-	        this.setState({ map_class: 'rudy-gmap', map_visible: false });
+	        this.setState({ map_class: 'rudy-gmap', map_visible: false, clickable_bg: '' });
 	      }
 	    }
 	  }, {
@@ -21549,17 +21550,22 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        { className: this.state.map_class },
+	        null,
+	        _react2.default.createElement('div', { className: this.state.clickable_bg, onClick: this.showHide.bind(this) }),
 	        _react2.default.createElement(
 	          'div',
-	          { onClick: this.showHide.bind(this), className: 'rudy-hide-mobile rudy-gmap-close' },
+	          { className: this.state.map_class },
 	          _react2.default.createElement(
-	            'object',
-	            { data: 'images/close.svg', type: 'image/svg+xml', className: 'rudy-gmap-close' },
-	            _react2.default.createElement('img', { src: 'images/close.png', className: 'rudy-gmap-close' })
-	          )
-	        ),
-	        _react2.default.createElement('div', { className: 'rudy-gmap-canvas', ref: 'mapCanvas' })
+	            'div',
+	            { onClick: this.showHide.bind(this), className: 'rudy-hide-mobile rudy-gmap-close' },
+	            _react2.default.createElement(
+	              'object',
+	              { data: 'images/close.svg', type: 'image/svg+xml', className: 'rudy-gmap-close' },
+	              _react2.default.createElement('img', { src: 'images/close.png', className: 'rudy-gmap-close' })
+	            )
+	          ),
+	          _react2.default.createElement('div', { className: 'rudy-gmap-canvas', ref: 'mapCanvas' })
+	        )
 	      );
 	    }
 	  }, {
