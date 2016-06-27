@@ -7,7 +7,7 @@ html {
 	font-size              : 12px;
 	-webkit-font-smoothing : antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	text-shadow            : 0 0 1px rgba(128,128,128,0.01);
+	text-shadow            : 0 0 0.083em rgba(128,128,128,0.01);
 }
 
 a {
@@ -87,7 +87,7 @@ ul li {
 	-webkit-transition-timing-function: cubic-bezier(1,.11,.39,1);
 	transition-timing-function        : cubic-bezier(1,.11,.39,1);
 	overflow                          : auto;
-	padding                           : 0 0 0 2%;
+	padding                           : 0 0 0 4%;
 	z-index                           : 250;
 }
 
@@ -295,7 +295,7 @@ ul li {
 
 .rudy-gmap-close {
 	width  : 1.167em;
-	padding: 5px 0 5px 0;
+	padding: 0.417em 0 0.417em 0;
 	cursor : pointer;
 }
 
@@ -326,7 +326,7 @@ ul li {
 .rudy-contact-centered ul li {
 	display    : block;
 	text-align : center;
-	padding    : 10px;
+	padding    : 0.833em;
 	position   : relative;
 	color      : #f4004a;
 	font-size  : 1.5em;
@@ -347,27 +347,27 @@ ul li {
 }
 
 .rudy-contact-images-phone {
-	width: 80px;
+	width: 25%;
 }
 
 .rudy-contact-phone-height {
-	height: 20px;
+	height: 1.667em;
 }
 
 .rudy-contact-images-email {
-	width: 60px;
+	width: 20%;
 }
 
 .rudy-contact-email-height {
-	height: 20px;
+	height: 1.667em;
 }
 
 .rudy-contact-images-pin {
-	width: 40px;
+	width: 15%;
 }
 
 .rudy-contact-pin-height {
-	height: 20px;
+	height: 1.667em;
 }
 
 .rudy-contact-info-cont {
@@ -459,13 +459,13 @@ ul li {
 	}
 
 	.rudy-foodmenu {
-		position         : absolute;
-		top              : 15%;
-		left             : 15%;
-		right            : 15%;
-		bottom           : 15%;
-		background-color : rgba(0, 0, 0, 1);
-		padding          : 2% 0 0 2%;
+		position        : absolute;
+		top             : 15%;
+		left            : 15%;
+		right           : 15%;
+		bottom          : 15%;
+		background-color: rgba(0, 0, 0, 1);
+		padding         : 2% 0 0 2%;
 	}
 
 	.rudy-item-cont {
@@ -478,7 +478,7 @@ ul li {
 	}
 
 	.rudy-item-cont ul li:nth-child(3) {
-		height: 30px;
+		height: 2.500em;
 	}
 
 	.rudy-foodmenu-title {
@@ -494,7 +494,7 @@ ul li {
 		background-color: rgba(0, 0, 0, 0);
 		text-align      : left;
 		z-index         : 0;
-		width           : 450px;
+		width           : 37.500em;
 	}
 
 	.rudy-contact:before {
@@ -511,14 +511,14 @@ ul li {
 	}
 
 	.rudy-contact-centered ul {
-		width: 400px;
+		width: 33.333em;
 	}
 
 	.rudy-contact-centered ul li {
 		display   : inline-block;
-		width     : 100px;
+		width     : 8.333em;
 		text-align: center;
-		padding   : 15px;
+		padding   : 1.250em;
 		position  : relative;
 		color     : #fff;
 		font-size : 1em;
@@ -526,7 +526,7 @@ ul li {
 
 	.rudy-contact-centered ul li:nth-child(even) {
 		text-align: left;
-		width     : 200px;
+		width     : 16.667em;
 	}
 
 	.rudy-contact-open {
@@ -535,27 +535,27 @@ ul li {
 	}
 
 	.rudy-contact-images-phone {
-		width: 100px;
+		width: 8.333em;
 	}
 
 	.rudy-contact-phone-height {
-		height: 40px;
+		height: 3.333em;
 	}
 
 	.rudy-contact-images-email {
-		width: 80px;
+		width: 6.667em;
 	}
 
 	.rudy-contact-email-height {
-		height: 20px;
+		height: 1.667em;
 	}
 
 	.rudy-contact-images-pin {
-		width: 60px;
+		width: 5.000em;
 	}
 
 	.rudy-contact-pin-height {
-		height: 60px;
+		height: 5.000em;
 	}
 
 	.rudy-contact-info-cont {
@@ -597,43 +597,44 @@ ul li {
 @media all and ( min-width: 1600px )  {
 
 	html {
-		font-size: 16px;
+		font-size  : 16px;
+		text-shadow: 0 0 0.063em rgba(128,128,128,0.01);
 	}
 
 	.rudy-contact {
-		width: 650px;
+		width: 40.625em;
 	}
 
 	.rudy-contact-centered ul {
-		width: 600px;
+		width: 37.500em;
 	}
 
 	.rudy-contact-centered ul li {
-		width: 200px;
+		width: 12.500em;
 	}
 
 	.rudy-contact-images-phone {
-		width: 200px;
+		width: 11.500em;
 	}
 
 	.rudy-contact-phone-height {
-		height: 80px;
+		height: 5.000em;
 	}
 
 	.rudy-contact-images-email {
-		width: 160px;
+		width: 9.000em;
 	}
 
 	.rudy-contact-email-height {
-		height: 40px;
+		height: 2.500em;
 	}
 
 	.rudy-contact-images-pin {
-		width: 120px;
+		width: 6.500em;
 	}
 
 	.rudy-contact-pin-height {
-		height: 120px;
+		height: 7.500em;
 	}
 }
 

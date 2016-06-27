@@ -1,5 +1,6 @@
 /*
-* RUDY MENU - BACKUP ONLY!!!!!!
+* RUDY MENU - BACKUP ONLY!!!!!! - file named 'menu.js' will take effect on the site
+*
 * When adding/removing items, please remember to keep the same structure that currently exists
 * Don't forget to add commas in the right places
 * It is suggested that you make a copy of this file somewhere for future reference if anything goes wrong while editing
