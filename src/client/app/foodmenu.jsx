@@ -26,6 +26,12 @@ class FoodMenu extends React.Component {
   	return (
       <div className={this.state.menu_status}>
 
+        <nav className="rudy-nav-mobile" onClick={this.props.hideAnyOpenMenu}>
+          <object data="images/close.svg" type="image/svg+xml" className={this.props.open_class}>
+            <img src="images/close.png" className={this.props.open_class} />
+          </object>
+        </nav>
+
         <div className="rudy-foodmenu-title">
           MENU
         </div>

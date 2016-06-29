@@ -14,7 +14,7 @@ class RudySite extends React.Component {
 			contact                : false,
 			somethings_open        : false,
 			overlay_class          : 'rudy-darkoverlay',
-			mobileicon_class_open  : 'rudy-close corner-padding rudy-hide-general',
+			mobileicon_class_open  : 'rudy-close corner-padding-close rudy-hide-general',
 			menu_icon_class        : 'rudy-menu-icon-closed',
 			contact_icon_class     : 'rudy-contact-icon-closed'
 		}
@@ -35,7 +35,7 @@ class RudySite extends React.Component {
 
 			this.setState({
 				overlay_class          : 'rudy-darkoverlay rudy-darkoverlay-dark',
-				mobileicon_class_open  : 'rudy-close corner-padding rudy-show-general',
+				mobileicon_class_open  : 'rudy-close corner-padding-close rudy-show-general',
 				menu_icon_class        : 'rudy-menu-icon-open',
 				contact_icon_class     : 'rudy-contact-icon-closed',
 				menu                   : true,
@@ -45,7 +45,7 @@ class RudySite extends React.Component {
 		} else {
 			this.setState({
 				overlay_class          : 'rudy-darkoverlay',
-				mobileicon_class_open  : 'rudy-close corner-padding rudy-hide-general',
+				mobileicon_class_open  : 'rudy-close corner-padding-close rudy-hide-general',
 				menu_icon_class        : 'rudy-menu-icon-closed',
 				contact_icon_class     : 'rudy-contact-icon-closed',
 				menu                   : false,
@@ -69,7 +69,7 @@ class RudySite extends React.Component {
 				overlay_class        : 'rudy-darkoverlay rudy-darkoverlay-dark',
 				contact_icon_class   : 'rudy-contact-icon-open',
 				menu_icon_class      : 'rudy-menu-icon-closed',
-				mobileicon_class_open: 'rudy-close corner-padding rudy-show-general',
+				mobileicon_class_open: 'rudy-close corner-padding-close rudy-show-general',
 				menu                 : false,
 				contact              : true,
 				somethings_open		 : true
@@ -79,7 +79,7 @@ class RudySite extends React.Component {
 				overlay_class        : 'rudy-darkoverlay',
 				contact_icon_class   : 'rudy-contact-icon-closed',
 				menu_icon_class      : 'rudy-menu-icon-closed',
-				mobileicon_class_open: 'rudy-close corner-padding rudy-hide-general',
+				mobileicon_class_open: 'rudy-close corner-padding-close rudy-hide-general',
 				menu                 : false,
 				contact              : false,
 				somethings_open		 : false
@@ -111,17 +111,12 @@ class RudySite extends React.Component {
 	      					<li onClick={this.showContact} className={this.state.contact_icon_class}>Contact</li>
 	      				</ul>
 	      			</nav>
-	      			<nav className="rudy-nav-mobile" onClick={this.hideAnyOpenMenu}>
-		                <object data="images/close.svg" type="image/svg+xml" className={this.state.mobileicon_class_open}>
-				            <img src="images/close.png" className={this.state.mobileicon_class_open} />
-				        </object>
-		            </nav>
 	     	 	</header>
       			<Main showMenu={this.showMenu} showContact={this.showContact} />
       			<Footer />
       			<div className={this.state.overlay_class} onClick={this.hideAnyOpenMenu}></div>
-      			<FoodMenu ref="menu" data={this.props}/>
-      			<Contact ref="contact"/>
+      			<FoodMenu ref="menu" data={this.props} hideAnyOpenMenu={this.hideAnyOpenMenu} open_class={this.state.mobileicon_class_open}/>
+      			<Contact ref="contact" hideAnyOpenMenu={this.hideAnyOpenMenu} open_class={this.state.mobileicon_class_open}/>
       		</div>
     	);
   	}

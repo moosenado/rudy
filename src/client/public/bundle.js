@@ -94,7 +94,7 @@
 				contact: false,
 				somethings_open: false,
 				overlay_class: 'rudy-darkoverlay',
-				mobileicon_class_open: 'rudy-close corner-padding rudy-hide-general',
+				mobileicon_class_open: 'rudy-close corner-padding-close rudy-hide-general',
 				menu_icon_class: 'rudy-menu-icon-closed',
 				contact_icon_class: 'rudy-contact-icon-closed'
 			};
@@ -117,7 +117,7 @@
 	
 					this.setState({
 						overlay_class: 'rudy-darkoverlay rudy-darkoverlay-dark',
-						mobileicon_class_open: 'rudy-close corner-padding rudy-show-general',
+						mobileicon_class_open: 'rudy-close corner-padding-close rudy-show-general',
 						menu_icon_class: 'rudy-menu-icon-open',
 						contact_icon_class: 'rudy-contact-icon-closed',
 						menu: true,
@@ -127,7 +127,7 @@
 				} else {
 					this.setState({
 						overlay_class: 'rudy-darkoverlay',
-						mobileicon_class_open: 'rudy-close corner-padding rudy-hide-general',
+						mobileicon_class_open: 'rudy-close corner-padding-close rudy-hide-general',
 						menu_icon_class: 'rudy-menu-icon-closed',
 						contact_icon_class: 'rudy-contact-icon-closed',
 						menu: false,
@@ -151,7 +151,7 @@
 						overlay_class: 'rudy-darkoverlay rudy-darkoverlay-dark',
 						contact_icon_class: 'rudy-contact-icon-open',
 						menu_icon_class: 'rudy-menu-icon-closed',
-						mobileicon_class_open: 'rudy-close corner-padding rudy-show-general',
+						mobileicon_class_open: 'rudy-close corner-padding-close rudy-show-general',
 						menu: false,
 						contact: true,
 						somethings_open: true
@@ -161,7 +161,7 @@
 						overlay_class: 'rudy-darkoverlay',
 						contact_icon_class: 'rudy-contact-icon-closed',
 						menu_icon_class: 'rudy-menu-icon-closed',
-						mobileicon_class_open: 'rudy-close corner-padding rudy-hide-general',
+						mobileicon_class_open: 'rudy-close corner-padding-close rudy-hide-general',
 						menu: false,
 						contact: false,
 						somethings_open: false
@@ -211,22 +211,13 @@
 									'Contact'
 								)
 							)
-						),
-						_react2.default.createElement(
-							'nav',
-							{ className: 'rudy-nav-mobile', onClick: this.hideAnyOpenMenu },
-							_react2.default.createElement(
-								'object',
-								{ data: 'images/close.svg', type: 'image/svg+xml', className: this.state.mobileicon_class_open },
-								_react2.default.createElement('img', { src: 'images/close.png', className: this.state.mobileicon_class_open })
-							)
 						)
 					),
 					_react2.default.createElement(_main2.default, { showMenu: this.showMenu, showContact: this.showContact }),
 					_react2.default.createElement(_footer2.default, null),
 					_react2.default.createElement('div', { className: this.state.overlay_class, onClick: this.hideAnyOpenMenu }),
-					_react2.default.createElement(_foodmenu2.default, { ref: 'menu', data: this.props }),
-					_react2.default.createElement(_contact2.default, { ref: 'contact' })
+					_react2.default.createElement(_foodmenu2.default, { ref: 'menu', data: this.props, hideAnyOpenMenu: this.hideAnyOpenMenu, open_class: this.state.mobileicon_class_open }),
+					_react2.default.createElement(_contact2.default, { ref: 'contact', hideAnyOpenMenu: this.hideAnyOpenMenu, open_class: this.state.mobileicon_class_open })
 				);
 			}
 		}]);
@@ -21256,6 +21247,15 @@
 	        'div',
 	        { className: this.state.menu_status },
 	        _react2.default.createElement(
+	          'nav',
+	          { className: 'rudy-nav-mobile', onClick: this.props.hideAnyOpenMenu },
+	          _react2.default.createElement(
+	            'object',
+	            { data: 'images/close.svg', type: 'image/svg+xml', className: this.props.open_class },
+	            _react2.default.createElement('img', { src: 'images/close.png', className: this.props.open_class })
+	          )
+	        ),
+	        _react2.default.createElement(
 	          'div',
 	          { className: 'rudy-foodmenu-title' },
 	          'MENU'
@@ -21384,6 +21384,15 @@
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'rudy-contact-centered' },
+	            _react2.default.createElement(
+	              'nav',
+	              { className: 'rudy-nav-mobile', onClick: this.props.hideAnyOpenMenu },
+	              _react2.default.createElement(
+	                'object',
+	                { data: 'images/close.svg', type: 'image/svg+xml', className: this.props.open_class },
+	                _react2.default.createElement('img', { src: 'images/close.png', className: this.props.open_class })
+	              )
+	            ),
 	            _react2.default.createElement(
 	              'div',
 	              { className: 'rudy-foodmenu-title' },

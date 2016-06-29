@@ -73,6 +73,10 @@ ul li {
 	padding: 2.5em;
 }
 
+.corner-padding-close {
+	padding: 2.5em;
+}
+
 .rudy-hide-desktop {
 	display: inline-block !important;
 }
@@ -110,7 +114,6 @@ ul li {
 	-webkit-transition-timing-function: cubic-bezier(1,.11,.39,1);
 	transition-timing-function        : cubic-bezier(1,.11,.39,1);
 	overflow                          : auto;
-	padding                           : 0 0 0 4%;
 	z-index                           : 250;
 }
 
@@ -130,13 +133,14 @@ ul li {
 
 .rudy-close {
 	width             : 2.500em;
-	-webkit-transition: all 1s .3s ease-in-out;
-	transition        : all 1s .3s ease-in-out;
+	-webkit-transition: all 1s .5s ease-in-out;
+	transition        : all 1s .5s ease-in-out;
 }
 
 .rudy-item-cont {
 	font-size: 2.200em;
 	color    : #fff;
+	padding  : 0 0 0 4%;
 }
 
 .rudy-item-cont ul {
@@ -177,6 +181,11 @@ ul li {
 
 .rudy-nav-desktop {
 	display: none;
+}
+
+.rudy-nav-mobile {
+	position: absolute;
+	top: 0;
 }
 
 .rudy-nav-desktop ul li {
@@ -272,7 +281,10 @@ ul li {
 }
 
 .rudy-social-icon {
-	width: 2.417em;
+	width            : 2.417em;
+	position         : relative;
+	-webkit-transform: translate3d(0,0,0);
+	transform        : translate3d(0,0,0);
 }
 
 .rudy-mobile-nav-text {
@@ -366,7 +378,10 @@ ul li {
 }
 
 .rudy-contact-img-padding {
-	padding-top: 4%;
+	padding-top      : 4%;
+	position         : relative;
+	-webkit-transform: translate3d(0,0,0);
+	transform        : translate3d(0,0,0);
 }
 
 .rudy-contact-images-phone {
@@ -488,11 +503,11 @@ ul li {
 		right           : 15%;
 		bottom          : 15%;
 		background-color: rgba(0, 0, 0, 1);
-		padding         : 2% 0 0 2%;
 	}
 
 	.rudy-item-cont {
 		font-size: 2em;
+		padding  : 2% 0 0 2%;
 	}
 
 	.rudy-item-cont ul {

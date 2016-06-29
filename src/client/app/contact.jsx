@@ -45,6 +45,11 @@ class Contact extends React.Component {
       <div>
         <div className={this.state.contact_status}>
           <div className="rudy-contact-centered">
+            <nav className="rudy-nav-mobile" onClick={this.props.hideAnyOpenMenu}>
+              <object data="images/close.svg" type="image/svg+xml" className={this.props.open_class}>
+                <img src="images/close.png" className={this.props.open_class} />
+              </object>
+            </nav>
             <div className="rudy-foodmenu-title">
               CONTACT
             </div>
