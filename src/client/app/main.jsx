@@ -16,7 +16,7 @@ class Main extends React.Component {
                 <li onClick={this.props.showMenu} className="rudy-hide-desktop rudy-mobile-nav-text">Menu</li>
                 <li onClick={this.props.showContact} className="rudy-hide-desktop rudy-mobile-nav-text">Contact</li>
                 <li>
-                  <a href="https://www.instagram.com/rudyresto/" target="_blank">
+                  <a href="https://www.instagram.com/rudyresto/" target="_blank" className="svg">
                     <object data="images/instagram_logo.svg" type="image/svg+xml" className="rudy-social-icon">
                       <img src="images/instagram_logo.png" className="rudy-social-icon"/>
                     </object>

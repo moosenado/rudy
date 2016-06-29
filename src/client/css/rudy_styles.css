@@ -39,6 +39,15 @@ a {
 	display        : block;
 }
 
+.svg:after {
+	content : ""; 
+	position: absolute; 
+	top     : 0; 
+	right   : 0; 
+	bottom  : 0; 
+	left    : 0;
+}
+
 body {
 	background-color: #f4004a;
 	font-family     : Moon;
@@ -260,7 +269,7 @@ ul li {
 	bottom     : 0;
 	left       : 0;
 	right      : 0;
-	z-index    : 150;
+	z-index    : 200;
 	font-weight: 700;
 	color      : #fff;
 }
@@ -269,7 +278,7 @@ ul li {
 	display       : inline-block;
 	padding       : 0 2.5em 0 0;
 	vertical-align: middle;
-	z-index       : 150;
+	position      : relative;
 }
 
 .rudy-social ul li a {
