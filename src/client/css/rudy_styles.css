@@ -160,6 +160,10 @@ ul li {
 	display: inline-block;
 }
 
+.rudy-item-cont ul li span {
+	color: #fff;
+}
+
 .rudy-item-cont ul li:first-child {
 	width      : 75%;
 	color      : #f2024b;
@@ -173,11 +177,11 @@ ul li {
 }
 
 .rudy-item-cont ul li:nth-child(3) {
-	width: 100%;
+	width: 90%;
 }
 
 .rudy-desc-text {
-	font-size: 0.3em;
+	font-size: 0.4em;
 }
 
 /* HEADER */

@@ -42,7 +42,7 @@ class FoodMenu extends React.Component {
             var dots = (info.price) ? '............................................................' : '';
             return (
               <ul key={i}>
-                <li>{info.name}{dots}</li>
+                <li>{info.name}<span>{dots}</span></li>
                 <li>{info.price}</li>
                 <li className="rudy-desc-text">{info.description}</li>
               </ul>

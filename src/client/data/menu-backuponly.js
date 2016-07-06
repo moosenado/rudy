@@ -9,52 +9,37 @@
 var rudy_menu = [
   {
     name: "The Rudy",
-    price: "6.49",
+    price: "6.50",
     description: "Cheeseburger, Lettuce, Tomato & Rudy Sauce"
   },
   {
     name: "Rude Dude",
-    price: "8.99",
+    price: "9.00",
     description: "Double Cheeseburger, Lettuce, Tomato & Rudy Sauce"
   },
   {
     name: "Valentino",
-    price: "8.99",
-    description: "Fried Chicken Sandwich"
-  },
-  {
-    name: "Valenrudy",
-    price: "12.99",
-    description: "Rudy & Valentino Sandwich"
+    price: "7.50",
+    description: "Fried Chicken Sandwich, Lettuce, Pickle, Valentino Sauce, Mild Hot Sauce"
   },
   {
     name: "Tattooed",
-    price: "1.49",
-    description: "With Bacon"
+    price: "1.50",
+    description: "Bacon"
   },
   {
-    name: "Fritters",
-    price: "3.99",
+    name: "Fries",
+    price: "3.50",
     description: ""
   },
   {
     name: "Poutine",
-    price: "6.99",
-    description: "Fritters, Quebecois Gravy & Cheese Curds"
-  },
-  {
-    name: "Drinks",
-    price: "1.99",
+    price: "7.50",
     description: ""
   },
   {
-    name: "Weezie's Fudge",
-    price: "1.49",
+    name: "Pop & Water",
+    price: "1.50",
     description: ""
-  },
-  {
-    name: "Toppings",
-    price: "",
-    description: "Lettuce, Tomatoes, Pickles, Onions, Ketchup, Mustard, Mayonnaise"
   }
 ];
