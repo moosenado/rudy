@@ -143,12 +143,13 @@ ul li {
 }
 
 .rudy-foodmenu-title {
-	color     : #fff;
-	width     : 100%;
-	text-align: center;
-	font-size : 2em;
-	margin    : 1.2em 0;
-	display   : block;
+	color      : #fff;
+	width      : 100%;
+	text-align : center;
+	font-size  : 2em;
+	margin     : 1.2em 0;
+	display    : block;
+	font-family: Moon;
 }
 
 .rudy-contact-title {
@@ -193,7 +194,7 @@ ul li {
 }
 
 .rudy-item-cont ul li:nth-child(3) {
-	width: 90%;
+	width: 87%;
 }
 
 .rudy-desc-text {
