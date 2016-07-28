@@ -40,24 +40,29 @@ a {
 }
 
 .svg:after {
-	content : ""; 
-	position: absolute; 
-	top     : 0; 
-	right   : 0; 
-	bottom  : 0; 
+	content : "";
+	position: absolute;
+	top     : 0;
+	right   : 0;
+	bottom  : 0;
 	left    : 0;
 }
 
 body {
-	background-color: #f4004a;
-	font-family     : Moon;
-	max-height      : 100vh;
-	position        : relative;
-	padding         : 0;
-	margin          : 0;
-	height          : 100%; /*firefox*/
-	overflow        : hidden;
-	letter-spacing  : 0.083em;
+	background-color : #f4004a;
+	font-family      : Moon;
+	max-height       : 100vh;
+	position         : relative;
+	padding          : 0;
+	margin           : 0;
+	height           : 100%; /*firefox*/
+	overflow         : hidden;
+	letter-spacing   : 0.083em;
+	-webkit-animation: fadeInPage 1s .5s forwards;
+	-moz-animation   : fadeInPage 1s .5s forwards;
+	-o-animation     : fadeInPage 1s .5s forwards;
+	animation        : fadeInPage 1s .5s forwards;
+	opacity          : 0;
 }
 
 object[type*="svg"] {
@@ -140,6 +145,15 @@ ul li {
 	display   : block;
 }
 
+.rudy-contact-title {
+	color     : #fff;
+	width     : 100%;
+	text-align: center;
+	font-size : 2em;
+	margin    : 1.2em 0;
+	display   : block;
+}
+
 .rudy-close {
 	width             : 2.500em;
 	-webkit-transition: all 1s .5s ease-in-out;
@@ -158,10 +172,6 @@ ul li {
 
 .rudy-item-cont ul li {
 	display: inline-block;
-}
-
-.rudy-item-cont ul li span {
-	color: #fff;
 }
 
 .rudy-item-cont ul li:first-child {
@@ -449,6 +459,10 @@ ul li {
 	font-weight: 700;
 }
 
+.rudy-close-desktop {
+	display: none;
+}
+
 @media all and ( min-width: 481px )  {
 
 	.rudy-chevron {
@@ -477,6 +491,18 @@ ul li {
 
 	.rudy-copy ul li:last-child {
 		padding: 0 1em 0 0;
+	}
+
+	.rudy-close-desktop {
+		display : block;
+		position: absolute;
+		top     : 0;
+		right   : 0;
+		cursor  : pointer;
+	}
+
+	.rudy-close-desktop object, .rudy-close-desktop img {
+		width: 2.500em;
 	}
 
 	.rudy-darkoverlay {
@@ -509,23 +535,19 @@ ul li {
 		display: inline-block;
 	}
 
-	.rudy-foodmenu {
-		position        : absolute;
-		top             : 15%;
-		left            : 15%;
-		right           : 15%;
-		bottom          : 15%;
-		background-color: rgba(0, 0, 0, 1);
-	}
-
 	.rudy-item-cont {
 		font-size: 2em;
 		padding  : 2% 0 0 2%;
 	}
 
 	.rudy-item-cont ul {
-		width: 48%;
-		float: left;
+		width       : 48%;
+		margin-left : auto;
+		margin-right: auto;
+	}
+
+	.rudy-item-cont ul li:first-child {
+		white-space: nowrap;
 	}
 
 	.rudy-item-cont ul li:nth-child(3) {
@@ -533,6 +555,10 @@ ul li {
 	}
 
 	.rudy-foodmenu-title {
+		margin: 1.6em 0;
+	}
+
+	.rudy-contact-title {
 		display: none;
 	}
 
@@ -707,4 +733,24 @@ ul li {
 @keyframes burgerRotate {
     from { transform: rotate(0deg) translateX(10px) rotate(0deg); }
     to   { transform: rotate(360deg) translateX(10px) rotate(-360deg); }
+}
+
+@-webkit-keyframes fadeInPage {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-moz-keyframes fadeInPage {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-o-keyframes fadeInPage {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes fadeInPage {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }

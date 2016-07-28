@@ -50,7 +50,7 @@ class Contact extends React.Component {
                 <img src="images/close.png" className={this.props.open_class} />
               </object>
             </nav>
-            <div className="rudy-foodmenu-title">
+            <div className="rudy-contact-title">
               CONTACT
             </div>
             <ul>

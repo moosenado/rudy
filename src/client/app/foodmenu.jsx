@@ -32,6 +32,12 @@ class FoodMenu extends React.Component {
           </object>
         </nav>
 
+        <nav className="rudy-close-desktop corner-padding-close" onClick={this.props.hideAnyOpenMenu}>
+          <object data="images/close.svg" type="image/svg+xml">
+            <img src="images/close.png" />
+          </object>
+        </nav>
+
         <div className="rudy-foodmenu-title">
           MENU
         </div>
