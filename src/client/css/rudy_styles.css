@@ -3,6 +3,11 @@
 	src: url("../fonts/moon_light.otf") format("opentype");
 }
 
+@font-face {
+	font-family: MoonBold;
+	src: url("../fonts/moon_bold.otf") format("opentype");
+}
+
 html {
 	font-size              : 12px;
 	-webkit-font-smoothing : antialiased;
@@ -120,6 +125,7 @@ ul li {
 	left                              : 0;
 	right                             : 0;
 	bottom                            : 0;
+	font-family                       : MoonBold;
 	background-color                  : rgba(0, 0, 0, .8);
 	-webkit-transform                 : translate3d(0, -2000px, 0);
 	transform                         : translate3d(0, -2000px, 0);
