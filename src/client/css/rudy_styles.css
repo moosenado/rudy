@@ -163,8 +163,8 @@ ul li {
 
 .rudy-close {
 	width             : 2.500em;
-	-webkit-transition: all 1s .5s ease-in-out;
-	transition        : all 1s .5s ease-in-out;
+	-webkit-transition: all 1.2s .8s ease-in-out;
+	transition        : all 1.2s .8s ease-in-out;
 }
 
 .rudy-item-cont {
@@ -398,7 +398,7 @@ ul li {
 	font-weight: 700;
 }
 
-.rudy-contact-centered ul li:nth-child(5) {
+.rudy-contact-centered ul li:nth-child(5), .rudy-contact-centered ul li:nth-child(7) {
 	cursor: pointer;
 }
 
@@ -426,6 +426,10 @@ ul li {
 	width: 20%;
 }
 
+.rudy-contact-images-clock {
+	width: 20%;
+}
+
 .rudy-contact-email-height {
 	height: 1.667em;
 }
@@ -435,6 +439,10 @@ ul li {
 }
 
 .rudy-contact-pin-height {
+	height: 1.667em;
+}
+
+.rudy-contact-clock-height {
 	height: 1.667em;
 }
 
@@ -630,6 +638,10 @@ ul li {
 		width: 6.667em;
 	}
 
+	.rudy-contact-images-clock {
+		width: 6.667em;
+	}
+
 	.rudy-contact-email-height {
 		height: 1.667em;
 	}
@@ -639,6 +651,10 @@ ul li {
 	}
 
 	.rudy-contact-pin-height {
+		height: 5.000em;
+	}
+
+	.rudy-contact-clock-height {
 		height: 5.000em;
 	}
 
@@ -709,6 +725,10 @@ ul li {
 		width: 9.000em;
 	}
 
+	.rudy-contact-images-clock {
+		width: 9.000em;
+	}
+
 	.rudy-contact-email-height {
 		height: 2.500em;
 	}
@@ -718,6 +738,10 @@ ul li {
 	}
 
 	.rudy-contact-pin-height {
+		height: 7.500em;
+	}
+
+	.rudy-contact-clock-height {
 		height: 7.500em;
 	}
 }

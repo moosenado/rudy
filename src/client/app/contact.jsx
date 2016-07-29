@@ -57,7 +57,7 @@ class Contact extends React.Component {
               <li>
                 <a href="tel:6477487839" className="svg">
                   <object data="images/iphone.svg" type="image/svg+xml" className="rudy-contact-images-phone rudy-contact-img-padding">
-                    <img src="images/iphone.png" />
+                    <img src="images/iphone.png" className="rudy-contact-images-phone rudy-contact-img-padding"/>
                   </object>
                 </a>
               </li>
@@ -71,7 +71,7 @@ class Contact extends React.Component {
               <li>
                 <a href="mailto:info@rudyresto.com" className="svg">
                   <object data="images/email.svg" type="image/svg+xml" className="rudy-contact-images-email rudy-contact-img-padding">
-                    <img src="images/email.png" />
+                    <img src="images/email.png" className="rudy-contact-images-email rudy-contact-img-padding"/>
                   </object>
                 </a>
               </li>
@@ -84,13 +84,25 @@ class Contact extends React.Component {
               </li>
               <li onClick={this.showMap.bind(this)} className="svg">
                 <object data="images/map_pin.svg" type="image/svg+xml" className="rudy-contact-images-pin rudy-contact-img-padding">
-                  <img src="images/map_pin.png" />
+                  <img src="images/map_pin.png" className="rudy-contact-images-pin rudy-contact-img-padding"/>
                 </object>
               </li>
               <li className="rudy-contact-pin-height">
                 <div className="rudy-contact-info-cont">
                   <div className="rudy-contact-info-centered">
                     <div className="rudy-pointer" onClick={this.showMap.bind(this)}>View Map</div>
+                  </div>
+                </div>
+              </li>
+              <li onClick={this.showMap.bind(this)} className="svg">
+                <object data="images/clock.svg" type="image/svg+xml" className="rudy-contact-images-clock rudy-contact-img-padding">
+                  <img src="images/clock.png" className="rudy-contact-images-clock rudy-contact-img-padding"/>
+                </object>
+              </li>
+              <li className="rudy-contact-clock-height">
+                <div className="rudy-contact-info-cont">
+                  <div className="rudy-contact-info-centered">
+                    <div className="rudy-pointer" onClick={this.showMap.bind(this)}>Hours</div>
                   </div>
                 </div>
               </li>
