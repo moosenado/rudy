@@ -391,6 +391,7 @@ ul li {
 
 .rudy-contact-centered ul li {
 	font-family: MoonBold;
+	font-weight: 700;
 	display    : inline-block;
 	width      : 50%;
 	text-align : center;
@@ -450,7 +451,7 @@ ul li {
 }
 
 .rudy-contact-clock-height {
-	height: 3em;
+	height: 2.8em;
 }
 
 .rudy-contact-info-cont {
