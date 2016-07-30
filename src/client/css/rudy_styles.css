@@ -393,7 +393,7 @@ ul li {
 	font-family: MoonBold;
 	font-weight: 700;
 	display    : inline-block;
-	width      : 50%;
+	width      : 35%;
 	text-align : center;
 	position   : relative;
 	color      : #f4004a;
@@ -403,7 +403,7 @@ ul li {
 
 .rudy-contact-centered ul li:nth-child(even) {
 	text-align: left;
-	width     : 50%;
+	width     : 65%;
 }
 
 .rudy-contact-centered ul li:nth-child(5), .rudy-contact-centered ul li:nth-child(7) {
@@ -660,7 +660,7 @@ ul li {
 	}
 
 	.rudy-contact-clock-height {
-		height: 5.000em;
+		height: 4.000em;
 	}
 
 	.rudy-contact-info-cont {
@@ -747,7 +747,7 @@ ul li {
 	}
 
 	.rudy-contact-clock-height {
-		height: 6.00em;
+		height: 5.00em;
 	}
 }
 
