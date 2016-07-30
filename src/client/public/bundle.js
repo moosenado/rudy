@@ -21439,7 +21439,16 @@
 	                    _react2.default.createElement(
 	                      'a',
 	                      { href: 'tel:6477487839' },
-	                      '647.748.7839'
+	                      _react2.default.createElement(
+	                        'span',
+	                        { className: 'rudy-hide-mobile' },
+	                        '647.748.7839'
+	                      ),
+	                      _react2.default.createElement(
+	                        'span',
+	                        { className: 'rudy-hide-desktop' },
+	                        'Call'
+	                      )
 	                    )
 	                  )
 	                )
@@ -21469,7 +21478,16 @@
 	                    _react2.default.createElement(
 	                      'a',
 	                      { href: 'mailto:info@rudyresto.com' },
-	                      'info@rudyresto.com'
+	                      _react2.default.createElement(
+	                        'span',
+	                        { className: 'rudy-hide-mobile' },
+	                        'info@rudyresto.com'
+	                      ),
+	                      _react2.default.createElement(
+	                        'span',
+	                        { className: 'rudy-hide-desktop' },
+	                        'Email'
+	                      )
 	                    )
 	                  )
 	                )
@@ -21495,7 +21513,16 @@
 	                    _react2.default.createElement(
 	                      'div',
 	                      { className: 'rudy-pointer', onClick: this.showMap.bind(this) },
-	                      'View Map'
+	                      _react2.default.createElement(
+	                        'span',
+	                        { className: 'rudy-hide-mobile' },
+	                        'View Map'
+	                      ),
+	                      _react2.default.createElement(
+	                        'span',
+	                        { className: 'rudy-hide-desktop' },
+	                        'Map'
+	                      )
 	                    )
 	                  )
 	                )

@@ -386,16 +386,23 @@ ul li {
 
 .rudy-contact-centered ul {
 	width: 100%;
+	box-sizing: border-box;
 }
 
 .rudy-contact-centered ul li {
-	display    : block;
+	font-family: MoonBold;
+	display    : inline-block;
+	width      : 50%;
 	text-align : center;
-	padding    : 0.5em;
 	position   : relative;
 	color      : #f4004a;
-	font-size  : 1.5em;
-	font-weight: 700;
+	font-size  : 2em;
+	margin-top : .4em;
+}
+
+.rudy-contact-centered ul li:nth-child(even) {
+	text-align: left;
+	width     : 50%;
 }
 
 .rudy-contact-centered ul li:nth-child(5), .rudy-contact-centered ul li:nth-child(7) {
@@ -415,35 +422,35 @@ ul li {
 }
 
 .rudy-contact-images-phone {
-	width: 25%;
+	width: 4em;
 }
 
 .rudy-contact-phone-height {
-	height: 1.667em;
+	height: 3.2em;
 }
 
 .rudy-contact-images-email {
-	width: 20%;
+	width: 3.5em;
 }
 
 .rudy-contact-images-clock {
-	width: 20%;
+	width: 3em;
 }
 
 .rudy-contact-email-height {
-	height: 1.667em;
+	height: 2.2em;
 }
 
 .rudy-contact-images-pin {
-	width: 15%;
+	width: 2.5em;
 }
 
 .rudy-contact-pin-height {
-	height: 1.667em;
+	height: 3.667em;
 }
 
 .rudy-contact-clock-height {
-	height: 1.667em;
+	height: 3em;
 }
 
 .rudy-contact-info-cont {
@@ -550,6 +557,18 @@ ul li {
 		display: inline-block;
 	}
 
+	.rudy-contact-centered ul li {
+		color     : #fff;
+		font-size : 1em;
+		width     : 8.333em;
+		padding   : 1.250em;
+		margin-top: 0;
+	}
+
+	.rudy-contact-centered ul li:nth-child(even) {
+		width: 16.667em;
+	}
+
 	.rudy-item-cont {
 		font-size: 2em;
 		padding  : 2% 0 0 2%;
@@ -604,21 +623,6 @@ ul li {
 
 	.rudy-contact-centered ul {
 		width: 33.333em;
-	}
-
-	.rudy-contact-centered ul li {
-		display   : inline-block;
-		width     : 8.333em;
-		text-align: center;
-		padding   : 1.250em;
-		position  : relative;
-		color     : #fff;
-		font-size : 1em;
-	}
-
-	.rudy-contact-centered ul li:nth-child(even) {
-		text-align: left;
-		width     : 16.667em;
 	}
 
 	.rudy-contact-open {
@@ -714,35 +718,35 @@ ul li {
 	}
 
 	.rudy-contact-images-phone {
-		width: 11.500em;
+		width: 10em;
 	}
 
 	.rudy-contact-phone-height {
-		height: 5.000em;
+		height: 3.500em;
 	}
 
 	.rudy-contact-images-email {
-		width: 9.000em;
+		width: 7.500em;
 	}
 
 	.rudy-contact-images-clock {
-		width: 9.000em;
+		width: 7.500em;
 	}
 
 	.rudy-contact-email-height {
-		height: 2.500em;
+		height: 1.00em;
 	}
 
 	.rudy-contact-images-pin {
-		width: 6.500em;
+		width: 5.00em;
 	}
 
 	.rudy-contact-pin-height {
-		height: 7.500em;
+		height: 6.00em;
 	}
 
 	.rudy-contact-clock-height {
-		height: 7.500em;
+		height: 6.00em;
 	}
 }
 

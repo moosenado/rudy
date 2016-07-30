@@ -64,7 +64,7 @@ class Contact extends React.Component {
               <li className="rudy-contact-phone-height">
                 <div className="rudy-contact-info-cont">
                   <div className="rudy-contact-info-centered">
-                    <a href="tel:6477487839">647.748.7839</a>
+                    <a href="tel:6477487839"><span className="rudy-hide-mobile">647.748.7839</span><span className="rudy-hide-desktop">Call</span></a>
                   </div>
                 </div>
               </li>
@@ -78,7 +78,7 @@ class Contact extends React.Component {
               <li className="rudy-contact-email-height">
                 <div className="rudy-contact-info-cont">
                   <div className="rudy-contact-info-centered">
-                    <a href="mailto:info@rudyresto.com">info@rudyresto.com</a>
+                    <a href="mailto:info@rudyresto.com"><span className="rudy-hide-mobile">info@rudyresto.com</span><span className="rudy-hide-desktop">Email</span></a>
                   </div>
                 </div>
               </li>
@@ -90,7 +90,7 @@ class Contact extends React.Component {
               <li className="rudy-contact-pin-height">
                 <div className="rudy-contact-info-cont">
                   <div className="rudy-contact-info-centered">
-                    <div className="rudy-pointer" onClick={this.showMap.bind(this)}>View Map</div>
+                    <div className="rudy-pointer" onClick={this.showMap.bind(this)}><span className="rudy-hide-mobile">View Map</span><span className="rudy-hide-desktop">Map</span></div>
                   </div>
                 </div>
               </li>
