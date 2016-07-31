@@ -341,18 +341,19 @@ ul li {
 .rudy-hours {
 	position                          : absolute;
 	top                               : 15%;
-	left                              : 15%;
-	right                             : 15%;
+	left                              : 25%;
+	right                             : 25%;
 	bottom                            : 15%;
+	border                            : 3px solid #f2024b;
 	background-color                  : rgba(0, 0, 0, 1);
-	-webkit-transform                 : translate3d(-2500px, 0, 0);
-	transform                         : translate3d(-2500px, 0, 0);
+	-webkit-transform                 : scale3d(0, 0, 1);
+	transform                         : scale3d(0, 0, 1);
 	-webkit-transition                : all 1s ease-in-out;
 	transition                        : all 1s ease-in-out;
 	-webkit-transition-timing-function: cubic-bezier(1,.11,.39,1);
 	transition-timing-function        : cubic-bezier(1,.11,.39,1);
 	overflow                          : hidden;
-	z-index                           : 301;
+	z-index                           : -1;
 }
 
 .rudy-clickable-bg {
@@ -369,6 +370,12 @@ ul li {
 	transform        : translate3d(0, 0, 0);
 }
 
+.rudy-hours-open {
+	-webkit-transform: scale3d(1, 1, 1);
+	transform        : scale3d(1, 1, 1);
+	z-index          : 301;
+}
+
 .rudy-gmap-canvas {
 	display: block;
 	width  : 100%;
@@ -378,6 +385,13 @@ ul li {
 .rudy-gmap-close {
 	width  : 1.167em;
 	padding: 0.417em 0 0.417em 0;
+	cursor : pointer;
+}
+
+.rudy-hours-close {
+	width  : 1.167em;
+	padding: 0.417em 0.417em 0.417em 0;
+	float  : right;
 	cursor : pointer;
 }
 

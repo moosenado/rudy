@@ -123,7 +123,7 @@ class Contact extends React.Component {
           
         </div>
         <GMap ref="gmap" initialCenter={initialCenter}/>
-        <Hours ref="hours"/>
+        <Hours ref="hours" data={this.props} />
       </div>
   	);
   }

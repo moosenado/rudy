@@ -75,6 +75,8 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -183,6 +185,8 @@
 		}, {
 			key: 'render',
 			value: function render() {
+				var _React$createElement;
+	
 				return _react2.default.createElement(
 					'div',
 					null,
@@ -217,7 +221,7 @@
 					_react2.default.createElement(_footer2.default, null),
 					_react2.default.createElement('div', { className: this.state.overlay_class, onClick: this.hideAnyOpenMenu }),
 					_react2.default.createElement(_foodmenu2.default, { ref: 'menu', data: this.props, hideAnyOpenMenu: this.hideAnyOpenMenu, open_class: this.state.mobileicon_class_open }),
-					_react2.default.createElement(_contact2.default, { ref: 'contact', hideAnyOpenMenu: this.hideAnyOpenMenu, data: this.props, open_class: this.state.mobileicon_class_open })
+					_react2.default.createElement(_contact2.default, (_React$createElement = { ref: 'contact', data: this.props, hideAnyOpenMenu: this.hideAnyOpenMenu }, _defineProperty(_React$createElement, 'data', this.props), _defineProperty(_React$createElement, 'open_class', this.state.mobileicon_class_open), _React$createElement))
 				);
 			}
 		}]);
@@ -21572,7 +21576,7 @@
 	          )
 	        ),
 	        _react2.default.createElement(_gmap2.default, { ref: 'gmap', initialCenter: initialCenter }),
-	        _react2.default.createElement(_hours2.default, { ref: 'hours' })
+	        _react2.default.createElement(_hours2.default, { ref: 'hours', data: this.props })
 	      );
 	    }
 	  }]);
@@ -21760,7 +21764,7 @@
 	    value: function showHide() {
 	
 	      if (!this.state.map_visible) {
-	        this.setState({ map_class: 'rudy-hours rudy-gmap-open', map_visible: true, clickable_bg: 'rudy-clickable-bg' });
+	        this.setState({ map_class: 'rudy-hours rudy-hours-open', map_visible: true, clickable_bg: 'rudy-clickable-bg' });
 	      } else {
 	        this.setState({ map_class: 'rudy-hours', map_visible: false, clickable_bg: '' });
 	      }
@@ -21768,6 +21772,9 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
+	
+	      var hours_data = this.props.data.data.data[1];
+	
 	      return _react2.default.createElement(
 	        'div',
 	        null,
@@ -21777,12 +21784,38 @@
 	          { className: this.state.map_class },
 	          _react2.default.createElement(
 	            'div',
-	            { onClick: this.showHide.bind(this), className: 'rudy-hide-mobile rudy-gmap-close' },
+	            { onClick: this.showHide.bind(this), className: 'rudy-hide-mobile rudy-hours-close' },
 	            _react2.default.createElement(
 	              'object',
-	              { data: 'images/close.svg', type: 'image/svg+xml', className: 'rudy-gmap-close' },
-	              _react2.default.createElement('img', { src: 'images/close.png', className: 'rudy-gmap-close' })
+	              { data: 'images/close.svg', type: 'image/svg+xml', className: 'rudy-hours-close' },
+	              _react2.default.createElement('img', { src: 'images/close.png', className: 'rudy-hours-close' })
 	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'rudy-item-cont' },
+	            hours_data.map(function (info, i) {
+	              var dots = info.Hours ? '............................................................' : '';
+	              return _react2.default.createElement(
+	                'ul',
+	                { key: i },
+	                _react2.default.createElement(
+	                  'li',
+	                  null,
+	                  info.Day,
+	                  _react2.default.createElement(
+	                    'span',
+	                    null,
+	                    dots
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  'li',
+	                  null,
+	                  info.Hours
+	                )
+	              );
+	            })
 	          )
 	        )
 	      );
