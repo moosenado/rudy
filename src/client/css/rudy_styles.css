@@ -161,6 +161,14 @@ ul li {
 	display   : block;
 }
 
+.rudy-hours-title {
+	color     : #fff;
+	width     : 100%;
+	text-align: center;
+	font-size : 2em;
+	margin    : 1.2em 0;
+}
+
 .rudy-close {
 	width             : 2.500em;
 	-webkit-transition: all 1.2s .8s ease-in-out;

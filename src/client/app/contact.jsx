@@ -23,6 +23,10 @@ class Contact extends React.Component {
     if (this.refs.gmap.state.map_visible) {
       this.refs.gmap.showHide();
     }
+
+    if (this.refs.hours.state.hours_visible) {
+      this.refs.hours.showHide();
+    }
   }
 
   showMap() {

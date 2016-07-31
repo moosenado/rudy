@@ -21376,6 +21376,10 @@
 	      if (this.refs.gmap.state.map_visible) {
 	        this.refs.gmap.showHide();
 	      }
+	
+	      if (this.refs.hours.state.hours_visible) {
+	        this.refs.hours.showHide();
+	      }
 	    }
 	  }, {
 	    key: 'showMap',
@@ -21752,8 +21756,8 @@
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Hours).call(this));
 	
 	    _this.state = {
-	      map_visible: false,
-	      map_class: 'rudy-hours',
+	      hours_visible: false,
+	      hours_class: 'rudy-hours',
 	      clickable_bg: ''
 	    };
 	    return _this;
@@ -21763,10 +21767,10 @@
 	    key: 'showHide',
 	    value: function showHide() {
 	
-	      if (!this.state.map_visible) {
-	        this.setState({ map_class: 'rudy-hours rudy-hours-open', map_visible: true, clickable_bg: 'rudy-clickable-bg' });
+	      if (!this.state.hours_visible) {
+	        this.setState({ hours_class: 'rudy-hours rudy-hours-open', hours_visible: true, clickable_bg: 'rudy-clickable-bg' });
 	      } else {
-	        this.setState({ map_class: 'rudy-hours', map_visible: false, clickable_bg: '' });
+	        this.setState({ hours_class: 'rudy-hours', hours_visible: false, clickable_bg: '' });
 	      }
 	    }
 	  }, {
@@ -21781,7 +21785,16 @@
 	        _react2.default.createElement('div', { className: this.state.clickable_bg, onClick: this.showHide.bind(this) }),
 	        _react2.default.createElement(
 	          'div',
-	          { className: this.state.map_class },
+	          { className: this.state.hours_class },
+	          _react2.default.createElement(
+	            'div',
+	            { onClick: this.showHide.bind(this), className: 'rudy-hide-desktop rudy-nav-mobile' },
+	            _react2.default.createElement(
+	              'object',
+	              { data: 'images/close.svg', type: 'image/svg+xml', className: 'rudy-close corner-padding-close' },
+	              _react2.default.createElement('img', { src: 'images/close.png', className: 'rudy-close corner-padding-close' })
+	            )
+	          ),
 	          _react2.default.createElement(
 	            'div',
 	            { onClick: this.showHide.bind(this), className: 'rudy-hide-mobile rudy-hours-close' },
@@ -21790,6 +21803,11 @@
 	              { data: 'images/close.svg', type: 'image/svg+xml', className: 'rudy-hours-close' },
 	              _react2.default.createElement('img', { src: 'images/close.png', className: 'rudy-hours-close' })
 	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'rudy-hours-title rudy-hide-desktop' },
+	            'HOURS'
 	          ),
 	          _react2.default.createElement(
 	            'div',
