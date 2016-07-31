@@ -338,7 +338,24 @@ ul li {
 	z-index                           : 301;
 }
 
-.rudy-gmap-bg {
+.rudy-hours {
+	position                          : absolute;
+	top                               : 15%;
+	left                              : 15%;
+	right                             : 15%;
+	bottom                            : 15%;
+	background-color                  : rgba(0, 0, 0, 1);
+	-webkit-transform                 : translate3d(-2500px, 0, 0);
+	transform                         : translate3d(-2500px, 0, 0);
+	-webkit-transition                : all 1s ease-in-out;
+	transition                        : all 1s ease-in-out;
+	-webkit-transition-timing-function: cubic-bezier(1,.11,.39,1);
+	transition-timing-function        : cubic-bezier(1,.11,.39,1);
+	overflow                          : hidden;
+	z-index                           : 301;
+}
+
+.rudy-clickable-bg {
 	position: absolute;
 	top     : 0;
 	bottom  : 0;

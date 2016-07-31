@@ -217,7 +217,7 @@
 					_react2.default.createElement(_footer2.default, null),
 					_react2.default.createElement('div', { className: this.state.overlay_class, onClick: this.hideAnyOpenMenu }),
 					_react2.default.createElement(_foodmenu2.default, { ref: 'menu', data: this.props, hideAnyOpenMenu: this.hideAnyOpenMenu, open_class: this.state.mobileicon_class_open }),
-					_react2.default.createElement(_contact2.default, { ref: 'contact', hideAnyOpenMenu: this.hideAnyOpenMenu, open_class: this.state.mobileicon_class_open })
+					_react2.default.createElement(_contact2.default, { ref: 'contact', hideAnyOpenMenu: this.hideAnyOpenMenu, data: this.props, open_class: this.state.mobileicon_class_open })
 				);
 			}
 		}]);
@@ -225,7 +225,7 @@
 		return RudySite;
 	}(_react2.default.Component);
 	
-	(0, _reactDom.render)(_react2.default.createElement(RudySite, { data: rudy_menu }), document.getElementById('app'));
+	(0, _reactDom.render)(_react2.default.createElement(RudySite, { data: [rudy_menu, rudy_hours] }), document.getElementById('app'));
 
 /***/ },
 /* 1 */
@@ -21241,7 +21241,7 @@
 	    key: 'render',
 	    value: function render() {
 	
-	      var food_data = this.props.data.data;
+	      var food_data = this.props.data.data[0];
 	
 	      return _react2.default.createElement(
 	        'div',
@@ -21332,6 +21332,10 @@
 	
 	var _gmap2 = _interopRequireDefault(_gmap);
 	
+	var _hours = __webpack_require__(/*! ./hours.jsx */ 173);
+	
+	var _hours2 = _interopRequireDefault(_hours);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -21350,8 +21354,7 @@
 	
 	    _this.state = {
 	      visible: false,
-	      contact_status: 'rudy-contact',
-	      map_status: 'rudy-gmap'
+	      contact_status: 'rudy-contact'
 	    };
 	    return _this;
 	  }
@@ -21380,6 +21383,18 @@
 	        this.refs.gmap.setState({ map_visible: true });
 	      } else {
 	        this.refs.gmap.setState({ map_visible: false });
+	      }
+	    }
+	  }, {
+	    key: 'showHours',
+	    value: function showHours() {
+	
+	      this.refs.hours.showHide();
+	
+	      if (!this.refs.hours.state.hours_visible) {
+	        this.refs.hours.setState({ hours_visible: true });
+	      } else {
+	        this.refs.hours.setState({ hours_visible: false });
 	      }
 	    }
 	  }, {
@@ -21529,7 +21544,7 @@
 	              ),
 	              _react2.default.createElement(
 	                'li',
-	                { onClick: this.showMap.bind(this), className: 'svg' },
+	                { onClick: this.showHours.bind(this), className: 'svg' },
 	                _react2.default.createElement(
 	                  'object',
 	                  { data: 'images/clock.svg', type: 'image/svg+xml', className: 'rudy-contact-images-clock rudy-contact-img-padding' },
@@ -21547,7 +21562,7 @@
 	                    { className: 'rudy-contact-info-centered' },
 	                    _react2.default.createElement(
 	                      'div',
-	                      { className: 'rudy-pointer', onClick: this.showMap.bind(this) },
+	                      { className: 'rudy-pointer', onClick: this.showHours.bind(this) },
 	                      'Hours'
 	                    )
 	                  )
@@ -21556,7 +21571,8 @@
 	            )
 	          )
 	        ),
-	        _react2.default.createElement(_gmap2.default, { ref: 'gmap', initialCenter: initialCenter })
+	        _react2.default.createElement(_gmap2.default, { ref: 'gmap', initialCenter: initialCenter }),
+	        _react2.default.createElement(_hours2.default, { ref: 'hours' })
 	      );
 	    }
 	  }]);
@@ -21615,7 +21631,7 @@
 	    value: function showHide() {
 	
 	      if (!this.state.map_visible) {
-	        this.setState({ map_class: 'rudy-gmap rudy-gmap-open', map_visible: true, clickable_bg: 'rudy-gmap-bg' });
+	        this.setState({ map_class: 'rudy-gmap rudy-gmap-open', map_visible: true, clickable_bg: 'rudy-clickable-bg' });
 	      } else {
 	        this.setState({ map_class: 'rudy-gmap', map_visible: false, clickable_bg: '' });
 	      }
@@ -21695,6 +21711,88 @@
 	}(_react2.default.Component);
 	
 	exports.default = GMap;
+
+/***/ },
+/* 173 */
+/*!**************************************************************************!*\
+  !*** C:/Users/m00senado/Documents/rudy-project/src/client/app/hours.jsx ***!
+  \**************************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Hours = function (_React$Component) {
+	  _inherits(Hours, _React$Component);
+	
+	  function Hours() {
+	    _classCallCheck(this, Hours);
+	
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Hours).call(this));
+	
+	    _this.state = {
+	      map_visible: false,
+	      map_class: 'rudy-hours',
+	      clickable_bg: ''
+	    };
+	    return _this;
+	  }
+	
+	  _createClass(Hours, [{
+	    key: 'showHide',
+	    value: function showHide() {
+	
+	      if (!this.state.map_visible) {
+	        this.setState({ map_class: 'rudy-hours rudy-gmap-open', map_visible: true, clickable_bg: 'rudy-clickable-bg' });
+	      } else {
+	        this.setState({ map_class: 'rudy-hours', map_visible: false, clickable_bg: '' });
+	      }
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement('div', { className: this.state.clickable_bg, onClick: this.showHide.bind(this) }),
+	        _react2.default.createElement(
+	          'div',
+	          { className: this.state.map_class },
+	          _react2.default.createElement(
+	            'div',
+	            { onClick: this.showHide.bind(this), className: 'rudy-hide-mobile rudy-gmap-close' },
+	            _react2.default.createElement(
+	              'object',
+	              { data: 'images/close.svg', type: 'image/svg+xml', className: 'rudy-gmap-close' },
+	              _react2.default.createElement('img', { src: 'images/close.png', className: 'rudy-gmap-close' })
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Hours;
+	}(_react2.default.Component);
+	
+	exports.default = Hours;
 
 /***/ }
 /******/ ]);

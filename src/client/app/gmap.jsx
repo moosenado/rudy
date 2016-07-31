@@ -19,7 +19,7 @@ class GMap extends React.Component {
   showHide() {
 
     if (!this.state.map_visible) {
-      this.setState({ map_class: 'rudy-gmap rudy-gmap-open', map_visible: true, clickable_bg: 'rudy-gmap-bg' });
+      this.setState({ map_class: 'rudy-gmap rudy-gmap-open', map_visible: true, clickable_bg: 'rudy-clickable-bg' });
     } else {
       this.setState({ map_class: 'rudy-gmap', map_visible: false, clickable_bg: '' });
     }

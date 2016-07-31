@@ -21,7 +21,7 @@ class FoodMenu extends React.Component {
 
 	render() {
 
-    let food_data = this.props.data.data;
+    let food_data = this.props.data.data[0];
 
   	return (
       <div className={this.state.menu_status}>

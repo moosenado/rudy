@@ -116,10 +116,10 @@ class RudySite extends React.Component {
       			<Footer />
       			<div className={this.state.overlay_class} onClick={this.hideAnyOpenMenu}></div>
       			<FoodMenu ref="menu" data={this.props} hideAnyOpenMenu={this.hideAnyOpenMenu} open_class={this.state.mobileicon_class_open}/>
-      			<Contact ref="contact" hideAnyOpenMenu={this.hideAnyOpenMenu} open_class={this.state.mobileicon_class_open}/>
+      			<Contact ref="contact" hideAnyOpenMenu={this.hideAnyOpenMenu} data={this.props} open_class={this.state.mobileicon_class_open}/>
       		</div>
     	);
   	}
 }
 
-render(<RudySite data={rudy_menu}/>, document.getElementById('app'));
+render(<RudySite data={[rudy_menu, rudy_hours]}/>, document.getElementById('app'));

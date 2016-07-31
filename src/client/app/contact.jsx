@@ -1,5 +1,6 @@
 import React from 'react';
 import GMap from './gmap.jsx';
+import Hours from './hours.jsx';
 
 class Contact extends React.Component {
 
@@ -7,8 +8,7 @@ class Contact extends React.Component {
       super();
       this.state = {
           visible       : false,
-          contact_status: 'rudy-contact',
-          map_status    : 'rudy-gmap'
+          contact_status: 'rudy-contact'
       }
   }
 
@@ -33,6 +33,18 @@ class Contact extends React.Component {
       this.refs.gmap.setState({ map_visible: true });
     } else {
       this.refs.gmap.setState({ map_visible: false });
+    }
+
+  }
+
+  showHours() {
+
+    this.refs.hours.showHide();
+
+    if (!this.refs.hours.state.hours_visible) {
+      this.refs.hours.setState({ hours_visible: true });
+    } else {
+      this.refs.hours.setState({ hours_visible: false });
     }
 
   }
@@ -94,7 +106,7 @@ class Contact extends React.Component {
                   </div>
                 </div>
               </li>
-              <li onClick={this.showMap.bind(this)} className="svg">
+              <li onClick={this.showHours.bind(this)} className="svg">
                 <object data="images/clock.svg" type="image/svg+xml" className="rudy-contact-images-clock rudy-contact-img-padding">
                   <img src="images/clock.png" className="rudy-contact-images-clock rudy-contact-img-padding"/>
                 </object>
@@ -102,7 +114,7 @@ class Contact extends React.Component {
               <li className="rudy-contact-clock-height">
                 <div className="rudy-contact-info-cont">
                   <div className="rudy-contact-info-centered">
-                    <div className="rudy-pointer" onClick={this.showMap.bind(this)}>Hours</div>
+                    <div className="rudy-pointer" onClick={this.showHours.bind(this)}>Hours</div>
                   </div>
                 </div>
               </li>
@@ -111,6 +123,7 @@ class Contact extends React.Component {
           
         </div>
         <GMap ref="gmap" initialCenter={initialCenter}/>
+        <Hours ref="hours"/>
       </div>
   	);
   }
