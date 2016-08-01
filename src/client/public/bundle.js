@@ -21814,7 +21814,7 @@
 	            { className: 'rudy-item-cont-hours' },
 	            hours_data.map(function (info, i) {
 	              var dots = info.Hours ? '............................................................' : '';
-	              var hour_string_mobile = info.Hours.replace(/pm/g, '');
+	              var hour_string_mobile = info.Hours.replace(/pm/g, '').replace(/am/g, '');
 	              return _react2.default.createElement(
 	                'ul',
 	                { key: i },

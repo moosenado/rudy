@@ -44,7 +44,7 @@ class Hours extends React.Component {
 
         {hours_data.map( function( info, i ) {
           var dots               = (info.Hours) ? '............................................................' : '';
-          var hour_string_mobile = info.Hours.replace(/pm/g,'');
+          var hour_string_mobile = info.Hours.replace(/pm/g,'').replace(/am/g,'');
           return (
             <ul key={i}>
               <li>{info.Day}<span>{dots}</span></li>
