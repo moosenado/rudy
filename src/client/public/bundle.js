@@ -21800,8 +21800,8 @@
 	            { onClick: this.showHide.bind(this), className: 'rudy-hide-mobile rudy-hours-close' },
 	            _react2.default.createElement(
 	              'object',
-	              { data: 'images/close.svg', type: 'image/svg+xml', className: 'rudy-hours-close' },
-	              _react2.default.createElement('img', { src: 'images/close.png', className: 'rudy-hours-close' })
+	              { data: 'images/close.svg', type: 'image/svg+xml' },
+	              _react2.default.createElement('img', { src: 'images/close.png' })
 	            )
 	          ),
 	          _react2.default.createElement(
@@ -21811,9 +21811,10 @@
 	          ),
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'rudy-item-cont' },
+	            { className: 'rudy-item-cont-hours' },
 	            hours_data.map(function (info, i) {
 	              var dots = info.Hours ? '............................................................' : '';
+	              var hour_string_mobile = info.Hours.replace(/pm/g, '');
 	              return _react2.default.createElement(
 	                'ul',
 	                { key: i },
@@ -21830,7 +21831,16 @@
 	                _react2.default.createElement(
 	                  'li',
 	                  null,
-	                  info.Hours
+	                  _react2.default.createElement(
+	                    'span',
+	                    { className: 'rudy-hide-desktop' },
+	                    hour_string_mobile
+	                  ),
+	                  _react2.default.createElement(
+	                    'span',
+	                    { className: 'rudy-hide-mobile' },
+	                    info.Hours
+	                  )
 	                )
 	              );
 	            })

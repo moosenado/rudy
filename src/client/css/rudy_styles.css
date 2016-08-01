@@ -1,11 +1,11 @@
 @font-face {
 	font-family: Moon;
-	src: url("../fonts/moon_light.otf") format("opentype");
+	src        : url("../fonts/moon_light.otf") format("opentype");
 }
 
 @font-face {
 	font-family: MoonBold;
-	src: url("../fonts/moon_bold.otf") format("opentype");
+	src        : url("../fonts/moon_bold.otf") format("opentype");
 }
 
 html {
@@ -181,12 +181,27 @@ ul li {
 	padding  : 0 0 0 4%;
 }
 
+.rudy-item-cont-hours {
+	font-size: 1.8em;
+	color    : #fff;
+	padding  : 0 1.5em 0 1.2em;
+}
+
 .rudy-item-cont ul {
+	margin: 0 0 1.2em 0;
+}
+
+.rudy-item-cont-hours ul {
 	margin: 0 0 1.2em 0;
 }
 
 .rudy-item-cont ul li {
 	display: inline-block;
+}
+
+.rudy-item-cont-hours ul li {
+	display    : inline-block;
+	font-family: MoonBold;
 }
 
 .rudy-item-cont ul li:first-child {
@@ -196,8 +211,21 @@ ul li {
 	overflow   : hidden;
 }
 
+.rudy-item-cont-hours ul li:first-child {
+	width      : 65%;
+	color      : #f2024b;
+	font-weight: 700;
+	overflow   : hidden;
+}
+
 .rudy-item-cont ul li:nth-child(2) {
 	width   : 25%;
+	overflow: hidden;
+}
+
+
+.rudy-item-cont-hours ul li:nth-child(2) {
+	width   : 35%;
 	overflow: hidden;
 }
 
@@ -397,10 +425,13 @@ ul li {
 }
 
 .rudy-hours-close {
-	width  : 1.167em;
-	padding: 0.417em 0.417em 0.417em 0;
+	padding: 1em 1em 0 0;
 	float  : right;
 	cursor : pointer;
+}
+
+.rudy-hours-close img, .rudy-hours-close object {
+	width: 1.167em;
 }
 
 .rudy-contact {
@@ -424,7 +455,7 @@ ul li {
 }
 
 .rudy-contact-centered ul {
-	width: 100%;
+	width     : 100%;
 	box-sizing: border-box;
 }
 
@@ -527,14 +558,6 @@ ul li {
 
 @media all and ( min-width: 481px )  {
 
-	.rudy-chevron {
-		width: 4.500em;
-	}
-
-	.rudy-close {
-		width: 4.500em;
-	}
-
 	.rudy-footer {
 		font-size: 1em;
 	}
@@ -564,7 +587,7 @@ ul li {
 	}
 
 	.rudy-close-desktop object, .rudy-close-desktop img {
-		width: 2.500em;
+		width: 2em;
 	}
 
 	.rudy-darkoverlay {
@@ -620,8 +643,26 @@ ul li {
 		margin-right: auto;
 	}
 
+	.rudy-item-cont-hours {
+		font-size: 2em;
+		color    : #fff;
+		padding  : 0 2em 0 2em;
+	}
+
+	.rudy-item-cont-hours ul {
+		margin: 1.5em 0 1.5em 0;
+	}
+
 	.rudy-item-cont ul li:first-child {
 		white-space: nowrap;
+	}
+
+	.rudy-item-cont-hours ul li:first-child {
+		width: 60%;
+	}
+
+	.rudy-item-cont-hours ul li:nth-child(2) {
+		width: 40%;
 	}
 
 	.rudy-item-cont ul li:nth-child(3) {
@@ -733,9 +774,9 @@ ul li {
 	.rudy-hours {
 		position                          : absolute;
 		top                               : 15%;
-		left                              : 25%;
-		right                             : 25%;
-		bottom                            : 15%;
+		left                              : 15%;
+		right                             : 15%;
+		bottom                            : auto;
 		border                            : 3px solid #f2024b;
 		background-color                  : rgba(0, 0, 0, 1);
 		-webkit-transform                 : scale3d(.7, .7, 1);
@@ -761,6 +802,24 @@ ul li {
 
 	.rudy-item-cont {
 		font-size: 2.667em;
+	}
+}
+
+@media all and ( min-width: 1250px )  {
+
+	.rudy-hours {
+		top   : 15%;
+		left  : 25%;
+		right : 25%;
+		bottom: auto;
+	}
+
+	.rudy-item-cont-hours ul li:first-child {
+		width: 65%;
+	}
+
+	.rudy-item-cont-hours ul li:nth-child(2) {
+		width: 35%;
 	}
 }
 

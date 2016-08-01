@@ -33,21 +33,22 @@ class Hours extends React.Component {
         </object>
       </div>
       <div onClick={this.showHide.bind(this)} className="rudy-hide-mobile rudy-hours-close">
-        <object data="images/close.svg" type="image/svg+xml" className="rudy-hours-close">
-          <img src="images/close.png" className="rudy-hours-close" />
+        <object data="images/close.svg" type="image/svg+xml">
+          <img src="images/close.png" />
         </object>
       </div>
       <div className="rudy-hours-title rudy-hide-desktop">
         HOURS
       </div>
-      <div className="rudy-item-cont">
+      <div className="rudy-item-cont-hours">
 
         {hours_data.map( function( info, i ) {
-          var dots = (info.Hours) ? '............................................................' : '';
+          var dots               = (info.Hours) ? '............................................................' : '';
+          var hour_string_mobile = info.Hours.replace(/pm/g,'');
           return (
             <ul key={i}>
               <li>{info.Day}<span>{dots}</span></li>
-              <li>{info.Hours}</li>
+              <li><span className="rudy-hide-desktop">{hour_string_mobile}</span><span className="rudy-hide-mobile">{info.Hours}</span></li>
             </ul>
           );
         })}
