@@ -63,11 +63,14 @@ body {
 	height           : 100%; /*firefox*/
 	overflow         : hidden;
 	letter-spacing   : 0.083em;
-	-webkit-animation: fadeInPage 1s .5s forwards;
-	-moz-animation   : fadeInPage 1s .5s forwards;
-	-o-animation     : fadeInPage 1s .5s forwards;
-	animation        : fadeInPage 1s .5s forwards;
 	opacity          : 0;
+}
+
+.fadeInPagePlease {
+	-webkit-animation: fadeInPage 2s forwards;
+	-moz-animation   : fadeInPage 2s forwards;
+	-o-animation     : fadeInPage 2s forwards;
+	animation        : fadeInPage 2s forwards;
 }
 
 object[type*="svg"] {

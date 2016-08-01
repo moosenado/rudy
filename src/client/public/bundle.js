@@ -103,6 +103,7 @@
 			_this.showMenu = _this.showMenu.bind(_this);
 			_this.showContact = _this.showContact.bind(_this);
 			_this.hideAnyOpenMenu = _this.hideAnyOpenMenu.bind(_this);
+			window.onload = _this.bringInPage();
 			return _this;
 		}
 	
@@ -137,6 +138,14 @@
 						somethings_open: false
 					});
 				}
+			}
+		}, {
+			key: 'bringInPage',
+			value: function bringInPage() {
+				var body = document.getElementById('body');
+				window.setTimeout(function () {
+					body.classList.add('fadeInPagePlease');
+				}, 1000);
 			}
 		}, {
 			key: 'showContact',

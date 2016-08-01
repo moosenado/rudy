@@ -21,6 +21,7 @@ class RudySite extends React.Component {
 		this.showMenu        = this.showMenu.bind(this);
 		this.showContact     = this.showContact.bind(this);
 		this.hideAnyOpenMenu = this.hideAnyOpenMenu.bind(this);
+		window.onload        = this.bringInPage();
   	}
 
 	showMenu() {
@@ -53,6 +54,13 @@ class RudySite extends React.Component {
 				somethings_open		   : false
 			});
 		}
+	}
+
+	bringInPage() {
+		var body = document.getElementById('body');
+		window.setTimeout(function(){
+			body.classList.add('fadeInPagePlease');
+		},1000);
 	}
 
 	showContact() {
