@@ -21809,7 +21809,7 @@
 	            { onClick: this.showHide.bind(this), className: 'rudy-hide-mobile rudy-hours-close' },
 	            _react2.default.createElement(
 	              'object',
-	              { data: 'images/close.svg', type: 'image/svg+xml' },
+	              { data: 'images/close_pink.svg', type: 'image/svg+xml' },
 	              _react2.default.createElement('img', { src: 'images/close.png' })
 	            )
 	          ),

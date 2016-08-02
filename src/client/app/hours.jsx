@@ -33,7 +33,7 @@ class Hours extends React.Component {
         </object>
       </div>
       <div onClick={this.showHide.bind(this)} className="rudy-hide-mobile rudy-hours-close">
-        <object data="images/close.svg" type="image/svg+xml">
+        <object data="images/close_pink.svg" type="image/svg+xml">
           <img src="images/close.png" />
         </object>
       </div>
