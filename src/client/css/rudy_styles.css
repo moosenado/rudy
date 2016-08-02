@@ -119,6 +119,28 @@ ul li {
 	cursor: pointer;
 }
 
+.rudy-no-opacity:before {
+	position   : absolute;
+	top        : 50%;
+	bottom     : 0;
+	left       : 0;
+	right      : 0;
+	content    : 'Please Rotate Your Screen For A Better Viewing Experience';
+	opacity    : 1;
+	color      : #fff;
+	font-family: MoonBold;
+	text-align : center;
+
+}
+
+.rudy-no-opacity > * {
+	opacity: 0;
+}
+
+.rudy-opac > * {
+	opacity: 1;
+}
+
 /* FOOD MENU */
 
 .rudy-foodmenu {
@@ -254,7 +276,7 @@ ul li {
 
 .rudy-nav-mobile {
 	position: absolute;
-	top: 0;
+	top     : 0;
 }
 
 .rudy-nav-desktop ul li {

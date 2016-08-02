@@ -98,12 +98,14 @@
 				overlay_class: 'rudy-darkoverlay',
 				mobileicon_class_open: 'rudy-close corner-padding-close rudy-hide-general',
 				menu_icon_class: 'rudy-menu-icon-closed',
-				contact_icon_class: 'rudy-contact-icon-closed'
+				contact_icon_class: 'rudy-contact-icon-closed',
+				viewport_class: 'rudy-opac'
 			};
 			_this.showMenu = _this.showMenu.bind(_this);
 			_this.showContact = _this.showContact.bind(_this);
 			_this.hideAnyOpenMenu = _this.hideAnyOpenMenu.bind(_this);
 			window.onload = _this.bringInPage();
+			window.addEventListener('resize', _this.checkBrowserSize.bind(_this));
 			return _this;
 		}
 	
@@ -146,6 +148,22 @@
 				window.setTimeout(function () {
 					body.classList.add('fadeInPagePlease');
 				}, 1000);
+			}
+		}, {
+			key: 'checkBrowserSize',
+			value: function checkBrowserSize() {
+				var height = window.innerHeight;
+				var width = window.innerWidth;
+	
+				if (width < 768 && width > height) {
+					this.setState({
+						viewport_class: 'rudy-no-opacity'
+					});
+				} else {
+					this.setState({
+						viewport_class: 'rudy-opac'
+					});
+				}
 			}
 		}, {
 			key: 'showContact',
@@ -198,7 +216,7 @@
 	
 				return _react2.default.createElement(
 					'div',
-					null,
+					{ className: this.state.viewport_class },
 					_react2.default.createElement(
 						'header',
 						{ className: 'rudy-header' },

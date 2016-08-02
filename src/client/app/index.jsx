@@ -16,12 +16,14 @@ class RudySite extends React.Component {
 			overlay_class          : 'rudy-darkoverlay',
 			mobileicon_class_open  : 'rudy-close corner-padding-close rudy-hide-general',
 			menu_icon_class        : 'rudy-menu-icon-closed',
-			contact_icon_class     : 'rudy-contact-icon-closed'
+			contact_icon_class     : 'rudy-contact-icon-closed',
+			viewport_class         : 'rudy-opac'
 		}
 		this.showMenu        = this.showMenu.bind(this);
 		this.showContact     = this.showContact.bind(this);
 		this.hideAnyOpenMenu = this.hideAnyOpenMenu.bind(this);
 		window.onload        = this.bringInPage();
+		window.addEventListener('resize', this.checkBrowserSize.bind(this));
   	}
 
 	showMenu() {
@@ -61,6 +63,24 @@ class RudySite extends React.Component {
 		window.setTimeout(function(){
 			body.classList.add('fadeInPagePlease');
 		},1000);
+	}
+
+	checkBrowserSize() {
+		var height = window.innerHeight;
+    	var width  = window.innerWidth;
+
+    	if (width < 768 && (width > height))
+    	{
+    		this.setState({
+				viewport_class: 'rudy-no-opacity'
+			});
+    	}
+    	else
+    	{
+    		this.setState({
+				viewport_class: 'rudy-opac'
+			});
+    	}
 	}
 
 	showContact() {
@@ -110,7 +130,7 @@ class RudySite extends React.Component {
 
   	render () {
     	return (
-    		<div>
+    		<div className={this.state.viewport_class}>
 	    		<header className="rudy-header">
 	      			<nav className="rudy-nav-desktop corner-padding">
 	      				<ul>
