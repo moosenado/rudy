@@ -91,6 +91,7 @@
 	
 			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(RudySite).call(this));
 	
+			var viewport_class_init = _this.checkBrowserSizeOnLoad();
 			_this.state = {
 				menu: false,
 				contact: false,
@@ -99,13 +100,15 @@
 				mobileicon_class_open: 'rudy-close corner-padding-close rudy-hide-general',
 				menu_icon_class: 'rudy-menu-icon-closed',
 				contact_icon_class: 'rudy-contact-icon-closed',
-				viewport_class: 'rudy-opac'
+				viewport_class: viewport_class_init
 			};
 			_this.showMenu = _this.showMenu.bind(_this);
 			_this.showContact = _this.showContact.bind(_this);
 			_this.hideAnyOpenMenu = _this.hideAnyOpenMenu.bind(_this);
+			_this.checkBrowserSize = _this.checkBrowserSize.bind(_this);
 			window.onload = _this.bringInPage();
-			window.addEventListener('resize', _this.checkBrowserSize.bind(_this));
+	
+			window.addEventListener('resize', _this.checkBrowserSize);
 			return _this;
 		}
 	
@@ -148,6 +151,20 @@
 				window.setTimeout(function () {
 					body.classList.add('fadeInPagePlease');
 				}, 1000);
+			}
+		}, {
+			key: 'checkBrowserSizeOnLoad',
+			value: function checkBrowserSizeOnLoad() {
+				var height = window.innerHeight;
+				var width = window.innerWidth;
+	
+				if (width < 768 && width > height) {
+					var initState = 'rudy-no-opacity';
+				} else {
+					var initState = 'rudy-opac';
+				}
+	
+				return initState;
 			}
 		}, {
 			key: 'checkBrowserSize',

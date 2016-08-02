@@ -9,6 +9,7 @@ class RudySite extends React.Component {
 
 	constructor() {
       	super();
+      	var viewport_class_init = this.checkBrowserSizeOnLoad();
 		this.state = {
 			menu                   : false,
 			contact                : false,
@@ -17,13 +18,15 @@ class RudySite extends React.Component {
 			mobileicon_class_open  : 'rudy-close corner-padding-close rudy-hide-general',
 			menu_icon_class        : 'rudy-menu-icon-closed',
 			contact_icon_class     : 'rudy-contact-icon-closed',
-			viewport_class         : 'rudy-opac'
+			viewport_class         : viewport_class_init
 		}
-		this.showMenu        = this.showMenu.bind(this);
-		this.showContact     = this.showContact.bind(this);
-		this.hideAnyOpenMenu = this.hideAnyOpenMenu.bind(this);
-		window.onload        = this.bringInPage();
-		window.addEventListener('resize', this.checkBrowserSize.bind(this));
+		this.showMenu         = this.showMenu.bind(this);
+		this.showContact      = this.showContact.bind(this);
+		this.hideAnyOpenMenu  = this.hideAnyOpenMenu.bind(this);
+		this.checkBrowserSize = this.checkBrowserSize.bind(this);
+		window.onload         = this.bringInPage();
+
+		window.addEventListener('resize', this.checkBrowserSize);
   	}
 
 	showMenu() {
@@ -63,6 +66,22 @@ class RudySite extends React.Component {
 		window.setTimeout(function(){
 			body.classList.add('fadeInPagePlease');
 		},1000);
+	}
+
+	checkBrowserSizeOnLoad() {
+		var height = window.innerHeight;
+    	var width  = window.innerWidth;
+
+    	if (width < 768 && (width > height))
+    	{
+    		var initState = 'rudy-no-opacity';
+    	}
+    	else
+    	{
+    		var initState = 'rudy-opac';
+    	}
+
+    	return initState;
 	}
 
 	checkBrowserSize() {
