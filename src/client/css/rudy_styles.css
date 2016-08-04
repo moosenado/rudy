@@ -493,7 +493,7 @@ ul li {
 	position   : relative;
 	color      : #f4004a;
 	font-size  : 2em;
-	margin-top : .4em;
+	margin-top : 1em;
 }
 
 .rudy-contact-centered ul li:nth-child(even) {
@@ -518,35 +518,35 @@ ul li {
 }
 
 .rudy-contact-images-phone {
-	width: 4em;
-}
-
-.rudy-contact-phone-height {
-	height: 3.2em;
-}
-
-.rudy-contact-images-email {
-	width: 3.5em;
-}
-
-.rudy-contact-images-clock {
 	width: 3em;
 }
 
-.rudy-contact-email-height {
+.rudy-contact-phone-height {
 	height: 2.2em;
 }
 
-.rudy-contact-images-pin {
+.rudy-contact-images-email {
 	width: 2.5em;
 }
 
+.rudy-contact-images-clock {
+	width: 2em;
+}
+
+.rudy-contact-email-height {
+	height: 1.5em;
+}
+
+.rudy-contact-images-pin {
+	width: 1.5em;
+}
+
 .rudy-contact-pin-height {
-	height: 3.667em;
+	height: 2.1em;
 }
 
 .rudy-contact-clock-height {
-	height: 2.8em;
+	height: 1.8em;
 }
 
 .rudy-contact-info-cont {
@@ -802,7 +802,6 @@ ul li {
 		left                              : 15%;
 		right                             : 15%;
 		bottom                            : auto;
-		border                            : 3px solid #f2024b;
 		background-color                  : rgba(0, 0, 0, 1);
 		-webkit-transform                 : scale3d(.7, .7, 1);
 		transform                         : scale3d(.7, .7, 1);
