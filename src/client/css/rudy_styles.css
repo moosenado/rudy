@@ -820,6 +820,20 @@ ul li {
 		opacity          : 1;
 		z-index          : 301;
 	}
+
+	.rudy-gmap {
+		-webkit-transform: scale3d(.7, .7, 1);
+		transform        : scale3d(.7, .7, 1);
+		z-index          : -1;
+		opacity          : 0;
+	}
+
+	.rudy-gmap-open {
+		-webkit-transform: scale3d(1, 1, 1);
+		transform        : scale3d(1, 1, 1);
+		opacity          : 1;
+		z-index          : 301;
+	}
 }
 
 @media all and ( min-width: 1024px )  {
